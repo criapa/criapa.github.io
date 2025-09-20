@@ -1,11 +1,11 @@
 <!-- Chosen Palette: Corporate & Trustworthy -->
 <!-- Application Structure Plan: A single, top-down scrolling page is chosen to present the proposal as a formal, executive document. This linear flow guides the client logically from an initial summary, through the strategic analysis, the project plan, and finally to the financial commitment. This structure is more traditional and corporate than tabs, enhancing the sense of a serious, well-structured business proposal. Key interactions are focused solely on the financial section (payment selection) to maintain focus and clarity. -->
 <!-- Visualization & Content Choices: 
-- Executive Summary (Top): Goal: Inform -> Method: Styled HTML KPI section -> Interaction: Dynamic total investment figure updates based on payment selection -> Justification: Provides a high-level overview of the project's key figures and benefits upfront.
+- Executive Summary (Top): Goal: Inform -> Method: Styled HTML KPI section -> Interaction: Static -> Justification: Provides a high-level overview of the project's key benefits and a positive technical opinion upfront, building trust before price is mentioned.
 - Strategic Analysis (Viability): Goal: Compare -> Method: HTML/Tailwind side-by-side comparison table -> Interaction: Static -> Justification: Clearly articulates the core value proposition by addressing the potential brand conflict directly and professionally.
 - Project Stages (Plan): Goal: Organize -> Method: HTML/Tailwind structured list with numbered stages -> Interaction: Static -> Justification: Presents the service as a clear, phased project, building confidence in the process.
-- Financial Breakdown (Investment): Goal: Inform/Compare -> Method: Chart.js Doughnut Chart on Canvas and a detailed HTML table -> Interaction: Static chart, dynamic text based on payment selection -> Justification: Offers both a visual and a granular breakdown of the new, more detailed service costs.
-- Payment Scenarios (Investment): Goal: Compare -> Method: Interactive HTML Cards -> Interaction: Clickable cards update the Executive Summary total and highlight the selected option -> Justification: Allows the client to interactively explore financial scenarios, making the proposal a decision-making tool.
+- Financial Breakdown (Investment): Goal: Inform/Compare -> Method: Chart.js Doughnut Chart on Canvas and a detailed HTML table -> Interaction: Static chart -> Justification: Offers both a visual and a granular breakdown of the new, more detailed service costs.
+- Payment Scenarios (Investment): Goal: Compare -> Method: Interactive HTML Cards -> Interaction: Clickable cards highlight the selected option -> Justification: Allows the client to interactively explore financial scenarios, making the proposal a decision-making tool.
 -->
 <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 <!DOCTYPE html>
@@ -101,6 +101,11 @@
                 <h3 class="text-2xl font-bold section-title mb-6">Resumo Executivo</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     <div>
+                        <p class="text-base text-gray-500 font-semibold">Parecer Técnico</p>
+                        <p class="text-4xl font-extrabold text-green-600 mt-2">Viabilidade Alta</p>
+                        <p class="text-xs text-gray-400 mt-1">Baseado no Princípio da Especialidade</p>
+                    </div>
+                    <div>
                         <p class="text-base text-gray-500 font-semibold">Prazo de Proteção</p>
                         <p class="text-4xl font-extrabold text-gray-800 mt-2">10 Anos</p>
                         <p class="text-xs text-gray-400 mt-1">Renováveis sucessivamente</p>
@@ -149,7 +154,6 @@
                         <br><br>
                         <h4 class="text-lg font-bold">Análise e Protocolo</h4>
                         <p class="text-gray-600">Realização da pesquisa de anterioridade, classificação da marca segundo a Lei de Propriedade Industrial e submissão do pedido de registro junto ao INPI.</p>
-                        
                     </div>
                     <div data-step="2" class="timeline-item relative mb-10">
                         <br><br>
@@ -199,12 +203,12 @@
                                     <td class="py-3 text-gray-600">Gestão de Deferimento e Concessão</td>
                                     <td class="py-3 text-right font-semibold">R$ 847,00</td>
                                 </tr>
+                                <tr class="">
+                                    <td class="pt-4 font-bold text-lg section-title">INVESTIMENTO TOTAL</td>
+                                    <td class="pt-4 text-right font-extrabold text-xl section-title">R$ 4.997,00</td>
+                                </tr>
                             </tbody>
                         </table>
-                    </div>
-                    <div>
-                        <p class="text-base text-gray-500 font-semibold">Valor do Investimento</p>
-                        <p id="totalInvestmentDisplay" class="text-4xl font-extrabold text-gray-800 mt-2">R$ 4.997,00</p>
                     </div>
                     <div>
                         <div class="chart-container">
@@ -244,25 +248,11 @@
                 installments: document.getElementById('pay-installments'),
             };
 
-            const totalInvestmentDisplay = document.getElementById('totalInvestmentDisplay');
-            const baseTotal = 4997;
-            const discountTotal = 4200;
             const formatter = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
 
             function selectPayment(option) {
                  Object.values(paymentCards).forEach(card => card.classList.remove('selected'));
                  paymentCards[option].classList.add('selected');
-
-                 switch(option) {
-                    case 'discount':
-                        totalInvestmentDisplay.textContent = formatter.format(discountTotal);
-                        break;
-                    case 'standard':
-                    case 'installments':
-                    default:
-                        totalInvestmentDisplay.textContent = formatter.format(baseTotal);
-                        break;
-                 }
             }
             
             Object.keys(paymentCards).forEach(key => {
