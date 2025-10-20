@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRIAPA: Painel Estratégico para o Edital Incubatec</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+       .content-section h2 {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 800; /* font-extrabold */
+            color: #1e293b; /* slate-800 */
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0; /* slate-200 */
+        }
+       .content-section h3 {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 700; /* font-bold */
+            color: #334155; /* slate-700 */
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+       .content-section p,.content-section li {
+            color: #475569; /* slate-600 */
+            line-height: 1.75;
+            text-align: justify;
+        }
+       .content-section ul {
+            list-style-position: inside;
+            list-style-type: disc;
+            padding-left: 1rem;
+        }
+       .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+       .checklist-item {
+            transition: all 0.2s ease-in-out;
+        }
+       .checklist-item.completed {
+            background-color: #f0fdf4; /* green-50 */
+            color: #64748b; /* slate-500 */
+        }
+       .checklist-item.completed label {
+            text-decoration: line-through;
+        }
+       .sticky-nav {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 1.5rem;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <header class="bg-slate-800 text-white shadow-lg">
+        <div class="container mx-auto px-6 py-8">
+            <h1 class="text-4xl md:text-5xl font-extrabold">Painel Estratégico CRIAPA</h1>
+            <p class="mt-2 text-xl text-slate-300">Seu guia completo para uma candidatura de sucesso ao Edital INCUBATEC/UFRPE 01/2025.</p>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+            
+            <aside class="lg:col-span-1">
+                <div class="sticky-nav bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-lg font-bold mb-4 text-slate-700">Navegação Rápida</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#plano-acao" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Plano de Ação</a></li>
+                        <li><a href="#analise-criterios" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Análise dos Critérios</a></li>
+                        <li><a href="#diretrizes-execucao" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Diretrizes de Execução</a></li>
+                        <li><a href="#pitch-organizer" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Organizador do Pitch</a></li>
+                        <li><a href="#perguntas-banca" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Perguntas da Banca</a></li>
+                        <li><a href="#conclusao" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Conclusão</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <main class="lg:col-span-3 space-y-12">
+                
+                <section id="introducao" class="content-section bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <h2 class="text-3xl font-extrabold text-slate-800 !border-none !p-0 !m-0">Introdução: O Posicionamento Estratégico da CRIAPA</h2>
+                    </div>
+                    <p class="text-lg text-slate-500 mb-6">A seguir, a análise completa que posiciona a CRIAPA como um catalisador de inovação indispensável para o ecossistema da UFRPE.</p>
+                    
+                    <p>O Edital INCUBATEC/UFRPE Nº 01/2025 estabelece como objetivo central a seleção de "empreendimentos inovadores de base tecnológica" para fomentar a criação de novas empresas fundamentadas no conhecimento, pesquisa e propriedade intelectual gerados na Universidade Federal Rural de Pernambuco (UFRPE).[1] Neste contexto, a candidatura da CRIAPA, uma empresa especializada em serviços de registro de marcas e patentes, exige um posicionamento estratégico que transcenda a percepção de uma consultoria tradicional. A análise a seguir delineia uma abordagem robusta para enquadrar a CRIAPA não apenas como elegível, mas como um parceiro estratégico indispensável para o ecossistema de inovação da UFRPE.</p>
+                    <p class="mt-4">O argumento central desta candidatura deve ser o de posicionar a CRIAPA como um empreendimento de <strong>"tecnologia habilitadora" (*enabling technology*)</strong>. A "base tecnológica" da empresa não reside em um produto físico ou software, mas na aplicação sistemática e intensiva de conhecimento científico-jurídico para construir, proteger e valorizar o ativo mais crítico de qualquer empresa de base tecnológica: sua Propriedade Intelectual (PI). Esta abordagem alinha-se diretamente com a definição conceitual do próprio edital.</p>
+                    <p class="mt-4">O item 8.1 do edital define "Empreendimento Inovador de Base Tecnológica" como uma "empresa ou iniciativa empresarial em fase inicial, com modelo de negócio fundamentado em conhecimento científico e tecnológico intensivo, com potencial de mercado, alto crescimento e capacidade de geração de valor para a sociedade".[1] A proposta da CRIAPA deve decodificar e responder a cada elemento desta definição:</p>
+                    <ul class="mt-4 space-y-2">
+                        <li><strong>"Conhecimento científico e tecnológico intensivo":</strong> A proposta deve argumentar que a gestão estratégica da propriedade intelectual é uma disciplina de conhecimento intensivo, uma verdadeira tecnologia de negócio. Ela envolve a análise de anterioridade em bases de dados globais, a redação técnica de patentes que requer profundo entendimento científico, e a aplicação de metodologias para transformar invenções em ativos comercializáveis. A CRIAPA não apenas executa um serviço; ela aplica uma tecnologia de gestão da inovação.</li>
+                        <li><strong>"Capacidade de geração de valor para a sociedade":</strong> A CRIAPA deve ser apresentada como um multiplicador de valor para todo o ecossistema. Ao proteger as inovações geradas nos laboratórios e pelas startups da UFRPE, a empresa habilita a transformação desse conhecimento em empresas sustentáveis, empregos qualificados e soluções tecnológicas que atendem a demandas da sociedade. Este posicionamento demonstra um alinhamento direto com a missão extensionista e de desenvolvimento regional da universidade.</li>
+                    </ul>
+                    <p class="mt-4">Portanto, a candidatura da CRIAPA será articulada como uma oportunidade singular para a INCUBATEC internalizar uma competência crítica, fortalecendo de forma sistêmica todo o seu portfólio de incubadas. A proposta demonstrará que a presença da CRIAPA no programa de incubação não beneficia apenas a si mesma, mas acelera o cumprimento dos objetivos estratégicos da própria UFRPE, potencializando o retorno do investimento da universidade em pesquisa e desenvolvimento.</p>
+                </section>
+
+                <section id="plano-acao" class="content-section bg-white p-8 rounded-lg shadow-md">
+                    <h2>Plano de Ação e Checklist de Elegibilidade</h2>
+                    <p class="mb-6">Utilize este checklist interativo para garantir que todos os passos e documentos exigidos pelo edital sejam cumpridos. Marque os itens conforme forem concluídos.</p>
+                    
+                    <div class="space-y-4" id="checklist-container">
+                        </div>
+                </section>
+
+                <section id="analise-criterios" class="content-section">
+                    <h2>Análise Criteriosa e Estratégias de Pontuação (Quadro 2)</h2>
+                    <p class="mb-6">A avaliação das propostas será realizada com base em oito critérios. Clique em cada um para expandir e ver a análise detalhada e os argumentos estratégicos para a CRIAPA.</p>
+                    <div id="accordion-container" class="space-y-4">
+                        </div>
+                </section>
+
+                <section id="diretrizes-execucao" class="content-section bg-white p-8 rounded-lg shadow-md">
+                    <h2>Diretrizes para a Execução da Proposta e do Pitch</h2>
+                    <p>A excelência na articulação estratégica deve ser acompanhada por uma execução impecável na preparação dos documentos e na apresentação oral (pitch). Esta seção fornece um guia prático para traduzir a estratégia delineada na Parte I em entregáveis convincentes.</p>
+                    
+                    <h3>Elaboração dos Documentos (Item 5.2)</h3>
+                    <p>O edital exige o envio de três documentos em formato PDF: a Apresentação do Pitch, o Formulário de Apresentação de Proposta e os Currículos Consolidados.[1] A consistência da mensagem entre eles é vital.</p>
+                    <ul class="mt-4 space-y-3">
+                        <li><strong>Formulário de Apresentação de Proposta (Anexo I):</strong> Este é o documento central e deve conter a versão detalhada e escrita de todos os argumentos desenvolvidos na Parte I. Cada campo do formulário deve ser preenchido de forma a responder, implícita ou explicitamente, a um ou mais critérios de avaliação. A linguagem deve ser clara, objetiva e profissional. É o espaço para detalhar metodologias, planos de negócio e projeções. Recomenda-se o uso de subtítulos que espelhem os critérios de avaliação para guiar a leitura da banca.</li>
+                        <li><strong>Apresentação do Pitch (Slides):</strong> A apresentação de slides deve ser o suporte visual para a apresentação oral. Deve ser concisa, com mais elementos gráficos (diagramas, ícones, números-chave) do que texto. A estrutura narrativa deve ser impactante e seguir a lógica do pitch de 5 minutos detalhada abaixo. Cada slide deve ter um propósito claro e contribuir para a história geral. O design deve ser profissional e refletir a identidade visual da CRIAPA.</li>
+                        <li><strong>Currículos Consolidados (Lattes):</strong> Conforme o item 5.2.c, os currículos devem ser compilados em um único arquivo.[1] Como estratégia de valorização, este arquivo deve ser iniciado com uma página de rosto que funcione como um sumário executivo da equipe. Esta página deve apresentar uma foto profissional de cada membro, seu nome, seu papel no projeto (e.g., "Estrategista de PI", "Desenvolvedor de Negócios") e um resumo de 2-3 linhas de suas competências mais relevantes para a CRIAPA, conforme discutido no critério 1.5. Isso facilita o trabalho da banca e reforça imediatamente a narrativa de uma equipe completa e qualificada.</li>
+                    </ul>
+                </section>
+
+                <section id="pitch-organizer" class="content-section">
+                    <h2>Estrutura do Pitch de 5 Minutos (Item 5.3.3)</h2>
+                    <p class="mb-6">O tempo de 5 minutos é extremamente curto. Use este guia visual para estruturar sua apresentação, garantindo que cada segundo seja usado para máximo impacto.</p>
+                    <div class="space-y-6" id="pitch-organizer-container">
+                        </div>
+                </section>
+
+                <section id="perguntas-banca" class="content-section bg-white p-8 rounded-lg shadow-md">
+                    <h2>Antecipação de Perguntas da Banca (Item 5.3.4)</h2>
+                    <p>Após o pitch, a banca poderá realizar indagações.[1] Estar preparado com respostas estratégicas é tão importante quanto a apresentação em si. Abaixo, algumas perguntas prováveis e sugestões de respostas estratégicas.</p>
+                    
+                    <div class="mt-6 space-y-6">
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h4 class="font-bold text-lg text-slate-700">Pergunta Provável 1: "Vocês são uma empresa de tecnologia ou um escritório de advocacia?"</h4>
+                            <p class="mt-2"><strong>Resposta Estratégica:</strong> "Nós nos definimos como uma empresa de tecnologia de negócio. Nossa tecnologia não é software, mas sim a aplicação sistemática e escalável de conhecimento científico-jurídico para construir ativos de alto valor. Assim como uma fintech usa tecnologia para redesenhar serviços financeiros, nós usamos nossa metodologia para redesenhar a forma como startups acessam e utilizam a propriedade intelectual como ferramenta de crescimento. Somos arquitetos de ativos intangíveis, um pilar para qualquer empresa de base tecnológica."</p>
+                        </div>
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h4 class="font-bold text-lg text-slate-700">Pergunta Provável 2: "Como seu modelo de negócio é sustentável se vocês planejam oferecer serviços a baixo custo ou com taxa de sucesso para startups que ainda não têm receita?"</h4>
+                            <p class="mt-2"><strong>Resposta Estratégica:</strong> "Nosso modelo foi desenhado para sustentabilidade a longo prazo, baseado em dois pilares: eficiência e sucesso compartilhado. Primeiro, a incubação na UFRPE nos proporciona um fluxo constante e qualificado de clientes, reduzindo drasticamente nosso custo de aquisição, que é um dos maiores gargalos para empresas de serviço. Segundo, nosso modelo de receita é híbrido. Serviços padronizados terão taxas acessíveis, garantindo o fluxo de caixa. O grande potencial de retorno vem do nosso modelo de sucesso compartilhado. Ao apostarmos no crescimento das incubadas, nosso sucesso financeiro está diretamente atrelado ao sucesso delas. É um modelo de portfólio: o sucesso de algumas startups irá compensar e superar o investimento feito nas outras. É um modelo de *venture capital* aplicado a serviços."</p>
+                        </div>
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h4 class="font-bold text-lg text-slate-700">Pergunta Provável 3: "Qual seria a relação de vocês com o Núcleo de Empreendedorismo e Inovação (NEI) da UFRPE? Não haveria uma sobreposição de funções?"</h4>
+                            <p class="mt-2"><strong>Resposta Estratégica:</strong> "Nossa proposta é de colaboração e complementaridade, não de sobreposição. Vemos o NEI como o grande articulador estratégico da política de inovação da universidade. Nosso papel seria o de um parceiro operacional especializado e ágil, focado na execução para as startups da incubadora. Enquanto o NEI define as diretrizes e atua em nível institucional, nós podemos ajudar a desafogar a demanda operacional, oferecendo a velocidade e a flexibilidade que uma startup necessita para interagir com o mercado e com investidores. Atuaremos sempre em total alinhamento com a Política de PI da Universidade e em constante diálogo com a gestão do NEI e do IPÊ, funcionando como um recurso especializado à disposição deles."</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="conclusao" class="content-section bg-white p-8 rounded-lg shadow-md">
+                    <h2>Conclusão: A CRIAPA como Parceiro Estratégico Indispensável</h2>
+                    <p>A análise detalhada do Edital INCUBATEC/UFRPE 01/2025 e do contexto institucional da universidade revela uma oportunidade clara para a CRIAPA se posicionar de forma única e compelling. A candidatura da empresa não deve ser apresentada como a de apenas mais um empreendimento buscando espaço e apoio, mas como a de um parceiro estratégico que chega para preencher uma lacuna crítica e potencializar todo o ecossistema de inovação da UFRPE.</p>
+                    <p class="mt-4">A força da proposta reside em sua capacidade de demonstrar uma simbiose perfeita. De um lado, a INCUBATEC oferece à CRIAPA um ambiente ideal para validação de seu modelo de negócio inovador, acesso a um fluxo qualificado de clientes e a chancela de uma instituição de prestígio, elementos fundamentais para sua escalabilidade regional e nacional. De outro, a CRIAPA oferece à INCUBATEC e à UFRPE uma competência essencial que está no cerne da economia do conhecimento: a capacidade de transformar pesquisa e inovação em ativos protegidos e de alto valor.</p>
+                    <p class="mt-4">Ao internalizar este "Hub de Propriedade Intelectual", a INCUBATEC aumenta o valor, a resiliência e o potencial de investimento de todas as suas empresas incubadas. A presença da CRIAPA funciona como uma apólice de seguro para a inovação gerada no ecossistema, garantindo que o esforço de empreendedores e pesquisadores se traduza em desenvolvimento econômico e social sustentável, em plena consonância com os objetivos do PDI 2021-2030 e com os Objetivos de Desenvolvimento Sustentável da ONU.</p>
+                    <p class="mt-4">Portanto, a recomendação final é que todos os documentos da proposta e a apresentação do pitch sejam construídos sobre este pilar narrativo: a CRIAPA não está pedindo para entrar na incubadora; está se oferecendo para ser a parceira que ajudará a construir o futuro da inovação na UFRPE. É uma proposta de valor mútuo, um investimento estratégico com potencial de retorno exponencial para todas as partes envolvidas.</p>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <footer class="bg-slate-800 text-slate-400 mt-12">
+        <div class="container mx-auto px-6 py-4 text-center">
+            <p>&copy; 2025 - Painel Estratégico desenvolvido para apoiar a candidatura da CRIAPA.</p>
+        </div>
+    </footer>
+
+    <script>
+        const checklistData = [
+            { id: 'doc1', text: 'Formulário de Apresentação de Proposta (Anexo I) preenchido', category: 'Documentação Principal' },
+            { id: 'doc2', text: 'Apresentação do Pitch (PDF, máx. 10 slides)', category: 'Documentação Principal' },
+            { id: 'doc3', text: 'Currículos Consolidados da equipe (PDF único)', category: 'Documentação Principal' },
+            { id: 'doc4', text: 'Comprovação de vínculo de um membro com a UFRPE', category: 'Documentação Principal' },
+            { id: 'prep1', text: 'Mapear argumentos para cada critério do Quadro 2', category: 'Preparação do Conteúdo' },
+            { id: 'prep2', text: 'Desenvolver o Business Model Canvas/Lean Canvas', category: 'Preparação do Conteúdo' },
+            { id: 'prep3', text: 'Alinhar a proposta aos objetivos do PDI da UFRPE', category: 'Preparação do Conteúdo' },
+            { id: 'prep4', text: 'Identificar e articular a contribuição para os ODS da ONU', category: 'Preparação do Conteúdo' },
+            { id: 'prep5', text: 'Estruturar o roteiro do pitch de 5 minutos', category: 'Preparação do Conteúdo' },
+            { id: 'rev1', text: 'Revisar todos os documentos (ortografia e gramática)', category: 'Revisão Final' },
+            { id: 'rev2', text: 'Ensaiar o pitch de 5 minutos (cronometrar!)', category: 'Revisão Final' },
+            { id: 'rev3', text: 'Preparar respostas para as possíveis perguntas da banca', category: 'Revisão Final' },
+        ];
+
+        const accordionData = [
+            { 
+                id: 'c1', 
+                title: 'Solução e Grau de Inovação', 
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>',
+                content: `Este critério avalia a "clareza da solução e o grau de inovação da proposta, bem como sua viabilidade técnica".[1] Para uma empresa de serviços como a CRIAPA, a "solução" e sua "inovação" devem ser articuladas de forma multidimensional, abrangendo processo, modelo de negócio e impacto sistêmico. A abordagem tradicional de descrever um produto ou software é insuficiente; a proposta deve educar a banca avaliadora sobre onde reside a verdadeira inovação da empresa.<br><br>Primeiramente, a <strong>inovação de processo</strong> é fundamental. A CRIAPA deve detalhar sua metodologia proprietária para o ciclo de vida da propriedade intelectual. Isso pode incluir um framework de diagnóstico que avalia a maturidade da inovação de uma startup, um processo otimizado para a redação e depósito de patentes que maximiza as chances de deferimento, ou o uso de ferramentas de <em>business intelligence</em> para monitorar o cenário tecnológico e identificar oportunidades ou riscos para seus clientes. A "viabilidade técnica" aqui se traduz na robustez, repetibilidade e eficácia dessa metodologia. Apresentar um fluxograma ou um esquema visual deste processo nos materiais de apoio pode ser extremamente eficaz.<br><br>Em segundo lugar, a <strong>inovação de modelo de negócio</strong> é um diferencial poderoso. O setor de serviços jurídicos é notoriamente conservador em seus modelos de precificação, baseados em horas técnicas ou taxas fixas elevadas. A CRIAPA pode propor um modelo disruptivo e alinhado ao universo das startups, como um modelo de <em>success fee</em> (taxa de sucesso), onde parte da remuneração está atrelada ao sucesso da startup (e.g., recebimento de um investimento, licenciamento da patente), ou um modelo de assinatura mensal acessível para a gestão contínua do portfólio de PI. Essa abordagem não apenas torna o serviço acessível, mas demonstra que a CRIAPA está disposta a compartilhar o risco, posicionando-se como uma verdadeira parceira, não apenas uma prestadora de serviços.<br><br>Finalmente, a maior inovação é a <strong>inovação sistêmica</strong>. A proposta deve vender a visão de criar um "Hub de Propriedade Intelectual" dentro da INCUBATEC. A solução da CRIAPA não é apenas o serviço prestado a uma empresa, mas a criação de uma infraestrutura de conhecimento e suporte que beneficia todo o ecossistema. Isso resolve um problema crônico para incubadoras: o acesso fragmentado, caro e muitas vezes reativo a serviços de PI. A CRIAPA oferece uma solução proativa e integrada. Para articular essa visão de forma moderna e alinhada à linguagem do ecossistema, a proposta pode enquadrar seu serviço como <strong>"Inovação como Serviço" (IaaS - <em>Innovation as a Service</em>)</strong> ou, mais especificamente, "Estratégia de PI como Serviço". Essa terminologia reposiciona a CRIAPA de uma consultoria para uma empresa com uma abordagem de produto escalável e integrado, o que ressoará positivamente com uma banca de avaliação de inovação.`
+            },
+            { 
+                id: 'c2', 
+                title: 'Diferenciais Competitivos', 
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>',
+                content: `Este critério avalia "os diferenciais e barreiras de entrada de concorrentes no mercado da proposta".[1] A estratégia da CRIAPA deve ser a de demonstrar que seus diferenciais são sustentáveis e que a própria incubação na UFRPE é um mecanismo para aprofundar essas vantagens competitivas.<br><br>O primeiro diferencial é a <strong>hiperespecialização</strong>. A CRIAPA não deve se apresentar como um escritório de advocacia ou consultoria generalista que também atende startups, mas como uma empresa cuja existência é dedicada a atender as necessidades únicas de empresas de base tecnológica. Isso implica um profundo conhecimento não apenas da legislação de PI, mas também dos ciclos de vida de startups, das dinâmicas de captação de investimento e das particularidades de setores tecnológicos (e.g., biotech, software, agritech). Essa profundidade de conhecimento é uma barreira de entrada significativa, pois requer anos de experiência focada para ser replicada. A proposta deve ilustrar essa expertise com exemplos de desafios de PI típicos de startups que um escritório generalista não saberia como endereçar.<br><br>O segundo e mais poderoso diferencial é a <strong>proximidade e imersão no ecossistema</strong>. A proposta de incubação não deve ser justificada pela economia de custos, mas como uma decisão estratégica para se integrar ao tecido da UFRPE. Ao operar de dentro da INCUBATEC, a CRIAPA ganha um nível de acesso, compreensão e confiança que nenhum concorrente externo pode igualar. A empresa participará das mesmas reuniões, entenderá os desafios das incubadas em tempo real e construirá relacionamentos pessoais com os empreendedores e pesquisadores. Nesse sentido, a própria incubação se torna a principal barreira de entrada. A proposta deve articular claramente: "Nossa presença física e imersão diária na INCUBATEC nos permitirão oferecer um serviço proativo e contextualizado, transformando a proteção de PI de um evento reativo para um processo contínuo e estratégico, uma vantagem que é, por definição, impossível para concorrentes externos replicarem."<br><br>O terceiro diferencial competitivo é o <strong>modelo de negócio alinhado</strong>, conforme discutido no critério anterior. Um modelo que compartilha o risco e o sucesso com as startups cria um forte laço de parceria e lealdade. Enquanto concorrentes operam em um modelo puramente transacional (pagamento por serviço), a CRIAPA operará em um modelo relacional e de longo prazo. Isso cria uma barreira de troca (*switching cost*) para as startups, que não encontrarão em outro lugar um parceiro tão investido em seu sucesso. A combinação desses três fatores – expertise profunda, imersão exclusiva e alinhamento de interesses – cria uma posição de mercado única e altamente defensável.`
+            },
+            { 
+                id: 'c3', 
+                title: 'Escalabilidade do Negócio', 
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>',
+                content: `A avaliação do "potencial de escalabilidade em atender mercado local, regional, nacional e/ou internacional" [1] é crucial para demonstrar que a CRIAPA é um empreendimento com alto potencial de crescimento, uma característica chave para uma incubadora de base tecnológica. A proposta deve apresentar um plano de escalabilidade claro e multifacetado, mostrando que a incubação na UFRPE é o primeiro passo de uma jornada maior.<br><br>O <strong>primeiro vetor de escala</strong> é o aprofundamento dentro do próprio ecossistema da UFRPE. O mercado inicial e local são as startups selecionadas para o programa da INCUBATEC. Uma vez validado o modelo de serviço neste núcleo, a CRIAPA pode expandir sua atuação para atender outras demandas da universidade: grupos de pesquisa com tecnologias patenteáveis, projetos de extensão inovadores, spin-offs acadêmicas e, eventualmente, empresas que venham a se instalar no parque tecnológico da UFRPE. Este é um plano de crescimento orgânico e de baixo custo de aquisição de clientes, que utiliza a incubadora como uma plataforma de lançamento.<br><br>O <strong>segundo vetor de escala</strong> é a expansão para o ecossistema regional. A UFRPE, com seu prestígio e a chancela da INCUBATEC, servirá como um poderoso estudo de caso e selo de credibilidade. A CRIAPA poderá usar o sucesso obtido com as incubadas da UFRPE para prospectar clientes em outros polos de inovação de Pernambuco, como o Porto Digital, e em outros estados do Nordeste. A estratégia aqui é de "pousar e expandir" (*land and expand*), onde a UFRPE é a cabeça de ponte para a conquista do mercado regional de startups e empresas de tecnologia. A proposta pode incluir cartas de intenção ou interesse de outras empresas do ecossistema para fortalecer este ponto.<br><br>O <strong>terceiro vetor de escala</strong>, e o que demonstra maior ambição, é a transição para o mercado nacional através de produtos de serviço digitais. A consultoria de alta especialização é difícil de escalar, pois depende do tempo de especialistas. No entanto, o conhecimento adquirido pode ser transformado em produtos escaláveis. A CRIAPA pode desenvolver e comercializar cursos online sobre propriedade intelectual para empreendedores, ferramentas de diagnóstico de PI baseadas em software (SaaS), ou modelos de documentos (*templates*) para acordos de confidencialidade e licenciamento. A incubação na UFRPE funcionaria como um laboratório vivo para desenvolver, testar e validar esses produtos digitais com um público-alvo real antes de lançá-los em escala nacional. Esta visão demonstra que a CRIAPA não se limita a um modelo de consultoria tradicional e tem um plano claro para se tornar uma *scale-up* de base tecnológica.`
+            },
+            { 
+                id: 'c4', 
+                title: 'Qualidade do Modelo de Negócio', 
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>',
+                content: `O edital exige a apresentação de um modelo de negócio, preferencialmente seguindo os formatos Business Model Canvas ou Lean Canvas.[1] Este documento não deve ser um mero formulário, mas a espinha dorsal da proposta estratégica, demonstrando a viabilidade e a coerência do empreendimento.<br><br>O Canvas da CRIAPA deve ser preenchido com uma linguagem precisa e orientada ao valor, evitando jargões jurídicos. A seguir, uma análise detalhada dos blocos mais críticos:<br><br><ul><li><strong>Segmentos de Clientes:</strong> É crucial detalhar os diferentes perfis de clientes e suas necessidades específicas. Devem ser claramente distintos: (1) <strong>Startups em estágio inicial (incubadas na INCUBATEC):</strong> Necessitam de proteção fundamental (marca, software) de forma acessível e educativa. (2) <strong>Pesquisadores e spin-offs acadêmicas da UFRPE:</strong> Necessitam de apoio na transformação de resultados de pesquisa em patentes robustas e na negociação de licenciamentos. (3) <strong>Empresas de tecnologia estabelecidas (ecossistema externo):</strong> Necessitam de gestão estratégica de portfólio de PI, análise competitiva e <em>due diligence</em> para fusões e aquisições.</li><li><strong>Proposta de Valor:</strong> A proposta de valor deve ser articulada a partir da perspectiva do cliente. Em vez de "Registro de marcas e patentes", a linguagem deve ser: <strong>"Segurança para Inovar"</strong>, <strong>"Transformação de Pesquisa em Ativo de Valor"</strong>, <strong>"Aceleração do Acesso a Investimento através da Proteção de Ativos Intangíveis"</strong>, ou <strong>"Blindagem Competitiva no Mercado"</strong>. Cada proposta de valor deve ser diretamente associada a um segmento de cliente.</li><li><strong>Canais:</strong> O canal de aquisição mais importante no estágio inicial é a própria INCUBATEC. A proposta deve destacar como a imersão no programa funcionará como um canal direto e de alta conversão para o primeiro segmento de clientes. Outros canais a serem mencionados incluem parcerias com o Núcleo de Empreendedorismo e Inovação (NEI) da UFRPE, participação em eventos do ecossistema e, futuramente, marketing de conteúdo digital.</li><li><strong>Fontes de Receita:</strong> Este bloco deve refletir a inovação do modelo de negócio. É preciso detalhar a estrutura de precificação para cada serviço e cliente: (a) Taxas fixas (*flat fees*) para serviços padronizados (e.g., registro de marca); (b) Planos de assinatura mensal para gestão contínua de portfólio; (c) Taxas de sucesso (*success fees*) vinculadas a eventos de liquidez (e.g., um percentual sobre o valor de um contrato de licenciamento ou sobre uma rodada de investimento viabilizada pela PI).</li><li><strong>Parcerias-Chave:</strong> A parceria mais importante é com a própria UFRPE, através do Instituto IPÊ e do NEI.[2] Outras parcerias estratégicas a serem exploradas e mencionadas são com o SEBRAE (para capacitação), agências de fomento (para projetos conjuntos), fundos de investimento (*venture capital*) que necessitam de <em>due diligence</em> de PI, e outros parques tecnológicos. Demonstrar que já existem conversas iniciais com esses potenciais parceiros adicionará grande credibilidade à proposta.</li></ul>`
+            },
+            { 
+                id: 'c5', 
+                title: 'Composição da Equipe', 
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>',
+                content: `Este critério avalia se "a equipe de trabalho apresenta uma distribuição de funções e expertises de acordo com as necessidades do negócio".[1] A apresentação da equipe deve ir além da simples listagem de qualificações; deve contar uma história coesa sobre por que este é o time certo para executar esta visão.<br><br>Um requisito mandatório do edital é que a equipe possua "pelo menos um membro com vínculo à comunidade acadêmica da UFRPE".[1] Este membro não pode ser uma figura simbólica. Sua função deve ser estratégica e claramente definida na proposta, como "Diretor de Relações Institucionais" ou "Conselheiro para o Ecossistema UFRPE". Sua biografia deve destacar não apenas o vínculo formal (discente, egresso, servidor), mas também seu conhecimento da cultura, dos processos e das pessoas-chave dentro da universidade. Ele será a ponte que garante o alinhamento e a sinergia entre a CRIAPA e a UFRPE.<br><br>A proposta deve realizar um <strong>mapeamento explícito de competências</strong>. Em vez de apenas anexar os currículos, é recomendável criar uma seção ou um slide que resuma a equipe em um formato de "time dos sonhos". Por exemplo:<br><br><ul><li><strong>[Nome]: O Estrategista de PI.</strong> Com X anos de experiência em patentes de [área], responsável pela excelência técnica dos serviços.</li><li><strong>[Nome]: O Desenvolvedor de Negócios.</strong> Com experiência em [vendas, marketing, gestão de startups], responsável pela aquisição de clientes, parcerias e pela sustentabilidade financeira do negócio.</li><li><strong>[Nome do Membro com Vínculo]: A Ponte com a UFRPE.</strong> [Ex-aluno de doutorado/Professor/etc.] da UFRPE, com profundo conhecimento do ecossistema de pesquisa da universidade, responsável por facilitar a colaboração e identificar oportunidades internas.</li></ul><br>Esta abordagem demonstra que a equipe foi montada de forma intencional para cobrir todas as áreas críticas do negócio: a <strong>área técnica</strong> (domínio da PI), a <strong>área de negócios</strong> (gestão, crescimento) e a <strong>área de relacionamento</strong> (conexão com o parceiro estratégico, a UFRPE). A documentação obrigatória, como os "Currículos Consolidados (lattes)" [1], deve ser organizada em um único arquivo PDF, mas pode ser precedida por esta página de rosto resumida, que orienta a leitura da banca e reforça a narrativa de uma equipe completa e sinérgica.`
+            },
+            { 
+                id: 'c6', 
+                title: 'Aderência aos Objetivos Estratégicos da UFRPE', 
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222 4 2.222V20m-8 0h8" /></svg>',
+                content: `A avaliação da "aderência aos objetivos estratégicos da UFRPE dispostos em seu PDI 2021-2030" [1] é, possivelmente, o critério de maior peso político e estratégico. Uma pontuação alta aqui sinaliza que a CRIAPA não é um inquilino, mas um parceiro alinhado à missão da universidade. A proposta deve demonstrar um profundo conhecimento do PDI e articular como a CRIAPA atua como um catalisador para seus objetivos.<br><br>A pesquisa sobre o planejamento institucional da UFRPE revela um forte direcionamento para a inovação e o empreendedorismo. A universidade criou estruturas dedicadas como o Instituto de Inovação, Parcerias, Empreendedorismo e Internacionalização (IPÊ) e o Núcleo de Empreendedorismo e Inovação (NEI).[2] Além disso, instituiu formalmente uma Política de Propriedade Intelectual e transferência de tecnologia.[2] Estes não são apenas itens burocráticos; são declarações estratégicas da universidade.<br><br>A proposta da CRIAPA deve se posicionar não como meramente "aderente" a esses objetivos, mas como o <strong>braço operacional que viabiliza sua execução</strong>. O argumento deve ser direto e explícito:<br><br><ul><li><strong>Alinhamento com o NEI e o IPÊ:</strong> "A CRIAPA propõe atuar em colaboração direta com o NEI e o IPÊ, oferecendo workshops, mentorias e consultorias especializadas para capacitar toda a comunidade acadêmica da UFRPE na cultura de proteção à inovação, cumprindo a missão dessas novas estruturas institucionais." [2]</li><li><strong>Viabilização da Política de PI e Transferência de Tecnologia:</strong> "Nosso serviço é a ferramenta que transforma a Política de Transferência de Tecnologia da UFRPE de um documento normativo em resultados práticos. Atuamos na identificação, proteção e valoração das tecnologias desenvolvidas na universidade, criando um fluxo contínuo de ativos licenciáveis e novas empresas, que são indicadores-chave de sucesso para o PDI."</li><li><strong>Contribuição para o Eixo Estratégico "Sociedade":</strong> O PDI da UFRPE está organizado em eixos, incluindo o eixo "Sociedade".[3] A proposta deve conectar suas atividades a este eixo: "Ao fortalecer a base de PI das startups da INCUBATEC, aumentamos sua taxa de sobrevivência e potencial de crescimento, contribuindo diretamente para a geração de empregos qualificados e para o desenvolvimento socioeconômico de Pernambuco, um objetivo central do eixo 'Sociedade' do PDI."</li></ul><br>A abordagem mais sofisticada é apresentar a CRIAPA como a solução para um "gap" institucional implícito. Universidades, mesmo com estruturas de apoio à inovação, frequentemente enfrentam desafios de agilidade e capacidade para atender à demanda de pesquisadores e startups. O ritmo acadêmico e os processos administrativos podem ser lentos demais para o dinamismo do mercado. A CRIAPA, como uma entidade externa, especializada e ágil, pode preencher essa lacuna. A proposta pode sutilmente comunicar: "Entendemos que o desafio de converter conhecimento em valor econômico é complexo. A CRIAPA oferece à UFRPE uma parceria ágil e focada, complementando as estruturas internas e acelerando o alcance das metas de inovação e empreendedorismo do PDI." Esta mensagem demonstra empatia com os desafios da gestão universitária e posiciona a CRIAPA como uma solução inteligente e estratégica.`
+            },
+            { 
+                id: 'c7', 
+                title: 'Propriedade Intelectual', 
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" /></svg>',
+                content: `Este critério avalia se "o empreendimento inovador possui solução com potencial de obtenção de patente ou se já possui patente ou outra forma de proteção da propriedade intelectual".[1] Para a CRIAPA, cujo negócio é a própria propriedade intelectual, este critério representa uma oportunidade única de redefinir as expectativas da banca e demonstrar um nível superior de pensamento estratégico.<br><br>A resposta a este critério deve ser estruturada em dois níveis. O primeiro nível é a resposta direta e obrigatória: identificar e listar a propriedade intelectual da própria CRIAPA. Isso inclui:<br><br><ul><li><strong>Marca:</strong> O nome "CRIAPA" e seu logotipo devem estar em processo de registro ou já registrados como marca no INPI. A proposta deve afirmar isso claramente, demonstrando que a empresa pratica o que prega.</li><li><strong>Segredo de Negócio:</strong> A metodologia proprietária de diagnóstico, análise e gestão de PI deve ser descrita como um segredo de negócio, protegido por acordos de confidencialidade com a equipe e clientes.</li><li><strong>Direitos Autorais:</strong> Se a CRIAPA utiliza uma plataforma de software própria para gestão de processos ou desenvolveu materiais de treinamento e cursos, estes são protegidos por direitos autorais.</li></ul><br>No entanto, limitar-se a isso seria desperdiçar uma oportunidade. O segundo nível, o estratégico, consiste em mudar o foco da PI <em>da CRIAPA</em> para a <em>sua capacidade de gerar e proteger a PI de terceiros</em>. O argumento central deve ser que o maior ativo da CRIAPA é seu capital humano e sua metodologia, que funcionam como uma "fábrica" de propriedade intelectual para todo o ecossistema.<br><br>A proposta deve dirigir-se diretamente à banca avaliadora com uma proposta de valor irresistível: "Ao avaliar este critério, pedimos que considerem não apenas a nossa própria PI, mas o impacto exponencial que teremos sobre a PI de todo o programa. A aprovação da CRIAPA na INCUBATEC não significa a entrada de um projeto com uma ou duas patentes potenciais. Significa internalizar a competência estratégica para identificar, proteger e valorizar dezenas de inovações de todos os outros 19 projetos que serão aprovados. Nós não somos apenas um ativo; somos um multiplicador de ativos. Nosso valor não está no que protegemos para nós, mas no que podemos proteger para todo o portfólio da INCUBATEC, aumentando drasticamente a taxa de sucesso, o potencial de investimento e o valor de mercado de cada empresa incubada."<br><br>Essa abordagem transforma um critério que poderia ser um ponto fraco (uma empresa de serviços não tem patentes de invenção) no argumento mais forte da proposta, demonstrando uma visão sistêmica e um alinhamento profundo com os objetivos da própria incubadora.`
+            },
+            { 
+                id: 'c8', 
+                title: 'Alinhamento aos ODS da ONU', 
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h1a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.737 16.95l.247.494A2 2 0 0010 19h4a2 2 0 001.716-1.056l.247-.494M12 17.25V14.25m-4.243 3l-1.06-2.122m8.486 0L16.243 17.25" /></svg>',
+                content: `O edital avalia "em que medida a proposta está alinhada a um ou mais Objetivos de Desenvolvimento Sustentável (ODS) da ONU".[1] Uma resposta superficial, apenas citando os ODS, resultará em uma pontuação baixa. A proposta da CRIAPA deve demonstrar um entendimento profundo, conectando suas atividades a metas específicas dos ODS e explicando o mecanismo causal dessa contribuição.<br><br>A análise deve focar em dois ODS principais, cujas metas estão diretamente ligadas ao <em>core business</em> da CRIAPA:<br><br><strong>ODS 8: Trabalho Decente e Crescimento Econômico.</strong> Este objetivo visa "promover o crescimento econômico sustentado, inclusivo e sustentável, emprego pleno e produtivo e trabalho decente para todos".[4] A CRIAPA contribui diretamente para:<br><ul><li><strong>Meta 8.2:</strong> "Atingir níveis mais elevados de produtividade das economias por meio da diversificação, modernização tecnológica e inovação".[5] A conexão é clara: a propriedade intelectual é a infraestrutura legal da economia da inovação. Ao permitir que empresas protejam suas invenções, a CRIAPA incentiva o investimento em P&D e a criação de produtos e serviços de maior valor agregado, que são a base para o aumento da produtividade econômica.</li><li><strong>Meta 8.3:</strong> "Promover políticas orientadas para o desenvolvimento que apoiem as atividades produtivas, geração de emprego decente, empreendedorismo, criatividade e inovação, e incentivar a formalização e o crescimento das micro, pequenas e médias empresas".[5] Esta meta descreve precisamente o trabalho da CRIAPA. A empresa é um agente direto de apoio ao empreendedorismo inovador. Ao formalizar um ativo intangível (uma invenção, uma marca) através de um registro legal, a CRIAPA permite que micro e pequenas empresas (como as startups da INCUBATEC) acessem capital de risco, celebrem contratos seguros e compitam no mercado, promovendo seu crescimento e a geração de empregos qualificados.</li></ul><br><strong>ODS 9: Indústria, Inovação e Infraestrutura.</strong> O objetivo é "construir infraestruturas resilientes, promover a industrialização inclusiva e sustentável e fomentar a inovação".[6, 7] A contribuição da CRIAPA se manifesta em:<br><ul><li><strong>Meta 9.3:</strong> "Aumentar o acesso das pequenas indústrias e outras empresas... aos serviços financeiros... e sua integração em cadeias de valor e mercados".[6] Uma patente ou uma marca registrada não é apenas um direito de exclusividade; é um ativo econômico. Pode ser usado como garantia para empréstimos, é um fator decisivo para o aporte de capital de investidores anjo e fundos de <em>venture capital</em>, e confere à startup a legitimidade necessária para se integrar a cadeias de valor de grandes corporações. A CRIAPA, ao construir essa "infraestrutura" legal e de ativos para as startups, viabiliza diretamente seu acesso a mercados e serviços financeiros.</li><li><strong>Meta 9.5:</strong> "Fortalecer a pesquisa científica, melhorar as capacidades tecnológicas... incentivando a inovação".[6] Ao criar uma ponte eficiente entre a pesquisa científica gerada na UFRPE e sua aplicação comercial através da proteção da PI, a CRIAPA cria um ciclo virtuoso. A perspectiva de licenciamento e receita incentiva mais pesquisa aplicada, e o sucesso das spin-offs atrai mais talentos e recursos para a universidade, fortalecendo a capacidade tecnológica da região como um todo.</li></ul><br>Para uma análise ainda mais avançada, a proposta pode mencionar o <strong>ODS 17: Parcerias e Meios de Implementação</strong>, argumentando que a propriedade intelectual é a linguagem contratual que viabiliza parcerias robustas e seguras entre universidade-empresa, startup-investidor e startup-grande corporação. Nesse sentido, a CRIAPA atua como um catalisador para a formação de alianças estratégicas, um pilar fundamental para o avanço de todos os outros ODS no ecossistema de inovação.`
+            }
+        ];
+
+        const pitchData = [
+            { time: '00:00 - 01:00', title: 'Minuto 1: O Problema e a Oportunidade', content: `<strong>O Problema (Dor do Ecossistema):</strong> "A UFRPE gera conhecimento de ponta, mas muitas inovações se perdem ou não atingem seu potencial por falta de uma estratégia de proteção ágil e especializada."<br><strong>A Oportunidade:</strong> "Existe uma oportunidade de ouro para transformar essa pesquisa em ativos de alto valor, gerando novas empresas, empregos e retorno para a universidade e a sociedade."<br><strong>A Solução (Gancho):</strong> "Nós somos a CRIAPA, o parceiro estratégico que transforma conhecimento em ativos protegidos."` },
+            { time: '01:00 - 02:00', title: 'Minuto 2: Nossa Solução (O "Produto")', content: `<strong>O que fazemos:</strong> "Oferecemos um serviço integrado de 'Estratégia de PI como Serviço', desde o diagnóstico até o registro e a gestão contínua de marcas e patentes."<br><strong>Nosso Diferencial (Modelo de Negócio):</strong> "Nosso modelo é único: operamos com um custo acessível para as startups e compartilhamos o risco através de taxas de sucesso. Somos parceiros, não apenas prestadores de serviço."<br><strong>Por que aqui?</strong> "Nossa proposta é sermos o Hub de PI da INCUBATEC, oferecendo uma solução proativa e imersa no ecossistema."` },
+            { time: '02:00 - 03:00', title: 'Minuto 3: A Equipe e a Sinergia com a UFRPE', content: `<strong>Quem somos:</strong> Apresentar a equipe em 3 pilares: "Temos a expertise técnica em PI, a visão de negócio para o crescimento, e a conexão essencial com a UFRPE, através de [Nome do Membro com Vínculo], que nos dá um entendimento único da cultura e das oportunidades da universidade..."<br><strong>O Alinhamento Estratégico:</strong> "Nossa missão é diretamente alinhada ao PDI 2021-2030 da UFRPE..."` },
+            { time: '03:00 - 04:00', title: 'Minuto 4: O Impacto (O "Meta-Serviço")', content: `<strong>Visão Sistêmica:</strong> "O impacto da CRIAPA vai além do nosso próprio negócio. Ao sermos incubados, nós elevamos o valor e a segurança de todo o portfólio da INCUBATEC."<br><strong>Métricas de Impacto:</strong> "Nossa presença irá: (1) Aumentar a atratividade das startups para investidores; (2) Aumentar a taxa de sucesso...; e (3) Ajudar a UFRPE a atingir suas metas..."` },
+            { time: '04:00 - 05:00', title: 'Minuto 5: A Visão e o Pedido', content: `<strong>Visão de Futuro:</strong> "Nossa visão é consolidar o ecossistema UFRPE como um polo nacional de referência..."<br><strong>O Pedido:</strong> "Para tornar essa visão uma realidade, solicitamos a aprovação de nossa proposta para o programa de incubação da INCUBATEC."<br><strong>Fechamento:</strong> "Obrigado."` }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionContainer = document.getElementById('accordion-container');
+            accordionData.forEach(item => {
+                const element = document.createElement('div');
+                element.className = 'bg-white rounded-lg shadow-md overflow-hidden';
+                element.innerHTML = `
+                    <button class="accordion-toggle w-full flex justify-between items-center p-5 text-left text-lg font-bold text-slate-700 hover:bg-slate-100 transition-colors">
+                        <span class="flex items-center">
+                            <span class="text-blue-600 mr-3">${item.icon}</span>
+                            ${item.title}
+                        </span>
+                        <svg class="accordion-arrow h-6 w-6 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-5 border-t border-slate-200 bg-slate-50">
+                            <p>${item.content}</p>
+                        </div>
+                    </div>
+                `;
+                accordionContainer.appendChild(element);
+            });
+
+            document.querySelectorAll('.accordion-toggle').forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const arrow = button.querySelector('.accordion-arrow');
+                    
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        arrow.classList.remove('rotate-180');
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        arrow.classList.add('rotate-180');
+                    }
+                });
+            });
+
+            const checklistContainer = document.getElementById('checklist-container');
+            const categories = ['Documentação Principal', 'Preparação do Conteúdo', 'Revisão Final'];
+            categories.forEach(category => {
+                const categoryTitle = document.createElement('h3');
+                categoryTitle.className = 'text-xl font-bold text-slate-700 mt-6 mb-2';
+                categoryTitle.textContent = category;
+                checklistContainer.appendChild(categoryTitle);
+
+                checklistData.filter(item => item.category === category).forEach(item => {
+                    const element = document.createElement('div');
+                    element.className = 'checklist-item flex items-center p-4 bg-white rounded-lg shadow-sm border border-slate-200';
+                    element.innerHTML = `
+                        <input id="${item.id}" type="checkbox" class="h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                        <label for="${item.id}" class="ml-3 block text-slate-700 font-medium">${item.text}</label>
+                    `;
+                    checklistContainer.appendChild(element);
+
+                    element.querySelector('input').addEventListener('change', (e) => {
+                        if (e.target.checked) {
+                            element.classList.add('completed');
+                        } else {
+                            element.classList.remove('completed');
+                        }
+                    });
+                });
+            });
+
+            const pitchContainer = document.getElementById('pitch-organizer-container');
+            pitchData.forEach((item, index) => {
+                const element = document.createElement('div');
+                element.className = 'flex items-start';
+                element.innerHTML = `
+                    <div class="flex flex-col items-center mr-6">
+                        <div class="flex items-center justify-center w-12 h-12 bg-blue-600 text-white font-bold rounded-full z-10">
+                            ${index + 1}
+                        </div>
+                        ${index < pitchData.length - 1? '<div class="w-px h-full bg-slate-300"></div>' : ''}
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md w-full -mt-2">
+                        <p class="text-sm font-semibold text-blue-600">${item.time}</p>
+                        <h4 class="text-xl font-bold text-slate-800 mt-1">${item.title}</h4>
+                        <p class="mt-3 text-slate-600">${item.content}</p>
+                    </div>
+                `;
+                pitchContainer.appendChild(element);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
