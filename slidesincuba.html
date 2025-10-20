@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação Pitch CRIAPA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+            visibility: hidden;
+        }
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 10;
+        }
+        .slide-content {
+            width: 100%;
+            max-width: 1100px;
+        }
+        .progress-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 8px;
+            background-color: #2563eb; /* blue-600 */
+            transition: width 0.3s ease;
+        }
+        .nav-button {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 20;
+            background-color: rgba(0,0,0,0.3);
+            color: white;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .nav-button:hover {
+             background-color: rgba(0,0,0,0.5);
+        }
+        #prev-btn { left: 20px; }
+        #next-btn { right: 20px; }
+    </style>
+</head>
+<body class="bg-slate-100">
+
+    <div id="slide-container">
+        <!-- Slide 1: Título -->
+        <div id="slide-1" class="slide active bg-slate-800 text-white">
+            <div class="slide-content text-center">
+                <div class="flex justify-center items-center gap-4 mb-4">
+                    <svg class="h-16 w-16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    <h1 class="text-6xl font-black">CRIAPA</h1>
+                </div>
+                <h2 class="text-5xl font-bold mt-6">Catalisando a Inovação na UFRPE</h2>
+                <p class="text-2xl mt-4 text-slate-300">Proposta para o Edital INCUBATEC/UFRPE 01/2025</p>
+                <p class="text-xl mt-12">[Seu Nome]</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: O Desafio -->
+        <div id="slide-2" class="slide bg-white">
+            <div class="slide-content text-center">
+                <h2 class="text-5xl font-extrabold text-slate-800">O Vale entre a Pesquisa e o Mercado</h2>
+                <div class="mt-16 flex justify-between items-center w-full">
+                    <div class="text-center">
+                        <div class="bg-blue-100 p-6 rounded-full inline-block">
+                             <svg class="h-16 w-16 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-4 text-slate-700">Pesquisa & Inovação</h3>
+                        <p class="text-slate-500">UFRPE</p>
+                    </div>
+
+                    <div class="flex-grow mx-8 text-center">
+                        <p class="text-red-500 font-bold text-2xl">Incerteza & Vulnerabilidade</p>
+                        <div class="w-full h-1 bg-slate-200 mt-2 relative">
+                             <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full flex justify-around">
+                                <span class="text-slate-400 text-3xl">...</span>
+                            </div>
+                        </div>
+                        <p class="text-red-500 text-lg">Inovações se perdem sem blindagem</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="bg-green-100 p-6 rounded-full inline-block">
+                            <svg class="h-16 w-16 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-4 text-slate-700">Mercado & Sucesso</h3>
+                        <p class="text-slate-500">Empresas e Sociedade</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: A Solução -->
+        <div id="slide-3" class="slide bg-blue-50">
+            <div class="slide-content text-center">
+                <h2 class="text-5xl font-extrabold text-slate-800">Uma Tecnologia de Negócio</h2>
+                <p class="text-2xl mt-3 text-blue-800">Estratégia de Propriedade Intelectual como Serviço</p>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="text-center">
+                        <div class="bg-white p-6 rounded-2xl shadow-lg inline-block">
+                             <svg class="h-16 w-16 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-4 text-slate-700">Diagnóstico</h3>
+                        <p class="text-slate-500 mt-1">Identificar e avaliar o potencial da inovação.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white p-6 rounded-2xl shadow-lg inline-block">
+                            <svg class="h-16 w-16 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-4 text-slate-700">Proteção</h3>
+                        <p class="text-slate-500 mt-1">Blindar marcas e patentes de forma estratégica.</p>
+                    </div>
+                    <div class="text-center">
+                         <div class="bg-white p-6 rounded-2xl shadow-lg inline-block">
+                           <svg class="h-16 w-16 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-4 text-slate-700">Gestão</h3>
+                        <p class="text-slate-500 mt-1">Gerir o portfólio de ativos para o crescimento.</p>
+                    </div>
+                </div>
+                <div class="mt-16 bg-blue-600 text-white p-6 rounded-xl inline-block">
+                    <p class="text-xl font-bold">Nosso Diferencial: Somos parceiros no risco e no sucesso.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 4: A Equipe -->
+        <div id="slide-4" class="slide bg-white">
+            <div class="slide-content text-center">
+                <h2 class="text-5xl font-extrabold text-slate-800">A Equipe Certa no Lugar Certo</h2>
+                 <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-slate-50 p-8 rounded-xl text-center border">
+                        <svg class="h-16 w-16 mx-auto text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" /></svg>
+                        <h3 class="text-xl font-bold mt-4 text-slate-800">Expertise Técnica em PI</h3>
+                    </div>
+                    <div class="bg-blue-600 text-white p-8 rounded-xl text-center shadow-2xl scale-110">
+                        <svg class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222 4 2.222V20m-8 0h8" /></svg>
+                        <h3 class="text-xl font-bold mt-4">Conexão Estratégica UFRPE</h3>
+                    </div>
+                     <div class="bg-slate-50 p-8 rounded-xl text-center border">
+                        <svg class="h-16 w-16 mx-auto text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+                        <h3 class="text-xl font-bold mt-4 text-slate-800">Visão de Negócios</h3>
+                    </div>
+                </div>
+                 <p class="text-xl mt-16 text-slate-600">Total alinhamento com o PDI 2021-2030 e os ODS da ONU.</p>
+            </div>
+        </div>
+
+        <!-- Slide 5: O Impacto -->
+        <div id="slide-5" class="slide bg-slate-800 text-white">
+            <div class="slide-content text-center">
+                 <h2 class="text-5xl font-extrabold">O Impacto Exponencial</h2>
+                 <p class="text-2xl mt-3 text-slate-300">Não incubamos 1 empresa. Potencializamos TODAS.</p>
+                 <div class="mt-16 flex justify-center items-center gap-12">
+                     <div class="flex flex-col gap-6 text-right">
+                         <div class="bg-slate-700 p-4 rounded-lg">+ Valor de Mercado</div>
+                         <div class="bg-slate-700 p-4 rounded-lg">+ Segurança Jurídica</div>
+                     </div>
+                     <div class="bg-blue-600 p-8 rounded-full shadow-2xl">
+                         <svg class="h-24 w-24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                     </div>
+                     <div class="flex flex-col gap-6 text-left">
+                          <div class="bg-slate-700 p-4 rounded-lg">+ Atratividade para Investidores</div>
+                         <div class="bg-slate-700 p-4 rounded-lg">+ Taxa de Sucesso</div>
+                     </div>
+                 </div>
+                 <p class="mt-16 text-2xl font-bold">CRIAPA: Um multiplicador de ativos para o ecossistema.</p>
+            </div>
+        </div>
+        
+        <!-- Slide 6: A Visão -->
+        <div id="slide-6" class="slide bg-white">
+            <div class="slide-content text-center">
+                <h2 class="text-5xl font-extrabold text-slate-800">Construindo o Futuro da Inovação</h2>
+                <div class="mt-16 flex items-center justify-center gap-8 text-left">
+                    <svg class="h-32 w-32 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6H8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" /></svg>
+                    <div>
+                        <p class="text-3xl text-slate-700 leading-snug">Consolidar o ecossistema UFRPE como um <span class="font-bold text-blue-600">polo nacional de referência</span>, onde a inovação nasce forte, protegida e pronta para conquistar o mercado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Agradecimento -->
+        <div id="slide-7" class="slide bg-slate-800 text-white">
+            <div class="slide-content text-center">
+                <h2 class="text-6xl font-extrabold">Obrigado.</h2>
+                <div class="flex justify-center items-center gap-4 my-10">
+                    <svg class="h-12 w-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    <h3 class="text-4xl font-black">CRIAPA</h3>
+                </div>
+                <p class="text-2xl mt-4">Estamos à disposição para perguntas.</p>
+                 <p class="text-lg mt-8 text-slate-400">[Seu Nome]<br>[Seu Email] | [Seu Telefone]</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="prev-btn" class="nav-button">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+    </div>
+    <div id="next-btn" class="nav-button">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+    </div>
+    
+    <div class="progress-bar" id="progress-bar"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+            const progressBar = document.getElementById('progress-bar');
+            let currentSlide = 1;
+
+            const showSlide = (slideNumber) => {
+                slides.forEach(slide => slide.classList.remove('active'));
+                const newSlide = document.getElementById(`slide-${slideNumber}`);
+                if (newSlide) {
+                    newSlide.classList.add('active');
+                    updateProgressBar();
+                }
+            };
+
+            const updateProgressBar = () => {
+                const progress = ((currentSlide - 1) / (totalSlides - 1)) * 100;
+                progressBar.style.width = `${progress}%`;
+            };
+            
+            const nextSlide = () => {
+                if (currentSlide < totalSlides) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            };
+
+            const prevSlide = () => {
+                if (currentSlide > 1) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            };
+
+            document.getElementById('next-btn').addEventListener('click', nextSlide);
+            document.getElementById('prev-btn').addEventListener('click', prevSlide);
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' || e.key === ' ') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                }
+            });
+
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>
