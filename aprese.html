@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação de Pitch Aprimorada - CRIAPA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            background-color: #030712;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            visibility: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 10;
+        }
+        .slide-overlay {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 5rem;
+            background: linear-gradient(to right, rgba(3, 7, 18, 0.9) 30%, rgba(3, 7, 18, 0.5) 70%);
+        }
+         .slide-overlay-center {
+            background: rgba(3, 7, 18, 0.8);
+        }
+        .slide-content {
+            width: 100%;
+            max-width: 1200px;
+        }
+        .progress-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+            transition: width 0.3s ease;
+            z-index: 30;
+        }
+        .nav-button {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 20;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .nav-button:hover {
+             background-color: rgba(255,255,255,0.2);
+        }
+        #prev-btn { left: 30px; }
+        #next-btn { right: 30px; }
+    </style>
+</head>
+<body>
+
+    <div id="slide-container">
+        <!-- Slide 1: Título -->
+        <div id="slide-1" class="slide active bg-slate-900">
+             <div class="slide-overlay-center w-full h-full flex flex-col justify-center items-center">
+                <div class="slide-content text-white text-center">
+                    <h1 class="text-8xl font-black">CRIAPA</h1>
+                    <h2 class="text-5xl font-bold mt-4">Construindo a Ponte para o Futuro da Inovação</h2>
+                    <p class="text-2xl mt-6 text-slate-300">Proposta para o Edital INCUBATEC/UFRPE</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: O Desafio -->
+        <div id="slide-2" class="slide" style="background-image: url('https://image.pollinations.ai/prompt/An%20ultra-realistic,%203D%20infographic%20for%20a%20corporate%20presentation,%20print%20quality,%20300%20DPI,%204K%20resolution.%20On%20the%20left,%20a%20glowing%203D%20icon%20of%20a%20university%20building%20labeled%20%27PESQUISA%27.%20A%20complex,%20glowing%20blue%20electronic%20circuit%20path%20originates%20from%20it.%20In%20the%20center,%20this%20path%20becomes%20broken,%20frayed,%20and%20sparks%20fly%20from%20the%20severed%20connections,%20representing%20the%20%27VALE%20DA%20INCERTEZA%27.%20On%20the%20right,%20a%20glowing%203D%20icon%20of%20a%20city%20skyline%20labeled%20%27MERCADO%27%20remains%20unconnected.%20The%20background%20is%20a%20clean,%20dark,%20sophisticated%20surface.%20The%20lighting%20is%20dramatic,%20highlighting%20the%20sparks%20of%20the%20broken%20connection.%20The%20image%20is%20self-explanatory%20about%20a%20failed%20technological%20transfer%20process.');">
+             <div class="slide-overlay">
+                <div class="slide-content text-white text-left">
+                     <h2 class="text-6xl font-extrabold">O Circuito Quebrado</h2>
+                     <p class="text-2xl mt-4 text-slate-300 max-w-3xl">Grandes inovações perdem-se quando a transferência de tecnologia falha. Este é o vale da incerteza que a CRIAPA se propõe a resolver.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: A Solução -->
+        <div id="slide-3" class="slide" style="background-image: url('https://image.pollinations.ai/prompt/An%20ultra-realistic,%203D%20infographic,%20print%20quality,%20300%20DPI,%204K%20resolution.%20A%20powerful,%20modern%20blacksmith\'s%20forge.%20A%20robotic%20arm%20labeled%20\'CRIAPA\'%20is%20expertly%20hammering%20a%20piece%20of%20glowing,%20raw,%20molten%20metal%20(\'INOVA%C3%87%C3%83O%20BRUTA\')%20on%20an%20anvil.%20Sparks%20fly.%20The%20final%20shape%20being%20forged%20is%20a%20perfect,%20indestructible,%20shining%20blue%20shield%20with%20a%20patent%20symbol%20in%20the%20center.%20The%20background%20is%20a%20dark,%20high-tech%20workshop.%20The%20lighting%20is%20dramatic%20and%20fiery.%20The%20image%20is%20self-explanatory%20about%20shaping%20a%20raw%20idea%20into%20a%20strong,%20protected%20asset.');">
+            <div class="slide-overlay">
+                <div class="slide-content text-white text-left">
+                    <h2 class="text-6xl font-extrabold max-w-3xl">A Forja da Inovação</h2>
+                    <p class="text-2xl mt-4 text-slate-300 max-w-3xl">Transformamos o potencial bruto em ativos de mercado, indestrutíveis e de alto valor.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 4: A Equipe -->
+        <div id="slide-4" class="slide" style="background-image: url('https://image.pollinations.ai/prompt/An%20ultra-realistic,%203D%20infographic%20for%20a%20corporate%20presentation,%20print%20quality,%20300%20DPI,%204K%20resolution.%20Three%20strong,%20solid%20pillars%20rise%20from%20a%20dark,%20sophisticated%20surface.%20The%20first%20pillar%20has%20a%20glowing%203D%20legal%20scale%20icon%20floating%20above%20it.%20The%20second%20pillar%20has%20a%20glowing%203D%20rising%20bar%20chart%20icon%20floating%20above%20it.%20The%20third%20pillar%20has%20a%20glowing%203D%20university%20building%20icon%20floating%20above%20it.%20The%20three%20pillars%20converge%20at%20the%20top%20to%20support%20a%20single,%20luminous,%20multifaceted%20crystal%20representing%20a%20successful%20startup.%20The%20lighting%20is%20cinematic%20and%20professional,%20highlighting%20the%20synergy%20of%20the%20pillars.%20The%20overall%20feel%20is%20powerful,%20stable,%20and%20entirely%20self-explanatory.');">
+             <div class="slide-overlay">
+                <div class="slide-content text-white text-left">
+                    <h2 class="text-6xl font-extrabold max-w-3xl">A Fundação da Expertise</h2>
+                    <p class="text-2xl mt-4 text-slate-300 max-w-3xl">A nossa força reside na união de três pilares essenciais: a expertise em Propriedade Intelectual, a visão de Negócios e a profunda sinergia com o ecossistema UFRPE.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: O Impacto -->
+        <div id="slide-5" class="slide" style="background-image: url('https://image.pollinations.ai/prompt/An%20ultra-realistic,%203D%20infographic%20for%20a%20corporate%20presentation,%20print%20quality,%20300%20DPI,%204K%20resolution.%20In%20the%20center,%20a%20large,%20glowing%20blue%20crystalline%20structure%20representing%20an%20incubator.%20A%20smaller,%20bright%20golden%20shield%20icon%20is%20merging%20with%20the%20structure,%20sending%20out%20waves%20of%20energy.%20From%20the%20main%20structure,%20numerous%20smaller%20rocket%20ship%20icons%20are%20launching%20outwards%20in%20different%20directions,%20each%20surrounded%20by%20its%20own%20protective%20golden%20bubble.%20The%20background%20is%20a%20clean,%20dark,%20sophisticated%20surface.%20The%20lighting%20is%20cinematic%20and%20professional.%20The%20overall%20feel%20is%20of%20synergy,%20growth,%20and%20high-tech%20protection,%20and%20is%20entirely%20self-explanatory.');">
+            <div class="slide-overlay">
+                <div class="slide-content text-white text-left">
+                    <h2 class="text-6xl font-extrabold max-w-3xl">O Impacto Multiplicador</h2>
+                    <p class="text-2xl mt-4 text-slate-300 max-w-3xl">Aprovar a CRIAPA não é incubar uma empresa. É internalizar uma competência estratégica que blinda e potencializa <span class="font-bold text-sky-300">TODAS</span> as startups do ecossistema.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 6: A Visão -->
+        <div id="slide-6" class="slide" style="background-image: url('https://image.pollinations.ai/prompt/An%20ultra-realistic,%203D%20infographic,%20print%20quality,%20300%20DPI,%204K%20resolution.%20A%20powerful%20lighthouse%20stands%20on%20a%20cliff,%20with%20\'CRIAPA\'%20engraved%20in%20glowing%20letters%20on%20it.%20Its%20bright,%20focused%20beam%20of%20light%20cuts%20through%20a%20dark,%20stormy%20sea,%20illuminating%20a%20single%20safe%20path.%20A%20small,%20brave%20startup%20boat%20is%20navigating%20this%20path,%20safely%20avoiding%20abstract,%20jagged%20red%20rocks%20representing%20\'Riscos\'.%20The%20destination%20is%20a%20calm,%20glowing%20harbor%20labeled%20\'Sucesso\'.%20Cinematic,%20dramatic%20lighting.%20The%20image%20is%20self-explanatory%20about%20guidance%20and%20safety.');">
+            <div class="slide-overlay">
+                 <div class="slide-content text-white text-left">
+                    <h2 class="text-6xl font-extrabold max-w-3xl">O Farol Estratégico</h2>
+                    <p class="text-2xl mt-4 text-slate-300 max-w-3xl">A nossa visão é ser o guia que navega a complexidade, transformando a UFRPE num polo de referência onde a inovação nasce segura e pronta para o sucesso.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Agradecimento -->
+        <div id="slide-7" class="slide" style="background-image: url('https://image.pollinations.ai/prompt/An%20ultra-realistic,%203D%20infographic%20for%20a%20corporate%20presentation,%20print%20quality,%20300%20DPI,%204K%20resolution.%20A%20sleek,%20golden%20startup%20rocket%20is%20on%20a%20launchpad.%20Two%20sophisticated,%20blue%20robotic%20arms%20labeled%20\'CRIAPA\'%20are%20meticulously%20attaching%20the%20final%20critical%20components:%20a%20powerful%20engine%20labeled%20\'PATENTE\'%20and%20a%20protective%20nose%20cone%20shield%20labeled%20\'MARCA\'.%20The%20launch%20tower%20in%20the%20background%20is%20shaped%20like%20a%20university%20building.%20The%20sky%20above%20shows%20a%20clear%20trajectory%20to%20a%20planet%20labeled%20\'MERCADO\'.%20The%20lighting%20is%20dramatic%20and%20full%20of%20anticipation.%20The%20image%20is%20self-explanatory%20about%20preparation%20for%20market%20launch.');">
+            <div class="slide-overlay slide-overlay-center">
+                 <div class="slide-content text-white text-center">
+                    <h2 class="text-8xl font-black">Obrigado.</h2>
+                    <h3 class="text-5xl font-bold mt-4">CRIAPA</h3>
+                    <p class="text-2xl mt-8 text-slate-300">[Seu Nome] | [Seu Email]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="prev-btn" class="nav-button">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+    </div>
+    <div id="next-btn" class="nav-button">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+    </div>
+    
+    <div class="progress-bar" id="progress-bar"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+            const progressBar = document.getElementById('progress-bar');
+            let currentSlide = 1;
+
+            const showSlide = (slideNumber) => {
+                slides.forEach(slide => slide.classList.remove('active'));
+                const newSlide = document.getElementById(`slide-${slideNumber}`);
+                if (newSlide) {
+                    newSlide.classList.add('active');
+                    updateProgressBar();
+                }
+            };
+
+            const updateProgressBar = () => {
+                const progress = ((currentSlide - 1) / (totalSlides - 1)) * 100;
+                progressBar.style.width = `${progress}%`;
+            };
+            
+            const nextSlide = () => {
+                if (currentSlide < totalSlides) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            };
+
+            const prevSlide = () => {
+                if (currentSlide > 1) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            };
+
+            document.getElementById('next-btn').addEventListener('click', nextSlide);
+            document.getElementById('prev-btn').addEventListener('click', prevSlide);
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' || e.key === ' ') {
+                    e.preventDefault();
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    prevSlide();
+                }
+            });
+
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>
+
