@@ -254,9 +254,9 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .faq-question:hover{color:var(--teal-500)}
 .faq-question svg{width:18px;height:18px;fill:var(--teal-500);flex-shrink:0;transition:var(--transition);margin-top:2px}
 .faq-item.open .faq-question svg{transform:rotate(180deg)}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease}
-.faq-item.open .faq-answer{max-height:300px}
-.faq-answer p{font-size:.88rem;color:var(--gray-500);line-height:1.7;padding-bottom:16px}
+.faq-answer{display:grid;grid-template-rows:0fr;overflow:hidden;transition:grid-template-rows .4s cubic-bezier(.4,0,.2,1)}
+.faq-item.open .faq-answer{grid-template-rows:1fr}
+.faq-answer p{font-size:.88rem;color:var(--gray-500);line-height:1.7;padding-bottom:16px;margin:0}
 
 @media(max-width:768px){
   .faq-cols{grid-template-columns:1fr}
