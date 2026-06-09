@@ -1192,22 +1192,38 @@ document.getElementById('modalBack2').addEventListener('click', () => goToStep(1
 document.getElementById('modalBack3').addEventListener('click', () => goToStep(2));
 const modalSubmit = document.getElementById('modalSubmit');
 modalSubmit.addEventListener('click', () => {
-  // Collect data
-  const data = {
-    marca: marcaInput.value.trim(),
-    nome: document.getElementById('modalNome').value.trim(),
-    email: document.getElementById('modalEmail').value.trim(),
-    whatsapp: document.getElementById('modalWhatsapp').value.trim(),
-    serviço: document.getElementById('modalServico').value,
-    mensagem: document.getElementById('modalMensagem').value.trim()
+  const marca = marcaInput.value.trim();
+  const nome = document.getElementById('modalNome').value.trim();
+  const email = document.getElementById('modalEmail').value.trim();
+  const whatsapp = document.getElementById('modalWhatsapp').value.trim();
+  const servico = document.getElementById('modalServico').value;
+  const mensagem = document.getElementById('modalMensagem').value.trim();
+
+  const servicoLabels = {
+    'busca': 'Busca de Anterioridade',
+    'registro': 'Registro Completo de Marca',
+    'monitoramento': 'Monitoramento de Marca',
+    'consultoria': 'Consultoria em PI'
   };
-  console.log('Consulta enviada:', data);
-  // Show success
+
+  const subject = encodeURIComponent(`Consulta de Marca: ${marca}`);
+  const body = encodeURIComponent(
+    `Dados da Consulta:\n\n` +
+    `Nome: ${nome}\n` +
+    `Email: ${email}\n` +
+    `WhatsApp: ${whatsapp}\n` +
+    `Marca: ${marca}\n` +
+    `Serviço: ${servicoLabels[servico] || servico}\n` +
+    `Mensagem: ${mensagem}\n`
+  );
+
+  // Show success screen first
   steps.forEach(s => s.classList.remove('active'));
   modal.querySelector('.modal-step[data-step="success"]').classList.add('active');
-  // Hide progress and nav on success
-  document.querySelector('.modal-nav').style.display = 'none';
   dots.forEach(d => d.style.display = 'none');
+
+  // Open mailto link
+  window.location.href = `mailto:criapa.contato@gmail.com?subject=${subject}&body=${body}`;
 });
 document.getElementById('modalDone').addEventListener('click', closeModal);
 
