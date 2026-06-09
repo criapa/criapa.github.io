@@ -1179,7 +1179,7 @@ modalClose.addEventListener('click', closeModal);
 modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
 
-// Form submit via Formspree
+// Form submit via Formspree (AJAX)
 consultForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   formMarca.value = stepMarca.value.trim();
@@ -1199,16 +1199,23 @@ consultForm.addEventListener('submit', async (e) => {
     const response = await fetch(consultForm.action, {
       method: 'POST',
       body: formData,
-      headers: { 'Accept': 'application/json' }
+      headers: { 'Accept': 'application/json' },
+      redirect: 'follow'
     });
-    if (response.ok) {
+    // Formspree returns 200 on success, sometimes after redirect
+    if (response.ok || response.redirected) {
       consultForm.style.display = 'none';
       formSuccess.style.display = 'block';
     } else {
-      alert('Erro ao enviar. Tente novamente ou entre em contato pelo WhatsApp.');
+      const errText = await response.text();
+      console.error('Formspree error:', response.status, errText);
+      // Fallback: submit form normally
+      consultForm.submit();
     }
   } catch (err) {
-    alert('Erro de conexão. Verifique sua internet e tente novamente.');
+    console.error('Fetch error:', err);
+    // Fallback: submit form normally
+    consultForm.submit();
   } finally {
     submitBtn.textContent = originalText;
     submitBtn.disabled = false;
