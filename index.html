@@ -254,8 +254,8 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .faq-question:hover{color:var(--teal-500)}
 .faq-question svg{width:18px;height:18px;fill:var(--teal-500);flex-shrink:0;transition:var(--transition);margin-top:2px}
 .faq-item.open .faq-question svg{transform:rotate(180deg)}
-.faq-answer{max-height:0;opacity:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1),opacity .3s ease}
-.faq-item.open .faq-answer{max-height:9999px;opacity:1}
+.faq-answer{display:none}
+.faq-item.open .faq-answer{display:block}
 .faq-answer-inner{padding-bottom:16px}
 .faq-answer p{font-size:.88rem;color:var(--gray-500);line-height:1.7;margin:0}
 
@@ -1064,14 +1064,17 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// FAQ accordion
+// FAQ accordion - usa .faq-cols como container
 document.querySelectorAll('.faq-question').forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.stopPropagation();
     const item = btn.closest('.faq-item');
     const isOpen = item.classList.contains('open');
-    item.closest('.faq-col').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    // Close all items in same column (siblings until next h3)
+    const col = item.parentElement;
+    col.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
+    else item.classList.remove('open');
   });
 });
 
