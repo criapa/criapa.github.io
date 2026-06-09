@@ -877,7 +877,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
     <h2 class="reveal">Faça como as marcas que ja passaram por aqui</h2>
     <p class="reveal">Sua ideia tem valor. Nao deixe que uma marca desprotegida coloque tudo a perder.</p>
     <div class="final-cta-btns reveal">
-      <a href="https://wa.me/5581999999999?text=Ola!%20Quero%20proteger%20minha%20marca" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Quero Consultar</a>
+      <a href="#contato" class="btn btn-primary btn-lg">Quero Consultar</a>
       <a href="mailto:contato@criapahub.com" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.9)">Enviar E-mail</a>
     </div>
     <div class="final-trust reveal">
@@ -1083,7 +1083,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const modal = document.getElementById('consultModal');
 const modalClose = document.getElementById('modalClose');
 const consultForm = document.getElementById('consultForm');
-const formSuccess = modalBox.querySelector('.modal-success');
+const formSuccess = modal.querySelector('.modal-success');
 const steps = consultForm.querySelectorAll('.modal-step');
 const dots = consultForm.querySelectorAll('.modal-progress-dot');
 let currentStep = 1;
