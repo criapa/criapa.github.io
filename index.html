@@ -175,6 +175,26 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .benefits-video{margin:32px 0 48px;text-align:center}
 .benefits-video video{max-width:100%;width:100%;max-width:720px;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);background:#000}
 
+/* ============================================================
+   COOKIE BANNER
+   ============================================================ */
+#cookieBanner{position:fixed;bottom:0;left:0;right:0;z-index:99999;background:var(--azul-900);color:var(--white);padding:20px 24px;transform:translateY(110%);transition:transform .4s cubic-bezier(.4,0,.2,1);box-shadow:0 -4px 24px rgba(0,0,0,.2)}
+#cookieBanner.cookie-show{transform:translateY(0)}
+.cookie-banner-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:1200px;margin:0 auto;flex-wrap:wrap}
+.cookie-banner-text{flex:1;min-width:280px;font-size:.85rem;line-height:1.6;color:rgba(255,255,255,.8)}
+.cookie-banner-text strong{color:var(--white)}
+.cookie-banner-text a{color:var(--teal-400);text-decoration:underline}
+.cookie-banner-btns{display:flex;gap:12px;flex-shrink:0}
+.cookie-btn{padding:12px 28px;border-radius:var(--radius-full);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;transition:var(--transition);border:none}
+.cookie-btn-accept{background:var(--teal-500);color:var(--white)}
+.cookie-btn-accept:hover{background:var(--teal-400);transform:translateY(-1px)}
+.cookie-btn-reject{background:transparent;color:rgba(255,255,255,.6);border:2px solid rgba(255,255,255,.2)}
+.cookie-btn-reject:hover{border-color:rgba(255,255,255,.5);color:var(--white)}
+@media(max-width:640px){
+  .cookie-banner-inner{flex-direction:column;text-align:center}
+  .cookie-banner-btns{width:100%;justify-content:center}
+}
+
 /* Highlight card */
 .benefit-highlight{grid-column:1/-1;background:linear-gradient(135deg,var(--azul-900),var(--azul-800));color:var(--white);border:none;border-radius:var(--radius-lg);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
 .benefit-highlight .highlight-content h3{font-size:1.4rem;color:var(--white);margin-bottom:12px}
@@ -1309,6 +1329,46 @@ consultForm.addEventListener('submit', async (e) => {
 });
 
 document.getElementById('modalDone').addEventListener('click', closeModal);
+
+/* ============================================================
+   COOKIE BANNER
+   ============================================================ */
+(function(){
+  var COOKIE_KEY = 'criapa_cookies_accepted';
+  var stored = null;
+  try { stored = localStorage.getItem(COOKIE_KEY); } catch(e){}
+
+  if(stored === 'true' || stored === 'false') return;
+
+  var banner = document.createElement('div');
+  banner.id = 'cookieBanner';
+  banner.innerHTML =
+    '<div class="cookie-banner-inner">' +
+      '<div class="cookie-banner-text">' +
+        '🍪 Utilizamos cookies para melhorar a sua experiência, personalizar conteúdo e analisar o tráfego. ' +
+        'Ao clicar em <strong>Aceitar</strong>, você concorda com o uso de cookies conforme nossa ' +
+        '<a href="#" onclick="return false;">Política de Cookies</a> e ' +
+        '<a href="#" onclick="return false;">Política de Privacidade</a>.' +
+      '</div>' +
+      '<div class="cookie-banner-btns">' +
+        '<button class="cookie-btn cookie-btn-reject" id="cookieRejeitar">Rejeitar</button>' +
+        '<button class="cookie-btn cookie-btn-accept" id="cookieAceitar">Aceitar Tudo</button>' +
+      '</div>' +
+    '</div>';
+  document.body.appendChild(banner);
+
+  // small delay so the banner slides up after page load
+  setTimeout(function(){ banner.classList.add('cookie-show'); }, 600);
+
+  function hideBanner(v){
+    try { localStorage.setItem(COOKIE_KEY, v); } catch(e){}
+    banner.classList.remove('cookie-show');
+    setTimeout(function(){ banner.parentNode && banner.parentNode.removeChild(banner); }, 400);
+  }
+
+  document.getElementById('cookieAceitar').addEventListener('click', function(){ hideBanner('true'); });
+  document.getElementById('cookieRejeitar').addEventListener('click', function(){ hideBanner('false'); });
+})();
 
 </script>
 </body>
