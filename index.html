@@ -99,7 +99,8 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 /* Mobile menu */
 .mobile-menu{position:fixed;top:0;right:-100%;width:300px;height:100vh;background:var(--white);z-index:200;padding:80px 32px 32px;transition:var(--transition);box-shadow:var(--shadow-xl)}
 .mobile-menu.open{right:0}
-.mobile-menu a{display:block;padding:14px 0;font-size:1rem;font-weight:500;color:var(--gray-700);border-bottom:1px solid var(--gray-100)}.mobile-menu a.btn{display:flex;align-items:center;justify-content:center;width:100%;text-align:center}
+.mobile-menu a{display:block;padding:14px 0;font-size:1rem;font-weight:500;color:var(--gray-700);border-bottom:1px solid var(--gray-100)}
+.mobile-menu a.btn{display:inline-flex;text-align:center;justify-content:center;margin:16px auto 0;width:100%;max-width:280px}
 .mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:199;opacity:0;pointer-events:none;transition:var(--transition)}
 .mobile-menu-backdrop.show{opacity:1;pointer-events:all}
 
@@ -376,7 +377,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 
 .modal-select-wrap{position:relative;width:100%;max-width:480px;margin:0 auto 16px}
 .modal-select-wrap select{width:100%;padding:16px 20px;border-radius:var(--radius-full);border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:rgba(255,255,255,.35);font-size:1rem;font-family:inherit;outline:none;appearance:none;-webkit-appearance:none;cursor:pointer;transition:var(--transition)}
-.modal-select-wrap select:focus{border-color:var(--teal-500);background:rgba(255,255,255,.1);color:var(--white)}.modal-select-wrap select:hover{border-color:rgba(255,255,255,.3)}
+.modal-select-wrap select:focus{border-color:var(--teal-500);background:rgba(255,255,255,.1);color:var(--white)}
 .modal-select-wrap select option{background:var(--azul-800);color:var(--white)}
 .modal-select-arrow{position:absolute;right:20px;top:50%;transform:translatéY(-50%);width:12px;height:12px;pointer-events:none;opacity:.4}
 
@@ -396,8 +397,10 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .modal-success{text-align:center;padding:20px 0}
 .modal-success-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--verde-500),var(--teal-500));display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
 .modal-success-icon svg{width:28px;height:28px;fill:var(--white)}
-.modal-success h3{font-family:'Raleway',sans-serif;font-size:1.4rem;color:var(--white);margin-bottom:8px}
-.modal-success p{color:rgba(255,255,255,.5);font-size:.95rem;max-width:360px;margin:0 auto}
+.modal-success .success-msg{color:rgba(255,255,255,.7);font-size:.95rem;max-width:400px;margin:0 auto 16px;line-height:1.6;text-align:center}
+.modal-success .success-tagline{text-align:center;margin-bottom:8px}
+.modal-success .success-brand{font-family:'Raleway',sans-serif;font-size:1.4rem;font-weight:800;color:var(--ouro-500);letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:2px}
+.modal-success .success-slogan{font-size:.75rem;color:rgba(255,255,255,.5);letter-spacing:2px;text-transform:uppercase;font-weight:500}
 
 @media(max-width:640px){
   .modal-box{margin:0;max-height:100vh;height:100%;border-radius:0;border:none;padding:48px 20px 32px}
@@ -416,7 +419,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
       CRIAPA<span style="color:var(--teal-500)">Hub</span>
     </a>
     <nav class="header-nav">
-      <a href="#beneficios">Benefícios</a>
+      <a href="#beneficios">Beneficios</a>
       <a href="#como-funciona">Como Funciona</a>
       <a href="#faq">FAQ</a>
       <a href="#contato" class="btn btn-primary header-cta">Quero Consultar</a>
@@ -430,7 +433,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 <!-- Mobile menu -->
 <div class="mobile-menu-backdrop" id="mobileBackdrop"></div>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#beneficios">Benefícios</a>
+  <a href="#beneficios">Beneficios</a>
   <a href="#como-funciona">Como Funciona</a>
   <a href="#faq">FAQ</a>
   <a href="#contato" class="btn btn-primary btn-lg" style="width:100%;margin-top:16px">Quero Consultar</a>
@@ -512,7 +515,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
   <div class="container">
     <div class="stat">
       <div class="stat-num">95%</div>
-      <div class="stat-label">das empresas não protegem</div>
+      <div class="stat-label">das empresas nao protegem</div>
     </div>
     <div class="stat">
       <div class="stat-num">10</div>
@@ -533,10 +536,10 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 <section class="section" id="beneficios">
   <div class="container">
     <div class="benefits-header reveal">
-      <span class="label">Benefícios</span>
+      <span class="label">Beneficios</span>
       <h2>Sua marca segura. <strong>Simples assim.</strong></h2>
       <p>
-        Estima-se que mais de <strong>95%</strong> das empresas brasileiras não tem como
+        Estima-se que mais de <strong>95%</strong> das empresas brasileiras nao tem como
         comprovar que sao efetivamente donas das suas marcas. Veja como podemos te ajudar
         a fugir desse risco.
       </p>
@@ -550,7 +553,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
       <div class="benefit-card reveal reveal-delay-2">
         <div class="benefit-num">02</div>
         <h3>Exclusividade</h3>
-        <p>Sabemos que você não quer um concorrente usando uma marca similar ou igual. Somente com registro você se protege da concorrência desleal.</p>
+        <p>Sabemos que você nao quer um concorrente usando uma marca similar ou igual. Somente com registro você se protege da concorrência desleal.</p>
       </div>
       <div class="benefit-card reveal reveal-delay-3">
         <div class="benefit-num">03</div>
@@ -606,7 +609,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
           </div>
           <div class="how-step">
             <span class="how-step-num">4</span>
-            <span>Preparar todos os documentos necessários</span>
+            <span>Preparar todos os documentos necessarios</span>
           </div>
           <div class="how-step">
             <span class="how-step-num">5</span>
@@ -622,7 +625,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
           </div>
           <div class="how-step">
             <span class="how-step-num">8</span>
-            <span>Monitorar o processo até a decisão do INPI</span>
+            <span>Monitorar o processo até a decisao do INPI</span>
           </div>
           <div class="how-step">
             <span class="how-step-num">9</span>
@@ -641,7 +644,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
         <div class="how-steps">
           <div class="how-step">
             <span class="how-step-num">1</span>
-            <span>Informar dados básicos da marca</span>
+            <span>Informar dados basicos da marca</span>
           </div>
           <div class="how-step">
             <span class="how-step-num">2</span>
@@ -649,14 +652,14 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
           </div>
           <div class="how-step">
             <span class="how-step-num">3</span>
-            <span>Assinar digitalmente a procuração</span>
+            <span>Assinar digitalmente a procuracao</span>
           </div>
         </div>
       </div>
     </div>
     <div class="how-guarantee reveal">
       <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-      <span><strong>Garantia CRIAPA Hub:</strong> Em caso de indeferimento, protocolamos um novo pedido sem cobrança da nossa assessoria.</span>
+      <span><strong>Garantia CRIAPA Hub:</strong> Em caso de indeferimento, protocolamos um novo pedido sem cobranca da nossa assessoria.</span>
     </div>
   </div>
 </section>
@@ -675,12 +678,12 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
           <div class="test-avatar av1">MA</div>
           <div>
             <div class="test-name">Melissa Akemi</div>
-            <div class="test-role">Gouga Acessórios</div>
+            <div class="test-role">Gouga Acessorios</div>
           </div>
         </div>
       </div>
       <div class="test-card reveal reveal-delay-2">
-        <p class="test-quote">Essa foi uma de várias marcas que tive oportunidade de registrar com a CRIAPA. A ágilidade, clareza e facilidade em falar com a equipe e saber sobre o processo chamam atenção.</p>
+        <p class="test-quote">Essa foi uma de varias marcas que tive oportunidade de registrar com a CRIAPA. A ágilidade, clareza e facilidade em falar com a equipe e saber sobre o processo chamam aténcao.</p>
         <div class="test-author">
           <div class="test-avatar av2">JM</div>
           <div>
@@ -690,7 +693,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
         </div>
       </div>
       <div class="test-card reveal reveal-delay-3">
-        <p class="test-quote">Foi um processo super tranquilo. A CRIAPA cuidou de tudo, praticamente não tivemos que nos envolver. Foi super rapido e muito profissional.</p>
+        <p class="test-quote">Foi um processo super tranquilo. A CRIAPA cuidou de tudo, praticamente nao tivemos que nos envolver. Foi super rapido e muito profissional.</p>
         <div class="test-author">
           <div class="test-avatar av3">DB</div>
           <div>
@@ -703,7 +706,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
     <div class="test-trust reveal">
       <div class="test-trust-item">
         <svg viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#34A853" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-        <span>+250 avaliações 5 estrelas no Google</span>
+        <span>+250 avaliacoes 5 estrelas no Google</span>
       </div>
       <div class="test-trust-item">
         <svg viewBox="0 0 24 24" fill="#00B67A"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -717,7 +720,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 <div class="trust-section">
   <div class="container">
     <p>Inicie seu registro e esteja seguro</p>
-    <h3 style="font-size:1.6rem;color:var(--white);margin-bottom:32px;font-weight:700">Faça como as mais de <strong style="color:var(--teal-400)">3.700 marcas</strong> que ja passaram por aqui.</h3>
+    <h3 style="font-size:1.6rem;color:var(--white);margin-bottom:32px;font-weight:700">Faca como as mais de <strong style="color:var(--teal-400)">3.700 marcas</strong> que ja passaram por aqui.</h3>
     <div class="trust-logos">
       <span>Green Valley</span>
       <span>Bem+</span>
@@ -843,7 +846,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
         <div class="blog-card-img">Artigo</div>
         <div class="blog-card-body">
           <h3>Marca mista no INPI: o que esta protegido e o que ainda pode estar em risco</h3>
-          <p>Entenda as diferenças entre marcas nominativas, mistas e figurativas e qual a melhor estratégia para proteger a sua.</p>
+          <p>Entenda as diferencas entre marcas nominativas, mistas e figurativas e qual a melhor estratégia para proteger a sua.</p>
           <span class="blog-more">Leia mais →</span>
         </div>
       </a>
@@ -859,7 +862,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
         <div class="blog-card-img">Artigo</div>
         <div class="blog-card-body">
           <h3>Propriedade intelectual para startups: o que você precisa saber</h3>
-          <p>Marca, paténte, software, qual a melhor ordem de proteção para sua inovação? Guia completo para startups.</p>
+          <p>Marca, paténte, software, qual a melhor ordem de proteção para sua inovacao? Guia completo para startups.</p>
           <span class="blog-more">Leia mais →</span>
         </div>
       </a>
@@ -873,8 +876,8 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 <!-- CTA FINAL -->
 <section class="final-cta" id="contato">
   <div class="container">
-    <h2 class="reveal">Faça como as marcas que ja passaram por aqui</h2>
-    <p class="reveal">Sua ideia tem valor. Não deixe que uma marca desprotegida coloque tudo a perder.</p>
+    <h2 class="reveal">Faca como as marcas que ja passaram por aqui</h2>
+    <p class="reveal">Sua ideia tem valor. Nao deixe que uma marca desprotegida coloque tudo a perder.</p>
     <div class="final-cta-btns reveal">
       <a href="https://wa.me/5581999999999?text=Ola!%20Quero%20proteger%20minha%20marca" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Quero Consultar</a>
       <a href="mailto:contato@criapahub.com" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.9)">Enviar E-mail</a>
@@ -904,7 +907,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
         <a href="#hero" class="footer-logo">
           CRIAPA<span>Hub</span>
         </a>
-        <p>Propriedade intelectual com tecnologia e estratégia. Protegendo marcas e inovação no Brasil.</p>
+        <p>Propriedade intelectual com tecnologia e estratégia. Protegendo marcas e inovacao no Brasil.</p>
       </div>
       <div>
         <h4>Servicos</h4>
@@ -961,12 +964,20 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
       <div class="modal-progress-dot" data-step="3"></div>
     </div>
 
+    <form id="consultForm" action="https://formspree.io/f/xkoazwoq" method="POST" accept-charset="UTF-8">
+    <input type="hidden" name="Marca" id="formMarca">
+    <input type="hidden" name="Nome" id="formNome">
+    <input type="hidden" name="Email" id="formEmail">
+    <input type="hidden" name="WhatsApp" id="formWhatsapp">
+    <input type="hidden" name="Servico" id="formServico">
+    <input type="hidden" name="Mensagem" id="formMensagem">
+
     <!-- Step 1: Nome da marca -->
     <div class="modal-step active" data-step="1">
       <h2 class="modal-title">Qual o nome da marca que deseja <strong>consultar?</strong></h2>
       <div class="modal-field">
         <svg class="modal-icon-search" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-        <input type="text" id="modalMarca" placeholder="Qual o nome da marca que deseja consultar?" autocomplete="off" autofocus>
+        <input type="text" id="stepMarca" placeholder="Qual o nome da marca que deseja consultar?" autocomplete="off" autofocus>
       </div>
       <div class="modal-nav">
         <div></div>
@@ -979,15 +990,15 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
       <h2 class="modal-title">Seus dados para <strong>contato</strong></h2>
       <div class="modal-field">
         <svg class="modal-field-icon" viewBox="0 0 24 24" fill="rgba(255,255,255,.4)"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-        <input type="text" id="modalNome" placeholder="Seu nome completo" autocomplete="name">
+        <input type="text" id="stepNome" placeholder="Seu nome completo" autocomplete="name">
       </div>
       <div class="modal-field">
         <svg class="modal-field-icon" viewBox="0 0 24 24" fill="rgba(255,255,255,.4)"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        <input type="email" id="modalEmail" placeholder="Seu melhor e-mail" autocomplete="email">
+        <input type="email" id="stepEmail" placeholder="Seu melhor e-mail" autocomplete="email">
       </div>
       <div class="modal-field">
         <svg class="modal-field-icon" viewBox="0 0 24 24" fill="rgba(255,255,255,.4)"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-        <input type="tel" id="modalWhatsapp" placeholder="WhatsApp (com DDD)" autocomplete="tel">
+        <input type="tel" id="stepWhatsapp" placeholder="WhatsApp (com DDD)" autocomplete="tel">
       </div>
       <div class="modal-nav">
         <button class="modal-btn-back" id="modalBack2">
@@ -1000,37 +1011,42 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 
     <!-- Step 3: Detalhes -->
     <div class="modal-step" data-step="3">
-      <h2 class="modal-title">Qual <strong>serviço</strong> te interessa?</h2>
-      <div class="modal-field" style="margin-bottom:16px">
-        <svg class="modal-field-icon" viewBox="0 0 24 24" fill="rgba(255,255,255,.4)" style="top:50%;transform:translateY(-50%)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-        <select id="modalServico" style="padding-left:48px">
-          <option value="">Selecione o serviço</option>
-          <option value="Busca de Anterioridade">🔍 Busca de Anterioridade</option>
-          <option value="Registro Completo de Marca">📝 Registro Completo de Marca</option>
-          <option value="Monitoramento de Marca">👁️ Monitoramento de Marca</option>
-          <option value="Consultoria em PI">💡 Consultoria em PI</option>
+      <h2 class="modal-title">Conte um pouco sobre sua <strong>marca</strong></h2>
+      <div class="modal-select-wrap">
+        <select id="stepServico">
+          <option value="">Qual servico te interessa?</option>
+          <option value="busca">Busca de Anterioridade</option>
+          <option value="registro">Registro Completo de Marca</option>
+          <option value="monitoramento">Monitoramento de Marca</option>
+          <option value="consultoria">Consultoria em PI</option>
         </select>
         <svg class="modal-select-arrow" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
       </div>
       <div class="modal-field">
-        <textarea id="modalMensagem" placeholder="Conte um pouco sobre sua marca, segmento e objetivos..." rows="4" style="padding-left:20px"></textarea>
+        <textarea id="stepMensagem" placeholder="Conte um pouco sobre sua marca, segmento e objetivos..." rows="4"></textarea>
       </div>
       <div class="modal-nav">
         <button class="modal-btn-back" id="modalBack3">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
           Voltar
         </button>
-        <button class="modal-btn-next" id="modalSubmit">Enviar Consulta</button>
+        <button type="submit" class="modal-btn-next" id="modalSubmit">Enviar Consulta</button>
       </div>
     </div>
 
-    <!-- Success staté -->
-    <div class="modal-step modal-success" data-step="success">
+    </form>
+
+    <!-- Success state -->
+    <div class="modal-step modal-success" id="formSuccess" data-step="success">
       <div class="modal-success-icon">
         <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
       </div>
       <h3>Consulta enviada com sucesso!</h3>
-      <p>Nossa equipe entrará em contato em até 24 horas para dar andamento ao seu registro.</p>
+      <p class="success-msg">Obrigado pela confiança! Em até 24h iremos trazer todas as informações importantes e trilhar a estratégia que mais se adapta à sua marca.</p>
+      <div class="success-tagline">
+        <span class="success-brand">CRIAPA HUB</span>
+        <span class="success-slogan">protegendo futuros</span>
+      </div>
       <div class="modal-nav" style="justify-content:center;margin-top:24px">
         <button class="modal-btn-next" id="modalDone">Fechar</button>
       </div>
@@ -1096,7 +1112,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const modal = document.getElementById('consultModal');
 const modalClose = document.getElementById('modalClose');
 const consultForm = document.getElementById('consultForm');
-const formSuccess = modal.querySelector('.modal-success');
+const formSuccess = document.getElementById('formSuccess');
 const steps = consultForm.querySelectorAll('.modal-step');
 const dots = modal.querySelectorAll('.modal-progress-dot');
 let currentStep = 1;
@@ -1147,26 +1163,15 @@ function closeModal() {
 
 function goToStep(n) {
   currentStep = n;
-  // Update dots
+  steps.forEach(s => s.classList.remove('active'));
+  steps[n - 1].classList.add('active');
   dots.forEach((d, i) => {
     d.classList.remove('active', 'done');
     if (i + 1 === n) d.classList.add('active');
     if (i + 1 < n) d.classList.add('done');
   });
-  // Show active step
-  consultForm.querySelectorAll('.modal-step').forEach(s => s.classList.remove('active'));
-  const target = consultForm.querySelector(`.modal-step[data-step="${n}"]`);
-  if (target) target.classList.add('active');
-  // Show success
-  if (n === 'success') {
-    consultForm.style.display = 'none';
-    formSuccess.style.display = 'block';
-  }
-  // Focus input
-  setTimeout(() => {
-    const input = target.querySelector('input, textarea, select');
-    if (input) input.focus();
-  }, 100);
+  const focusInput = steps[n - 1].querySelector('input, textarea, select');
+  if (focusInput) setTimeout(() => focusInput.focus(), 100);
 }
 
 function validateStep(n) {
@@ -1232,7 +1237,8 @@ consultForm.addEventListener('submit', async (e) => {
       headers: { 'Accept': 'application/json' }
     });
     if (response.ok) {
-      goToStep('success');
+      consultForm.style.display = 'none';
+      formSuccess.style.display = 'block';
     } else {
       alert('Erro ao enviar. Tente novamente ou entre em contato pelo WhatsApp.');
     }
@@ -1243,6 +1249,7 @@ consultForm.addEventListener('submit', async (e) => {
     submitBtn.disabled = false;
   }
 });
+
 document.getElementById('modalDone').addEventListener('click', closeModal);
 
 </script>
