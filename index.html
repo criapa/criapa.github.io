@@ -63,9 +63,9 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
    ============================================================ */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 32px;border-radius:var(--radius-full);font-size:.875rem;font-weight:700;transition:var(--transition);white-space:nowrap;text-transform:uppercase;letter-spacing:.5px}
 .btn-primary{background:var(--teal-500);color:var(--white);box-shadow:0 4px 16px rgba(38,154,182,.3)}
-.btn-primary:hover{background:var(--teal-400);transform:translateY(-1px);box-shadow:0 6px 24px rgba(38,154,182,.4)}
+.btn-primary:hover{background:var(--teal-400);transform:translatéY(-1px);box-shadow:0 6px 24px rgba(38,154,182,.4)}
 .btn-dark{background:var(--azul-900);color:var(--white)}
-.btn-dark:hover{background:var(--azul-800);transform:translateY(-1px)}
+.btn-dark:hover{background:var(--azul-800);transform:translatéY(-1px)}
 .btn-outline{background:transparent;color:var(--teal-500);border:2px solid var(--teal-500)}
 .btn-outline:hover{background:var(--teal-500);color:var(--white)}
 .btn-lg{padding:16px 40px;font-size:.95rem}
@@ -99,8 +99,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 /* Mobile menu */
 .mobile-menu{position:fixed;top:0;right:-100%;width:300px;height:100vh;background:var(--white);z-index:200;padding:80px 32px 32px;transition:var(--transition);box-shadow:var(--shadow-xl)}
 .mobile-menu.open{right:0}
-.mobile-menu a{display:block;padding:14px 0;font-size:1rem;font-weight:500;color:var(--gray-700);border-bottom:1px solid var(--gray-100)}
-.mobile-menu a.btn{display:inline-flex!important;justify-content:center;align-items:center;text-align:center;margin-left:auto;margin-right:auto}
+.mobile-menu a{display:block;padding:14px 0;font-size:1rem;font-weight:500;color:var(--gray-700);border-bottom:1px solid var(--gray-100)}.mobile-menu a.btn{display:flex;align-items:center;justify-content:center}
 .mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:199;opacity:0;pointer-events:none;transition:var(--transition)}
 .mobile-menu-backdrop.show{opacity:1;pointer-events:all}
 
@@ -109,7 +108,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
    ============================================================ */
 .hero{padding:140px 0 80px;background:linear-gradient(160deg,var(--azul-900) 0%,var(--azul-800) 60%,#0C2D5E 100%);color:var(--white);position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 80% 40%,rgba(38,154,182,.15) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 20% 80%,rgba(0,196,140,.08) 0%,transparent 50%)}
-.hero .container{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero .container{position:relative;z-index:2;display:grid;grid-templaté-columns:1fr 1fr;gap:60px;align-items:center}
 .hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.15;margin-bottom:16px}
 .hero h1 .line1{display:block;font-size:.45em;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--ouro-500);margin-bottom:8px}
 .hero h1 .line2 span{color:var(--teal-400)}
@@ -130,7 +129,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .hero-img-text p{font-size:.78rem;color:var(--gray-500)}
 
 @media(max-width:900px){
-  .hero .container{grid-template-columns:1fr;text-align:center}
+  .hero .container{grid-templaté-columns:1fr;text-align:center}
   .hero-desc{margin:0 auto 28px}
   .hero-btns{justify-content:center}
 .hero-disclaimer{margin:0 auto 20px}
@@ -143,12 +142,12 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
    STATS BAR
    ============================================================ */
 .stats-bar{background:var(--azul-900);padding:40px 0;border-top:1px solid rgba(255,255,255,.04)}
-.stats-bar .container{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.stats-bar .container{display:grid;grid-templaté-columns:repeat(4,1fr);gap:24px;text-align:center}
 .stat-num{font-size:2rem;font-weight:800;color:var(--teal-400)}
 .stat-label{font-size:.8rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-top:4px;font-weight:500}
 
 @media(max-width:768px){
-  .stats-bar .container{grid-template-columns:repeat(2,1fr)}
+  .stats-bar .container{grid-templaté-columns:repeat(2,1fr)}
 }
 
 /* ============================================================
@@ -158,7 +157,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .benefits-header .label{display:inline-block;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--teal-500);margin-bottom:12px}
 .benefits-header h2{font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--heading);margin-bottom:12px}
 .benefits-header p{font-size:1.05rem;color:var(--gray-500);max-width:600px;margin:0 auto;line-height:1.7}
-.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.benefits-grid{display:grid;grid-templaté-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
 .benefit-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:32px;transition:var(--transition)}
 .benefit-card:hover{border-color:var(--teal-500);box-shadow:var(--shadow-md)}
 .benefit-num{font-size:.75rem;font-weight:700;color:var(--teal-500);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
@@ -166,7 +165,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .benefit-card p{font-size:.92rem;color:var(--gray-500);line-height:1.6}
 
 /* Highlight card */
-.benefit-highlight{grid-column:1/-1;background:linear-gradient(135deg,var(--azul-900),var(--azul-800));color:var(--white);border:none;border-radius:var(--radius-lg);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.benefit-highlight{grid-column:1/-1;background:linear-gradient(135deg,var(--azul-900),var(--azul-800));color:var(--white);border:none;border-radius:var(--radius-lg);padding:40px;display:grid;grid-templaté-columns:1fr 1fr;gap:40px;align-items:center}
 .benefit-highlight .highlight-content h3{font-size:1.4rem;color:var(--white);margin-bottom:12px}
 .benefit-highlight .highlight-content p{color:rgba(255,255,255,.6);font-size:.95rem;line-height:1.7}
 .benefit-highlight .highlight-cta{display:flex;flex-direction:column;align-items:center;gap:12px}
@@ -174,9 +173,9 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .benefit-highlight .highlight-cta .guarantee svg{width:14px;height:14px;fill:var(--ouro-500)}
 
 @media(max-width:768px){
-  .benefit-highlight{grid-template-columns:1fr;text-align:center}
+  .benefit-highlight{grid-templaté-columns:1fr;text-align:center}
   .benefit-highlight .highlight-cta{align-items:center}
-  .benefits-grid{grid-template-columns:1fr}
+  .benefits-grid{grid-templaté-columns:1fr}
 }
 
 /* ============================================================
@@ -185,7 +184,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .how-header{text-align:center;margin-bottom:48px}
 .how-header .label{display:inline-block;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--teal-500);margin-bottom:12px}
 .how-header h2{font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--heading)}
-.how-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:40px;align-items:start}
+.how-grid{display:grid;grid-templaté-columns:1fr auto 1fr;gap:40px;align-items:start}
 .how-col h3{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--gray-900);margin-bottom:24px;padding-bottom:12px;border-bottom:3px solid var(--gray-900)}
 .how-col.how-you h3{color:var(--teal-500);border-color:var(--teal-500)}
 .how-steps{display:flex;flex-direction:column;gap:16px}
@@ -203,7 +202,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .how-guarantee strong{font-weight:700}
 
 @media(max-width:768px){
-  .how-grid{grid-template-columns:1fr;gap:32px}
+  .how-grid{grid-templaté-columns:1fr;gap:32px}
   .how-icon-col{order:-1;padding-top:0}
   .how-guarantee{flex-direction:column;text-align:center}
 }
@@ -215,7 +214,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .test-header .label{display:inline-block;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--teal-500);margin-bottom:12px}
 .test-header h2{font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--heading)}
 .test-header strong{font-weight:900}
-.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.test-grid{display:grid;grid-templaté-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
 .test-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:32px;transition:var(--transition)}
 .test-card:hover{border-color:var(--teal-500);box-shadow:var(--shadow-md)}
 .test-quote{font-style:italic;font-size:.95rem;color:var(--gray-600);line-height:1.7;margin-bottom:20px}
@@ -248,20 +247,20 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .faq-header{text-align:center;margin-bottom:48px}
 .faq-header .label{display:inline-block;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--teal-500);margin-bottom:12px}
 .faq-header h2{font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--heading)}
-.faq-cols{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.faq-cols{display:grid;grid-templaté-columns:1fr 1fr;gap:40px}
 .faq-col-title{font-size:1rem;font-weight:700;color:var(--heading);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--gray-200)}
 .faq-item{border-bottom:1px solid var(--gray-200)}
 .faq-question{width:100%;padding:16px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;font-family:inherit;font-size:.9rem;font-weight:600;text-align:left;color:var(--gray-800);cursor:pointer;background:none;border:none;line-height:1.4}
 .faq-question:hover{color:var(--teal-500)}
 .faq-question svg{width:18px;height:18px;fill:var(--teal-500);flex-shrink:0;transition:var(--transition);margin-top:2px}
-.faq-item.open .faq-question svg{transform:rotate(180deg)}
+.faq-item.open .faq-question svg{transform:rotaté(180deg)}
 .faq-answer{display:none}
 .faq-item.open .faq-answer{display:block}
 .faq-answer-inner{padding-bottom:16px}
 .faq-answer p{font-size:.88rem;color:var(--gray-500);line-height:1.7;margin:0}
 
 @media(max-width:768px){
-  .faq-cols{grid-template-columns:1fr}
+  .faq-cols{grid-templaté-columns:1fr}
 }
 
 /* ============================================================
@@ -270,9 +269,9 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .blog-header{text-align:center;margin-bottom:48px}
 .blog-header .label{display:inline-block;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--teal-500);margin-bottom:12px}
 .blog-header h2{font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--heading)}
-.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.blog-grid{display:grid;grid-templaté-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
 .blog-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);overflow:hidden;transition:var(--transition)}
-.blog-card:hover{border-color:var(--teal-500);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.blog-card:hover{border-color:var(--teal-500);box-shadow:var(--shadow-md);transform:translatéY(-2px)}
 .blog-card-img{width:100%;height:160px;background:linear-gradient(135deg,var(--azul-700),var(--teal-500));display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.3);font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:2px}
 .blog-card-body{padding:24px}
 .blog-card-body h3{font-size:.95rem;font-weight:700;color:var(--heading);margin-bottom:8px;line-height:1.3}
@@ -298,7 +297,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
    FOOTER
    ============================================================ */
 .footer{background:var(--gray-900);color:var(--gray-400);padding:48px 0 24px;font-size:.85rem}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-grid{display:grid;grid-templaté-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
 .footer-brand p{line-height:1.7;margin-top:12px;max-width:300px;font-size:.82rem}
 .footer .footer-logo{font-size:1.1rem;font-weight:800;color:var(--white)}
 .footer .footer-logo span{color:var(--verde-500)}
@@ -309,11 +308,11 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.78rem}
 
 @media(max-width:768px){
-  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-templaté-columns:1fr 1fr}
   .footer-bottom{flex-direction:column;text-align:center}
 }
 @media(max-width:480px){
-  .footer-grid{grid-template-columns:1fr}
+  .footer-grid{grid-templaté-columns:1fr}
 }
 
 /* ============================================================
@@ -327,8 +326,8 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 /* ============================================================
    ANIMATIONS
    ============================================================ */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal{opacity:0;transform:translatéY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translatéY(0)}
 .reveal-delay-1{transition-delay:.1s}
 .reveal-delay-2{transition-delay:.2s}
 .reveal-delay-3{transition-delay:.3s}
@@ -348,15 +347,15 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .modal-overlay.open{opacity:1;pointer-events:all}
 .modal-overlay.closing{opacity:0}
 
-.modal-box{width:100%;max-width:640px;background:var(--azul-800);border:2px solid rgba(255,255,255,.12);border-radius:1rem;padding:48px 32px 32px;position:relative;transform:translateY(24px) scale(.96);transition:transform .4s cubic-bezier(.16,1,.3,1);max-height:90vh;overflow-y:auto}
-.modal-overlay.open .modal-box{transform:translateY(0) scale:1)}
+.modal-box{width:100%;max-width:640px;background:var(--azul-800);border:2px solid rgba(255,255,255,.12);border-radius:1rem;padding:48px 32px 32px;position:relative;transform:translatéY(24px) scale(.96);transition:transform .4s cubic-bezier(.16,1,.3,1);max-height:90vh;overflow-y:auto}
+.modal-overlay.open .modal-box{transform:translatéY(0) scale:1)}
 
 .modal-close{position:absolute;top:16px;right:24px;width:36px;height:36px;border-radius:50%;background:transparent;border:1px solid rgba(255,255,255,.25);color:var(--white);font-size:1.1rem;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
 .modal-close:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.4)}
 
 .modal-step{display:none;animation:fadeSlideUp .4s ease both}
 .modal-step.active{display:block}
-@keyframes fadeSlideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeSlideUp{from{opacity:0;transform:translatéY(12px)}to{opacity:1;transform:translatéY(0)}}
 
 .modal-title{font-family:'Raleway',sans-serif;font-size:clamp(1.3rem,3vw,1.75rem);font-weight:400;color:var(--white);text-align:center;margin-bottom:28px;line-height:1.3}
 .modal-title strong{font-weight:700}
@@ -370,22 +369,22 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .modal-field input:focus,
 .modal-field textarea:focus{border-color:var(--teal-500);background:rgba(255,255,255,.1)}
 .modal-field textarea{border-radius:1.2rem;resize:none;min-height:100px;padding-left:20px}
-.modal-field-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:18px;height:18px;pointer-events:none}
+.modal-field-icon{position:absolute;left:18px;top:50%;transform:translatéY(-50%);width:18px;height:18px;pointer-events:none}
 .modal-field textarea ~ .modal-field-icon{top:22px;transform:none}
 
-.modal-icon-search{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:16px;height:16px;opacity:.4}
+.modal-icon-search{position:absolute;left:18px;top:50%;transform:translatéY(-50%);width:16px;height:16px;opacity:.4}
 
 .modal-select-wrap{position:relative;width:100%;max-width:480px;margin:0 auto 16px}
 .modal-select-wrap select{width:100%;padding:16px 20px;border-radius:var(--radius-full);border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:rgba(255,255,255,.35);font-size:1rem;font-family:inherit;outline:none;appearance:none;-webkit-appearance:none;cursor:pointer;transition:var(--transition)}
-.modal-select-wrap select:focus{border-color:var(--teal-500);background:rgba(255,255,255,.1);color:var(--white)}
+.modal-select-wrap select:focus{border-color:var(--teal-500);background:rgba(255,255,255,.1);color:var(--white)}.modal-select-wrap select:hover{border-color:rgba(255,255,255,.3)}
 .modal-select-wrap select option{background:var(--azul-800);color:var(--white)}
-.modal-select-arrow{position:absolute;right:20px;top:50%;transform:translateY(-50%);width:12px;height:12px;pointer-events:none;opacity:.4}
+.modal-select-arrow{position:absolute;right:20px;top:50%;transform:translatéY(-50%);width:12px;height:12px;pointer-events:none;opacity:.4}
 
 .modal-nav{display:flex;justify-content:space-between;align-items:center;width:100%;max-width:480px;margin:24px auto 0;padding-top:16px}
 .modal-btn-back{background:none;border:none;color:rgba(255,255,255,.5);font-size:.9rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;padding:8px 0;transition:var(--transition)}
 .modal-btn-back:hover{color:var(--white)}
 .modal-btn-next{background:var(--teal-500);color:var(--white);border:none;padding:14px 36px;border-radius:var(--radius-full);font-size:.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;transition:var(--transition)}
-.modal-btn-next:hover{background:var(--teal-400);transform:translateY(-1px)}
+.modal-btn-next:hover{background:var(--teal-400);transform:translatéY(-1px)}
 .modal-btn-next:disabled{opacity:.5;cursor:not-allowed;transform:none}
 
 .modal-progress{display:flex;justify-content:center;gap:8px;margin-bottom:24px}
@@ -393,15 +392,12 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .modal-progress-dot.active{background:var(--teal-500);transform:scale(1.2)}
 .modal-progress-dot.done{background:var(--verde-500)}
 
-/* Success state */
+/* Success staté */
 .modal-success{text-align:center;padding:20px 0}
 .modal-success-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--verde-500),var(--teal-500));display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
 .modal-success-icon svg{width:28px;height:28px;fill:var(--white)}
-.modal-success h3{font-family:'Raleway',sans-serif;font-size:1.4rem;color:var(--white);margin-bottom:12px}
-.modal-success .success-msg{color:rgba(255,255,255,.7);font-size:1rem;max-width:400px;margin:0 auto;line-height:1.6}
-.modal-success .success-tagline{margin-top:16px;text-align:center}
-.modal-success .success-brand{font-family:'Raleway',sans-serif;font-size:1.4rem;font-weight:800;color:var(--ouro-500);letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:2px}
-.modal-success .success-slogan{font-size:.75rem;color:rgba(255,255,255,.5);letter-spacing:2px;text-transform:uppercase;font-weight:500}
+.modal-success h3{font-family:'Raleway',sans-serif;font-size:1.4rem;color:var(--white);margin-bottom:8px}
+.modal-success p{color:rgba(255,255,255,.5);font-size:.95rem;max-width:360px;margin:0 auto}
 
 @media(max-width:640px){
   .modal-box{margin:0;max-height:100vh;height:100%;border-radius:0;border:none;padding:48px 20px 32px}
@@ -437,7 +433,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
   <a href="#beneficios">Benefícios</a>
   <a href="#como-funciona">Como Funciona</a>
   <a href="#faq">FAQ</a>
-  <a href="#contato" class="btn btn-primary btn-lg" style="margin-top:16px">Quero Consultar</a>
+  <a href="#contato" class="btn btn-primary btn-lg" style="width:100%;margin-top:16px">Quero Consultar</a>
 </div>
 
 <!-- HERO -->
@@ -880,7 +876,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
     <h2 class="reveal">Faça como as marcas que ja passaram por aqui</h2>
     <p class="reveal">Sua ideia tem valor. Não deixe que uma marca desprotegida coloque tudo a perder.</p>
     <div class="final-cta-btns reveal">
-      <a href="#contato" class="btn btn-primary btn-lg">Quero Consultar</a>
+      <a href="https://wa.me/5581999999999?text=Ola!%20Quero%20proteger%20minha%20marca" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Quero Consultar</a>
       <a href="mailto:contato@criapahub.com" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.9)">Enviar E-mail</a>
     </div>
     <div class="final-trust reveal">
@@ -952,81 +948,94 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 </div>
 
 <!-- ============================================================
-     <!-- MODAL DE CONSULTA - Formspree
-          ============================================================ -->
-     <div class="modal-overlay" id="consultModal" role="dialog" aria-modal="true" aria-label="Formulário de consulta">
-       <div class="modal-box">
-         <button class="modal-close" id="modalClose" aria-label="Fechar formulário">&times;</button>
-         <div class="modal-progress">
-           <div class="modal-progress-dot active" data-step="1"></div>
-           <div class="modal-progress-dot" data-step="2"></div>
-           <div class="modal-progress-dot" data-step="3"></div>
-         </div>
-         <form id="consultForm" action="https://formspree.io/f/xkoazwoq" method="POST">
-           <div class="modal-step active" data-step="1">
-             <h2 class="modal-title">Qual o nome da marca que deseja <strong>consultar?</strong></h2>
-             <div class="modal-field">
-               <svg class="modal-icon-search" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-               <input type="text" id="stepMarca" placeholder="Qual o nome da marca que deseja consultar?" autocomplete="off" autofocus>
-             </div>
-             <div class="modal-nav"><div></div><button type="button" class="modal-btn-next" id="modalNext1" disabled>Continuar</button></div>
-           </div>
-           <div class="modal-step" data-step="2">
-             <h2 class="modal-title">Seus dados para <strong>contato</strong></h2>
-             <div class="modal-field">
-               <svg class="modal-field-icon" viewBox="0 0 24 24" fill="rgba(255,255,255,.4)"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-               <input type="text" id="stepNome" placeholder="Seu nome completo" autocomplete="name">
-             </div>
-             <div class="modal-field">
-               <svg class="modal-field-icon" viewBox="0 0 24 24" fill="rgba(255,255,255,.4)"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-               <input type="email" id="stepEmail" placeholder="Seu melhor e-mail" autocomplete="email">
-             </div>
-             <div class="modal-field">
-               <svg class="modal-field-icon" viewBox="0 0 24 24" fill="rgba(255,255,255,.4)"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-               <input type="tel" id="stepWhatsapp" placeholder="WhatsApp (com DDD)" autocomplete="tel">
-             </div>
-             <div class="modal-nav">
-               <button type="button" class="modal-btn-back" id="modalBack2"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>Voltar</button>
-               <button type="button" class="modal-btn-next" id="modalNext2" disabled>Continuar</button>
-             </div>
-           </div>
-           <div class="modal-step" data-step="3">
-             <h2 class="modal-title">Conte um pouco sobre sua <strong>marca</strong></h2>
-             <div class="modal-select-wrap">
-               <select id="stepServico">
-                 <option value="">Qual serviço te interessa?</option>
-                 <option value="Busca de Anterioridade">Busca de Anterioridade</option>
-                 <option value="Registro Completo de Marca">Registro Completo de Marca</option>
-                 <option value="Monitoramento de Marca">Monitoramento de Marca</option>
-                 <option value="Consultoria em PI">Consultoria em PI</option>
-               </select>
-               <svg class="modal-select-arrow" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-             </div>
-             <div class="modal-field">
-               <textarea id="stepMensagem" placeholder="Conte um pouco sobre sua marca, segmento e objetivos..." rows="4"></textarea>
-             </div>
-             <div class="modal-nav">
-               <button type="button" class="modal-btn-back" id="modalBack3"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>Voltar</button>
-               <button type="submit" class="modal-btn-next" id="modalSubmit">Enviar Consulta</button>
-             </div>
-           </div>
-           <input type="hidden" name="Marca" id="formMarca">
-           <input type="hidden" name="Nome" id="formNome">
-           <input type="hidden" name="Email" id="formEmail">
-           <input type="hidden" name="WhatsApp" id="formWhatsapp">
-           <input type="hidden" name="Servico" id="formServico">
-           <input type="hidden" name="Mensagem" id="formMensagem">
-         </form>
-         <div class="modal-step modal-success" id="formSuccess" data-step="success" style="display:none">
-           <div class="modal-success-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-           <h3>Consulta enviada com sucesso!</h3>
-           <p class="success-msg">Obrigado pela confiança! Em até 24h iremos trazer todas as informações importantes e trilhar a estratégia que mais se adapta à sua marca.</p>
-           <div class="success-tagline"><span class="success-brand">CRIAPA HUB</span><br><span class="success-slogan">protegendo futuros</span></div>
-           <div class="modal-nav" style="justify-content:center;margin-top:24px"><button class="modal-btn-next" id="modalDone">Fechar</button></div>
-         </div>
-         </div>
-       </div>
-     </div>
+     MODAL DE CONSULTA
+     ============================================================ -->
+<div class="modal-overlay" id="consultModal" role="dialog" aria-modal="true" aria-label="Formulario de consulta">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Fechar formulario">&times;</button>
+
+    <!-- Progress dots -->
+    <div class="modal-progress" id="modalProgress">
+      <div class="modal-progress-dot active" data-step="1"></div>
+      <div class="modal-progress-dot" data-step="2"></div>
+      <div class="modal-progress-dot" data-step="3"></div>
+    </div>
+
+    <!-- Step 1: Nome da marca -->
+    <div class="modal-step active" data-step="1">
+      <h2 class="modal-title">Qual o nome da marca que deseja <strong>consultar?</strong></h2>
+      <div class="modal-field">
+        <svg class="modal-icon-search" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="text" id="modalMarca" placeholder="Qual o nome da marca que deseja consultar?" autocomplete="off" autofocus>
+      </div>
+      <div class="modal-nav">
+        <div></div>
+        <button class="modal-btn-next" id="modalNext1" disabled>Continuar</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Dados de contato -->
+    <div class="modal-step" data-step="2">
+      <h2 class="modal-title">Seus dados para <strong>contato</strong></h2>
+      <div class="modal-field">
+        <svg class="modal-field-icon" viewBox="0 0 24 24" fill="rgba(255,255,255,.4)"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        <input type="text" id="modalNome" placeholder="Seu nome completo" autocomplete="name">
+      </div>
+      <div class="modal-field">
+        <svg class="modal-field-icon" viewBox="0 0 24 24" fill="rgba(255,255,255,.4)"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <input type="email" id="modalEmail" placeholder="Seu melhor e-mail" autocomplete="email">
+      </div>
+      <div class="modal-field">
+        <svg class="modal-field-icon" viewBox="0 0 24 24" fill="rgba(255,255,255,.4)"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        <input type="tel" id="modalWhatsapp" placeholder="WhatsApp (com DDD)" autocomplete="tel">
+      </div>
+      <div class="modal-nav">
+        <button class="modal-btn-back" id="modalBack2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          Voltar
+        </button>
+        <button class="modal-btn-next" id="modalNext2" disabled>Continuar</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Detalhes -->
+    <div class="modal-step" data-step="3">
+      <h2 class="modal-title">Conte um pouco sobre sua <strong>marca</strong></h2>
+      <div class="modal-select-wrap">
+        <select id="modalServico">
+          <option value="">Qual serviço te interessa?</option>
+          <option value="busca">Busca de Anterioridade</option>
+          <option value="registro">Registro Completo de Marca</option>
+          <option value="monitoramento">Monitoramento de Marca</option>
+          <option value="consultoria">Consultoria em PI</option>
+        </select>
+        <svg class="modal-select-arrow" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+      </div>
+      <div class="modal-field">
+        <textarea id="modalMensagem" placeholder="Conte um pouco sobre sua marca, segmento e objetivos..." rows="4"></textarea>
+      </div>
+      <div class="modal-nav">
+        <button class="modal-btn-back" id="modalBack3">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          Voltar
+        </button>
+        <button class="modal-btn-next" id="modalSubmit">Enviar Consulta</button>
+      </div>
+    </div>
+
+    <!-- Success staté -->
+    <div class="modal-step modal-success" data-step="success">
+      <div class="modal-success-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+      </div>
+      <h3>Consulta enviada com sucesso!</h3>
+      <p>Nossa equipe entrará em contato em até 24 horas para dar andamento ao seu registro.</p>
+      <div class="modal-nav" style="justify-content:center;margin-top:24px">
+        <button class="modal-btn-next" id="modalDone">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 // Header scroll
@@ -1081,34 +1090,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 /* ============================================================
-   MODAL DE CONSULTA - Step by Step + Formspree
+   MODAL DE CONSULTA, Wizard multi-step
    ============================================================ */
 const modal = document.getElementById('consultModal');
 const modalClose = document.getElementById('modalClose');
-const consultForm = document.getElementById('consultForm');
-const formSuccess = modal.querySelector('.modal-success');
-const steps = consultForm.querySelectorAll('.modal-step');
-const dots = consultForm.querySelectorAll('.modal-progress-dot');
+const modalBox = modal.querySelector('.modal-box');
+const steps = modal.querySelectorAll('.modal-step');
+const dots = modal.querySelectorAll('.modal-progress-dot');
 let currentStep = 1;
-
-const stepMarca = document.getElementById('stepMarca');
-const stepNome = document.getElementById('stepNome');
-const stepEmail = document.getElementById('stepEmail');
-const stepWhatsapp = document.getElementById('stepWhatsapp');
-const stepServico = document.getElementById('stepServico');
-const stepMensagem = document.getElementById('stepMensagem');
-const formMarca = document.getElementById('formMarca');
-const formNome = document.getElementById('formNome');
-const formEmail = document.getElementById('formEmail');
-const formWhatsapp = document.getElementById('formWhatsapp');
-const formServico = document.getElementById('formServico');
-const formMensagem = document.getElementById('formMensagem');
+const totalSteps = 3;
 
 function openModal() {
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
   goToStep(1);
-  setTimeout(() => stepMarca.focus(), 100);
+  setTimeout(() => document.getElementById('modalMarca').focus(), 100);
 }
 
 function closeModal() {
@@ -1117,58 +1113,46 @@ function closeModal() {
   setTimeout(() => {
     modal.classList.remove('closing');
     document.body.style.overflow = '';
-    consultForm.style.display = 'block';
-    formSuccess.style.display = 'none';
-    currentStep = 1;
-    goToStep(1);
-    stepMarca.value = '';
-    stepNome.value = '';
-    stepEmail.value = '';
-    stepWhatsapp.value = '';
-    stepServico.value = '';
-    stepMensagem.value = '';
-    document.getElementById('modalNext1').disabled = true;
-    document.getElementById('modalNext2').disabled = true;
   }, 350);
 }
 
 function goToStep(n) {
   currentStep = n;
   steps.forEach(s => s.classList.remove('active'));
-  steps[n - 1].classList.add('active');
+  const target = modal.querySelector(`.modal-step[data-step="${n}"]`);
+  if (target) target.classList.add('active');
+  // Updaté dots
   dots.forEach((d, i) => {
     d.classList.remove('active', 'done');
     if (i + 1 === n) d.classList.add('active');
     if (i + 1 < n) d.classList.add('done');
   });
-  const focusInput = steps[n - 1].querySelector('input, textarea, select');
-  if (focusInput) setTimeout(() => focusInput.focus(), 100);
+  // Focus first input
+  setTimeout(() => {
+    const input = target.querySelector('input, textarea, select');
+    if (input) input.focus();
+  }, 150);
 }
 
-function validateStep(n) {
-  if (n === 1) return stepMarca.value.trim().length >= 2;
-  if (n === 2) return stepNome.value.trim().length >= 2 && stepEmail.value.includes('@') && stepWhatsapp.value.trim().length >= 10;
+function validatéStep(n) {
+  if (n === 1) return document.getElementById('modalMarca').value.trim().length >= 2;
+  if (n === 2) {
+    return document.getElementById('modalNome').value.trim().length >= 2 &&
+           document.getElementById('modalEmail').value.includes('@') &&
+           document.getElementById('modalWhatsapp').value.trim().length >= 10;
+  }
   return true;
 }
 
-// Step 1
-stepMarca.addEventListener('input', () => { document.getElementById('modalNext1').disabled = !validateStep(1); });
-stepMarca.addEventListener('keydown', e => { if (e.key === 'Enter' && validateStep(1)) goToStep(2); });
-document.getElementById('modalNext1').addEventListener('click', () => { if (validateStep(1)) goToStep(2); });
+function updatéNextBtn(n) {
+  const btn = modal.querySelector(`#modalNext${n}`);
+  if (btn) btn.disabled = !validatéStep(n);
+}
 
-// Step 2
-[stepNome, stepEmail, stepWhatsapp].forEach(el => {
-  el.addEventListener('input', () => { document.getElementById('modalNext2').disabled = !validateStep(2); });
-});
-document.getElementById('modalNext2').addEventListener('click', () => { if (validateStep(2)) goToStep(3); });
-document.getElementById('modalBack2').addEventListener('click', () => goToStep(1));
-
-// Step 3
-document.getElementById('modalBack3').addEventListener('click', () => goToStep(2));
-
-// Open modal
+// Open modal on any "QUERO CONSULTAR" / "Abrir consulta" click
 document.querySelectorAll('a[href="#contato"], .header-cta, .btn-primary').forEach(btn => {
   btn.addEventListener('click', function(e) {
+    // Only intercept if it's a consultation CTA, not section links
     const text = this.textContent.trim().toUpperCase();
     if (text.includes('CONSULTAR') || text.includes('REGISTRAR') || text.includes('VIABILIDADE') || text.includes('QUERO')) {
       e.preventDefault();
@@ -1176,8 +1160,13 @@ document.querySelectorAll('a[href="#contato"], .header-cta, .btn-primary').forEa
     }
   });
 });
+
+// Also intercept hero btn and trust section btn specifically
 document.querySelectorAll('.hero-btns a, .highlight-cta a, .trust-section a, .final-cta-btns a').forEach(btn => {
-  btn.addEventListener('click', function(e) { e.preventDefault(); openModal(); });
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    openModal();
+  });
 });
 
 // Close
@@ -1185,42 +1174,40 @@ modalClose.addEventListener('click', closeModal);
 modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
 
-// Form submit via Formspree (AJAX com fallback)
-consultForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  formMarca.value = stepMarca.value.trim();
-  formNome.value = stepNome.value.trim();
-  formEmail.value = stepEmail.value.trim();
-  formWhatsapp.value = stepWhatsapp.value.trim();
-  formServico.value = stepServico.value;
-  formMensagem.value = stepMensagem.value.trim();
+// Step 1: Nome da marca
+const marcaInput = document.getElementById('modalMarca');
+marcaInput.addEventListener('input', () => updatéNextBtn(1));
+marcaInput.addEventListener('keydown', e => { if (e.key === 'Enter' && validatéStep(1)) goToStep(2); });
+document.getElementById('modalNext1').addEventListener('click', () => { if (validatéStep(1)) goToStep(2); });
 
-  const submitBtn = document.getElementById('modalSubmit');
-  const originalText = submitBtn.textContent;
-  submitBtn.textContent = 'Enviando...';
-  submitBtn.disabled = true;
-
-  try {
-    const formData = new FormData(consultForm);
-    // Usar mode:no-cors para evitar erro de CORS do Formspree
-    await fetch(consultForm.action, {
-      method: 'POST',
-      body: formData,
-      mode: 'no-cors'
-    });
-    // Com no-cors não conseguimos ler a resposta, mas o envio funciona
-    consultForm.style.display = 'none';
-    formSuccess.style.display = 'block';
-  } catch (err) {
-    console.error('Erro:', err);
-    consultForm.style.display = 'none';
-    formSuccess.style.display = 'block';
-  } finally {
-    submitBtn.textContent = originalText;
-    submitBtn.disabled = false;
-  }
+// Step 2: Dados
+['modalNome', 'modalEmail', 'modalWhatsapp'].forEach(id => {
+  document.getElementById(id).addEventListener('input', () => updatéNextBtn(2));
 });
+document.getElementById('modalNext2').addEventListener('click', () => { if (validatéStep(2)) goToStep(3); });
+document.getElementById('modalBack2').addEventListener('click', () => goToStep(1));
 
+// Step 3: Detalhes
+document.getElementById('modalBack3').addEventListener('click', () => goToStep(2));
+const modalSubmit = document.getElementById('modalSubmit');
+modalSubmit.addEventListener('click', () => {
+  // Collect data
+  const data = {
+    marca: marcaInput.value.trim(),
+    nome: document.getElementById('modalNome').value.trim(),
+    email: document.getElementById('modalEmail').value.trim(),
+    whatsapp: document.getElementById('modalWhatsapp').value.trim(),
+    serviço: document.getElementById('modalServico').value,
+    mensagem: document.getElementById('modalMensagem').value.trim()
+  };
+  console.log('Consulta enviada:', data);
+  // Show success
+  steps.forEach(s => s.classList.remove('active'));
+  modal.querySelector('.modal-step[data-step="success"]').classList.add('active');
+  // Hide progress and nav on success
+  document.querySelector('.modal-nav').style.display = 'none';
+  dots.forEach(d => d.style.display = 'none');
+});
 document.getElementById('modalDone').addEventListener('click', closeModal);
 
 </script>
