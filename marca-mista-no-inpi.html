@@ -21,7 +21,7 @@
 <style>
 :root{--azul-900:#0A1B3A;--azul-800:#0F2847;--azul-700:#143A6B;--azul-600:#1E50A0;--azul-500:#269AB6;--teal-500:#269AB6;--teal-400:#38B6CE;--verde-500:#00C48C;--verde-600:#00A070;--ouro-500:#D4A843;--gold:#D4A843;--white:#FFFFFF;--gray-50:#F8FAFC;--gray-100:#F1F5F9;--gray-200:#E2E8F0;--gray-300:#CBD5E1;--gray-400:#94A3B8;--gray-500:#64748B;--gray-600:#475569;--gray-700:#334155;--gray-800:#1E293B;--gray-900:#0F172A;--heading:#1C3622;--shadow-sm:0 1px 3px rgba(0,0,0,.06);--shadow-md:0 4px 16px rgba(0,0,0,.08);--shadow-lg:0 12px 40px rgba(0,0,0,.12);--shadow-xl:0 24px 64px rgba(0,0,0,.16);--radius:12px;--radius-lg:20px;--radius-xl:28px;--radius-full:9999px;--transition:.3s cubic-bezier(.4,0,.2,1)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
 body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--gray-700);background:var(--white);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
@@ -51,6 +51,8 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .mobile-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:199;opacity:0;pointer-events:none;transition:var(--transition)}
 .mobile-menu-backdrop.show{opacity:1;pointer-events:all}
 .article-hero{padding:120px 0 60px;background:linear-gradient(160deg,var(--azul-900) 0%,var(--azul-800) 60%,#0C2D5E 100%);color:var(--white);position:relative;overflow:hidden}
+@media(max-width:768px){.article-hero{padding:100px 0 40px}}
+@media(max-width:480px){.article-hero{padding:80px 0 32px}}
 .article-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 80% 40%,rgba(38,154,182,.15) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 20% 80%,rgba(0,196,140,.08) 0%,transparent 50%)}
 .article-hero .container{position:relative;z-index:2}
 .article-hero .label{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--ouro-500);margin-bottom:16px}
@@ -158,6 +160,65 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .modal-success .success-brand{font-family:'Raleway',sans-serif;font-size:1.4rem;font-weight:800;color:var(--ouro-500);letter-spacing:3px;text-transform:uppercase;display:block}
 .modal-success .success-slogan{font-size:.75rem;color:rgba(255,255,255,.5);letter-spacing:2px;text-transform:uppercase}
 #formSuccess{display:none}
+
+/* Mobile responsive for tables and content */
+.article-content .comparison-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 24px 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-200);
+}
+.article-content .comparison-table-wrapper .comparison-table {
+  margin: 0;
+  min-width: 500px;
+}
+.article-content .comparison-table-wrapper .comparison-table th,
+.article-content .comparison-table-wrapper .comparison-table td {
+  white-space: nowrap;
+  padding: 10px 14px;
+  font-size: .82rem;
+}
+@media(max-width:768px){
+  .article-content .comparison-table th,
+  .article-content .comparison-table td {
+    white-space: nowrap;
+    font-size: .78rem;
+    padding: 8px 10px;
+  }
+  .article-content p,
+  .article-content li {
+    font-size: .95rem;
+    word-break: break-word;
+  }
+  .article-content h2 {
+    font-size: 1.3rem;
+  }
+  .article-content h3 {
+    font-size: 1.1rem;
+  }
+  .tip-box, .warning-box {
+    flex-direction: column;
+    padding: 16px;
+  }
+  .tip-box .tip-icon, .warning-box .warn-icon {
+    margin-bottom: 4px;
+  }
+  .article-nav .container {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .modal-box {
+    padding: 32px 20px 24px;
+    margin: 12px;
+  }
+  .modal-field input,
+  .modal-field textarea,
+  .modal-select-wrap select {
+    font-size: 16px; /* Prevents iOS zoom */
+  }
+}
 </style>
 </head>
 <body>
@@ -214,13 +275,13 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 </div>
 <h2>Os 4 tipos de marca reconhecidos pelo INPI</h2>
 <p>O INPI classifica as marcas em quatro tipos distintos. Entender essa classificação é fundamental para escolher a estratégia correta de proteção.</p>
-<table class="comparison-table">
+<div class="comparison-table-wrapper"><table class="comparison-table">
   <tr><th>Tipo</th><th>O que é</th><th>Exemplo</th><th>Proteção</th></tr>
   <tr><td><strong>Nominativa</strong></td><td>Apenas o nome/sem desenho</td><td>"GOOGLE" escrito em fonte padrão</td><td>Protege o nome em qualquer grafia</td></tr>
   <tr><td><strong>Figurativa</strong></td><td>Apenas o símbolo/desenho</td><td>O Swoosh da Nike (sem texto)</td><td>Protege apenas o design visual</td></tr>
   <tr><td><strong>Mista</strong></td><td>Nome + símbolo combinados</td><td>"Nike" + Swoosh juntos</td><td>Protege a combinação específica</td></tr>
   <tr><td><strong>Tridimensional</strong></td><td>Forma física do produto</td><td>Garrafa da Coca-Cola</td><td>Protege a forma tridimensional</td></tr>
-</table>
+</table></div>
 <h2>Os riscos da marca mista: o que pode estar em risco?</h2>
 <p>Aqui está o ponto crítico que muitos empresários ignoram: ao registrar apenas uma marca mista, você pode deixar brechas significativas na proteção do seu negócio.</p>
 <h3>1. Uso isolado do nome por terceiros</h3>
