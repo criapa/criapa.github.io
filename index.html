@@ -164,6 +164,9 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .benefit-num{font-size:.75rem;font-weight:700;color:var(--teal-500);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
 .benefit-card h3{font-size:1.15rem;font-weight:700;color:var(--heading);margin-bottom:8px}
 .benefit-card p{font-size:.92rem;color:var(--gray-500);line-height:1.6}
+.benefit-card-exclusive{position:relative;overflow:hidden}
+.benefit-bg-symbol{position:absolute;right:-8px;bottom:-20px;font-size:3.5rem;font-weight:700;color:rgba(38,154,182,.08);line-height:1;pointer-events:none;z-index:0;font-family:'Raleway',sans-serif}
+.benefit-card-exclusive > *:not(.benefit-bg-symbol){position:relative;z-index:1}
 
 /* Highlight card */
 .benefit-highlight{grid-column:1/-1;background:linear-gradient(135deg,var(--azul-900),var(--azul-800));color:var(--white);border:none;border-radius:var(--radius-lg);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
@@ -550,10 +553,11 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
         <h3>Garantia de propriedade</h3>
         <p>Sua marca só é realmente sua quando você tem o certificado emitido pelo INPI.</p>
       </div>
-      <div class="benefit-card reveal reveal-delay-2">
+      <div class="benefit-card reveal reveal-delay-2 benefit-card-exclusive">
         <div class="benefit-num">02</div>
         <h3>Exclusividade</h3>
         <p>Sabemos que você não quer um concorrente usando uma marca similar ou igual. Somente com registro você se protege da concorrência desleal.</p>
+        <span class="benefit-bg-symbol">®</span>
       </div>
       <div class="benefit-card reveal reveal-delay-3">
         <div class="benefit-num">03</div>
