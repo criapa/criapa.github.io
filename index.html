@@ -165,8 +165,11 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .benefit-card h3{font-size:1.15rem;font-weight:700;color:var(--heading);margin-bottom:8px}
 .benefit-card p{font-size:.92rem;color:var(--gray-500);line-height:1.6}
 .benefit-card-exclusive{position:relative;overflow:hidden}
-.benefit-bg-symbol{position:absolute;right:-12px;bottom:-30px;font-size:6rem;font-weight:700;color:rgba(38,154,182,.07);line-height:1;pointer-events:none;z-index:0;font-family:'Raleway',sans-serif}
+.benefit-card-cred{position:relative;overflow:hidden}
+.benefit-bg-symbol{position:absolute;right:-20px;bottom:-50px;font-size:12rem;font-weight:700;color:rgba(38,154,182,.06);line-height:1;pointer-events:none;z-index:0;font-family:'Raleway',sans-serif}
+.benefit-bg-trophy{font-size:5rem;right:-10px;bottom:-15px;opacity:.15}
 .benefit-card-exclusive > *:not(.benefit-bg-symbol){position:relative;z-index:1}
+.benefit-card-cred > *:not(.benefit-bg-symbol){position:relative;z-index:1}
 
 /* Highlight card */
 .benefit-highlight{grid-column:1/-1;background:linear-gradient(135deg,var(--azul-900),var(--azul-800));color:var(--white);border:none;border-radius:var(--radius-lg);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
@@ -559,10 +562,11 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
         <p>Sabemos que você não quer um concorrente usando uma marca similar ou igual. Somente com registro você se protege da concorrência desleal.</p>
         <span class="benefit-bg-symbol">®</span>
       </div>
-      <div class="benefit-card reveal reveal-delay-3">
+      <div class="benefit-card reveal reveal-delay-3 benefit-card-cred">
         <div class="benefit-num">03</div>
         <h3>Credibilidade</h3>
         <p>O registro é reconhecido pelos seus clientes e demonstra o profissionalismo do seu negócio.</p>
+        <span class="benefit-bg-symbol benefit-bg-trophy">🏆</span>
       </div>
       <div class="benefit-card reveal reveal-delay-1">
         <div class="benefit-num">04</div>
