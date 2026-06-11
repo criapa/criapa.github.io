@@ -1124,7 +1124,6 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
     <input type="hidden" name="_subject" value="Nova consulta CRIAPA Hub">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_next" value="https://criapa.github.io/sucesso.html">
     <input type="hidden" name="Marca" id="formMarca">
     <input type="hidden" name="Nome" id="formNome">
     <input type="hidden" name="Email" id="formEmail">
@@ -1392,8 +1391,9 @@ if (!formTarget) {
 consultForm.target = 'formTarget';
 var formSubmitted = false;
 
-// Form submit - copia valores e submita nativamente
+// Form submit via FormSubmit - usa fetch com FormData
 consultForm.addEventListener('submit', function(e) {
+  e.preventDefault();
   formMarca.value = stepMarca.value.trim();
   formNome.value = stepNome.value.trim();
   formEmail.value = stepEmail.value.trim();
@@ -1401,7 +1401,42 @@ consultForm.addEventListener('submit', function(e) {
   formRedeSocial.value = stepRedeSocial.value.trim();
   formServico.value = stepServico.value;
   formMensagem.value = stepMensagem.value.trim();
-  // O form submita nativamente para o FormSubmit (com _next para redirect)
+
+  var submitBtn = document.getElementById('modalSubmit');
+  var originalText = submitBtn.textContent;
+  submitBtn.textContent = 'Enviando...';
+  submitBtn.disabled = true;
+
+  // Monta os dados como URLSearchParams (mais compativel)
+  var data = new URLSearchParams();
+  data.append('Marca', formMarca.value);
+  data.append('Nome', formNome.value);
+  data.append('Email', formEmail.value);
+  data.append('WhatsApp', formWhatsapp.value);
+  data.append('RedeSocial', formRedeSocial.value);
+  data.append('Servico', formServico.value);
+  data.append('Mensagem', formMensagem.value);
+  data.append('_subject', 'Nova consulta CRIAPA Hub');
+  data.append('_captcha', 'false');
+  data.append('_template', 'table');
+
+  fetch('https://formsubmit.co/criapa.contato@gmail.com', {
+    method: 'POST',
+    body: data,
+    mode: 'no-cors'
+  })
+  .then(function() {
+    consultForm.style.display = 'none';
+    formSuccess.style.display = 'block';
+  })
+  .catch(function() {
+    consultForm.style.display = 'none';
+    formSuccess.style.display = 'block';
+  })
+  .finally(function() {
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+  });
 });
 
 document.getElementById('modalDone').addEventListener('click', closeModal);

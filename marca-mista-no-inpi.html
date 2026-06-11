@@ -390,7 +390,6 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
     <input type="hidden" name="_subject" value="Nova consulta CRIAPA Hub">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_next" value="https://criapa.github.io/sucesso.html">
     <input type="hidden" name="Marca" id="formMarca"><input type="hidden" name="Nome" id="formNome"><input type="hidden" name="Email" id="formEmail"><input type="hidden" name="WhatsApp" id="formWhatsapp"><input type="hidden" name="RedeSocial" id="formRedeSocial"><input type="hidden" name="Servico" id="formServico"><input type="hidden" name="Mensagem" id="formMensagem">
     <div class="modal-step active" data-step="1"><h2 class="modal-title">Qual o nome da marca que deseja <strong>consultar?</strong></h2><div class="modal-field"><svg class="modal-icon-search" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg><input type="text" id="stepMarca" placeholder="Qual o nome da marca que deseja consultar?" autocomplete="off" autofocus></div><div class="modal-nav"><div></div><button type="button" class="modal-btn-next" id="modalNext1" disabled>Continuar</button></div></div>
     <div class="modal-step" data-step="2"><h2 class="modal-title">Seus dados para <strong>contato</strong></h2><div class="modal-field"><svg class="modal-field-icon" viewBox="0 0 24 24" fill="rgba(255,255,255,.4)"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><input type="text" id="stepNome" placeholder="Seu nome completo" autocomplete="name"></div><div class="modal-field"><svg class="modal-field-icon" viewBox="0 0 24 24" fill="rgba(255,255,255,.4)"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><input type="email" id="stepEmail" placeholder="Seu melhor e-mail" autocomplete="email"></div><div class="modal-field"><svg class="modal-field-icon" viewBox="0 0 24 24" fill="rgba(255,255,255,.4)"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><input type="tel" id="stepWhatsapp" placeholder="WhatsApp (com DDD)" autocomplete="tel"></div>
@@ -422,6 +421,7 @@ stepMarca.addEventListener('input',()=>{document.getElementById('modalNext1').di
 document.querySelectorAll('a[href="#contato"],.header-cta,.btn-primary,.article-cta a').forEach(btn=>{btn.addEventListener('click',function(e){const t=this.textContent.trim().toUpperCase();if(t.includes('CONSULTAR')||t.includes('REGISTRAR')||t.includes('VIABILIDADE')||t.includes('QUERO')){e.preventDefault();openModal()}})});
 modalClose.addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeModal()});
 consultForm.addEventListener('submit',function(e){
+  e.preventDefault();
   formMarca.value=stepMarca.value.trim();
   formNome.value=stepNome.value.trim();
   formEmail.value=stepEmail.value.trim();
@@ -429,7 +429,25 @@ consultForm.addEventListener('submit',function(e){
   formRedeSocial.value=stepRedeSocial.value.trim();
   formServico.value=stepServico.value;
   formMensagem.value=stepMensagem.value.trim();
-});););
+  var sb=document.getElementById('modalSubmit'),ot=sb.textContent;
+  sb.textContent='Enviando...';
+  sb.disabled=true;
+  var data=new URLSearchParams();
+  data.append('Marca',formMarca.value);
+  data.append('Nome',formNome.value);
+  data.append('Email',formEmail.value);
+  data.append('WhatsApp',formWhatsapp.value);
+  data.append('RedeSocial',formRedeSocial.value);
+  data.append('Servico',formServico.value);
+  data.append('Mensagem',formMensagem.value);
+  data.append('_subject','Nova consulta CRIAPA Hub');
+  data.append('_captcha','false');
+  data.append('_template','table');
+  fetch('https://formsubmit.co/criapa.contato@gmail.com',{method:'POST',body:data,mode:'no-cors'})
+  .then(function(){consultForm.style.display='none';formSuccess.style.display='block';})
+  .catch(function(){consultForm.style.display='none';formSuccess.style.display='block';})
+  .finally(function(){sb.textContent=ot;sb.disabled=false;});
+}););););
 document.getElementById('modalDone').addEventListener('click',closeModal);
 (function(){var k='criapa_cookies_v2',s=null;try{s=localStorage.getItem(k)}catch(e){}if(s==='true'||s==='false')return;var b=document.createElement('div');b.id='cookieBanner';b.innerHTML='<div class="cookie-banner-inner"><div class="cookie-banner-text">🍪 Utilizamos cookies para melhorar a sua experiência. Ao clicar em <strong>Aceitar</strong>, você concorda com o uso de cookies.</div><div class="cookie-banner-btns"><button class="cookie-btn cookie-btn-reject" id="cookieRejeitar">Rejeitar</button><button class="cookie-btn cookie-btn-accept" id="cookieAceitar">Aceitar Tudo</button></div></div>';document.body.appendChild(b);setTimeout(function(){b.classList.add('cookie-show')},600);function h(v){try{localStorage.setItem(k,v)}catch(e){}b.classList.remove('cookie-show');setTimeout(function(){b.parentNode&&b.parentNode.removeChild(b)},400)}document.getElementById('cookieAceitar').addEventListener('click',function(){h('true')});document.getElementById('cookieRejeitar').addEventListener('click',function(){h('false')})})();
 </script>
