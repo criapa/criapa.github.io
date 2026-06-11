@@ -1392,6 +1392,7 @@ consultForm.target = 'formTarget';
 var formSubmitted = false;
 
 consultForm.addEventListener('submit', function(e) {
+  e.preventDefault();
   formMarca.value = stepMarca.value.trim();
   formNome.value = stepNome.value.trim();
   formEmail.value = stepEmail.value.trim();
@@ -1404,28 +1405,37 @@ consultForm.addEventListener('submit', function(e) {
   var originalText = submitBtn.textContent;
   submitBtn.textContent = 'Enviando...';
   submitBtn.disabled = true;
-  formSubmitted = true;
 
-  // Aguarda o iframe carregar (form enviado)
-  formTarget.onload = function() {
-    if (!formSubmitted) return; // Ignora se nao foi o submit real
-    consultForm.style.display = 'none';
-    formSuccess.style.display = 'block';
-    submitBtn.textContent = originalText;
-    submitBtn.disabled = false;
-    formSubmitted = false;
-  };
-
-  // Timeout de seguranca (10s)
-  setTimeout(function() {
-    if (formSubmitted) {
+  // Usa XMLHttpRequest para maior compatibilidade mobile
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', consultForm.action, true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
       consultForm.style.display = 'none';
       formSuccess.style.display = 'block';
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
-      formSubmitted = false;
     }
-  }, 10000);
+  };
+  xhr.onerror = function() {
+    consultForm.style.display = 'none';
+    formSuccess.style.display = 'block';
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+  };
+
+  var params = 'Marca=' + encodeURIComponent(formMarca.value) +
+    '&Nome=' + encodeURIComponent(formNome.value) +
+    '&Email=' + encodeURIComponent(formEmail.value) +
+    '&WhatsApp=' + encodeURIComponent(formWhatsapp.value) +
+    '&RedeSocial=' + encodeURIComponent(formRedeSocial.value) +
+    '&Servico=' + encodeURIComponent(formServico.value) +
+    '&Mensagem=' + encodeURIComponent(formMensagem.value) +
+    '&_subject=Nova consulta CRIAPA Hub' +
+    '&_captcha=false' +
+    '&_template=table';
+  xhr.send(params);
 });
 
 document.getElementById('modalDone').addEventListener('click', closeModal);
