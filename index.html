@@ -1375,7 +1375,6 @@ modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
 
 // Form submit via FormSubmit - usa iframe oculto para compatibilidade mobile
-// Adiciona iframe oculto para receber a resposta do form
 var formTarget = document.getElementById('formTarget');
 if (!formTarget) {
   formTarget = document.createElement('iframe');
@@ -1385,9 +1384,9 @@ if (!formTarget) {
   document.body.appendChild(formTarget);
 }
 consultForm.target = 'formTarget';
+var formSubmitted = false;
 
 consultForm.addEventListener('submit', function(e) {
-  // Nao previne o submit - deixa o form enviar nativamente para o iframe
   formMarca.value = stepMarca.value.trim();
   formNome.value = stepNome.value.trim();
   formEmail.value = stepEmail.value.trim();
@@ -1399,21 +1398,27 @@ consultForm.addEventListener('submit', function(e) {
   var originalText = submitBtn.textContent;
   submitBtn.textContent = 'Enviando...';
   submitBtn.disabled = true;
+  formSubmitted = true;
 
   // Aguarda o iframe carregar (form enviado)
   formTarget.onload = function() {
+    if (!formSubmitted) return; // Ignora se nao foi o submit real
     consultForm.style.display = 'none';
     formSuccess.style.display = 'block';
     submitBtn.textContent = originalText;
     submitBtn.disabled = false;
+    formSubmitted = false;
   };
 
-  // Timeout de seguranca (se o iframe nao carregar em 10s)
+  // Timeout de seguranca (10s)
   setTimeout(function() {
-    consultForm.style.display = 'none';
-    formSuccess.style.display = 'block';
-    submitBtn.textContent = originalText;
-    submitBtn.disabled = false;
+    if (formSubmitted) {
+      consultForm.style.display = 'none';
+      formSuccess.style.display = 'block';
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+      formSubmitted = false;
+    }
   }, 10000);
 });
 
