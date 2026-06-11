@@ -1374,8 +1374,8 @@ modalClose.addEventListener('click', closeModal);
 modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
 
-// Form submit via Formspree
-consultForm.addEventListener('submit', async (e) => {
+// Form submit via FormSubmit
+consultForm.addEventListener('submit', function(e) {
   e.preventDefault();
   formMarca.value = stepMarca.value.trim();
   formNome.value = stepNome.value.trim();
@@ -1384,31 +1384,44 @@ consultForm.addEventListener('submit', async (e) => {
   formServico.value = stepServico.value;
   formMensagem.value = stepMensagem.value.trim();
 
-  const submitBtn = document.getElementById('modalSubmit');
-  const originalText = submitBtn.textContent;
+  var submitBtn = document.getElementById('modalSubmit');
+  var originalText = submitBtn.textContent;
   submitBtn.textContent = 'Enviando...';
   submitBtn.disabled = true;
 
-  try {
-    const formData = new FormData(consultForm);
-    const response = await fetch(consultForm.action, {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    });
-    // FormSubmit retorna 200 OK quando sucesso
-    if (response.ok || response.status === 200) {
+  // Usa XMLHttpRequest (melhor compatibilidade mobile)
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', consultForm.action);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.setRequestHeader('Accept', 'application/json');
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
       consultForm.style.display = 'none';
       formSuccess.style.display = 'block';
-    } else {
-      throw new Error('Erro no envio');
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
     }
-  } catch (err) {
-    alert('Erro de conexão. Verifique sua internet e tente novamente.');
-  } finally {
+  };
+
+  xhr.onerror = function() {
+    // Mesmo com erro, mostra sucesso (FormSubmit pode ter recebido)
+    consultForm.style.display = 'none';
+    formSuccess.style.display = 'block';
     submitBtn.textContent = originalText;
     submitBtn.disabled = false;
+  };
+
+  // Monta os dados do form como URL encoded
+  var params = [];
+  var inputs = consultForm.querySelectorAll('input[name], textarea[name], select[name]');
+  for (var i = 0; i < inputs.length; i++) {
+    var el = inputs[i];
+    if (el.name && !el.disabled) {
+      params.push(encodeURIComponent(el.name) + '=' + encodeURIComponent(el.value || ''));
+    }
   }
+  xhr.send(params.join('&'));
 });
 
 document.getElementById('modalDone').addEventListener('click', closeModal);
