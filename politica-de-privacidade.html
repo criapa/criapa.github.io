@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidade | CRIAPA Hub</title>
+<meta name="description" content="Política de Privacidade da CRIAPA Hub: como coletamos, usamos e protegemos seus dados pessoais, em conformidade com a LGPD (Lei nº 13.709/2018).">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://criapa.github.io/politica-de-privacidade.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --azul-900: #0A1B3A;
+  --azul-800: #0F2847;
+  --azul-700: #143A6B;
+  --azul-600: #1E50A0;
+  --azul-500: #269AB6;
+  --teal-500: #269AB6;
+  --teal-400: #38B6CE;
+  --verde-500: #00C48C;
+  --verde-600: #00A070;
+  --ouro-500: #D4A843;
+  --gold: #D4A843;
+  --white: #FFFFFF;
+  --gray-50: #F8FAFC;
+  --gray-100: #F1F5F9;
+  --gray-200: #E2E8F0;
+  --gray-300: #CBD5E1;
+  --gray-400: #94A3B8;
+  --gray-500: #64748B;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1E293B;
+  --gray-900: #0F172A;
+  --heading: #1C3622;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,.08);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --transition: .3s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--gray-700);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+h1,h2,h3,h4{font-family:'Raleway',sans-serif;font-weight:700;line-height:1.2}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 32px;border-radius:var(--radius-full);font-size:.875rem;font-weight:700;transition:var(--transition);white-space:nowrap;text-transform:uppercase;letter-spacing:.5px}
+.btn-primary{background:linear-gradient(135deg,var(--verde-500),var(--teal-500));color:var(--white);box-shadow:var(--shadow-md)}
+.btn-primary:hover{transform:translateY(-2px)}
+
+/* Header (versao solida, como o header "scrolled" da home) */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;padding:10px 0;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--gray-200)}
+.header .container{display:flex;align-items:center;justify-content:space-between}
+.header-logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:800;color:var(--heading)}
+.header-logo .logo-img,.header-logo img{width:36px;height:36px;border-radius:8px}
+.header-nav{display:flex;align-items:center;gap:28px}
+.header-nav a{font-size:.875rem;font-weight:500;color:var(--gray-600);transition:var(--transition)}
+.header-nav a:hover{color:var(--heading)}
+.header-cta{padding:10px 24px;font-size:.8rem}
+@media (max-width:760px){.header-nav a:not(.header-cta){display:none}}
+
+/* Faixa de titulo no padrao azul do site */
+.page-hero{background:linear-gradient(135deg,var(--azul-900),var(--azul-800) 60%,var(--azul-700));color:var(--white);padding:140px 0 60px;text-align:center}
+.page-hero .kicker{display:block;font-size:.8rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--ouro-500);margin-bottom:10px}
+.page-hero h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800}
+.page-hero p{color:rgba(255,255,255,.7);margin-top:12px;font-size:.95rem}
+
+/* Conteudo */
+.policy{padding:56px 0 72px}
+.policy .container{max-width:840px}
+.policy section{margin-bottom:36px}
+.policy h2{font-size:1.25rem;color:var(--azul-900);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--gray-100)}
+.policy h2 span{color:var(--teal-500);margin-right:8px}
+.policy p{margin-bottom:12px}
+.policy ul{list-style:disc;padding-left:22px;margin-bottom:12px}
+.policy ul li{margin-bottom:6px}
+.policy strong{color:var(--gray-800)}
+.policy .nota{background:var(--gray-50);border-left:4px solid var(--teal-500);border-radius:var(--radius);padding:16px 20px;font-size:.9rem;color:var(--gray-600)}
+.policy .atualizacao{font-size:.85rem;color:var(--gray-500)}
+.policy .cta-box{background:linear-gradient(135deg,var(--azul-900),var(--azul-800));color:var(--white);border-radius:var(--radius-lg);padding:32px;text-align:center;margin-top:40px}
+.policy .cta-box h3{font-size:1.2rem;margin-bottom:8px}
+.policy .cta-box p{color:rgba(255,255,255,.75);margin-bottom:18px}
+
+/* Footer (igual ao da home) */
+.footer{background:var(--azul-900);color:rgba(255,255,255,.7);padding:56px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr 1fr}}
+.footer-logo{font-family:'Raleway',sans-serif;font-size:1.3rem;font-weight:800;color:var(--white)}
+.footer-logo span{color:var(--teal-500)}
+.footer-brand p{font-size:.875rem;margin-top:12px;max-width:280px}
+.footer h4{color:var(--white);font-size:.95rem;margin-bottom:14px}
+.footer ul li{margin-bottom:9px}
+.footer ul a{font-size:.875rem;transition:var(--transition)}
+.footer ul a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.8rem;color:rgba(255,255,255,.5)}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <a href="index.html#hero" class="header-logo">
+      <img src="criapa.png" alt="CRIAPA" class="logo-img">
+      CRIAPA<span style="color:var(--teal-500)">Hub</span>
+    </a>
+    <nav class="header-nav">
+      <a href="index.html#beneficios">Benefícios</a>
+      <a href="index.html#como-funciona">Como Funciona</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contato" class="btn btn-primary header-cta">Quero Consultar</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="kicker">Lei nº 13.709/2018 — LGPD</span>
+    <h1>Política de Privacidade</h1>
+    <p>Como coletamos, usamos e protegemos seus dados pessoais</p>
+  </div>
+</div>
+
+<main class="policy">
+  <div class="container">
+
+    <p class="atualizacao">Última atualização: 11 de junho de 2026</p>
+    <br>
+    <p>A <strong>CRIAPA Hub</strong> respeita a sua privacidade e está comprometida
+    com a proteção dos seus dados pessoais, em conformidade com a
+    <strong>Lei nº 13.709/2018 (Lei Geral de Proteção de Dados — LGPD)</strong>.
+    Esta política explica como coletamos, usamos e protegemos suas informações,
+    tanto neste site quanto na prestação dos nossos serviços de assessoria em
+    propriedade industrial.</p>
+
+    <section>
+      <h2><span>1.</span>Quem somos</h2>
+      <p>A CRIAPA Hub é um escritório de assessoria em propriedade industrial que
+      atua junto ao INPI, com base em Recife/PE, responsável pelo tratamento dos
+      dados pessoais coletados neste site e na prestação dos seus serviços.</p>
+      <p>Contato do responsável pelo tratamento de dados:
+      <a href="mailto:criapa.contato@gmail.com" style="color:var(--teal-500);font-weight:600">criapa.contato@gmail.com</a></p>
+    </section>
+
+    <section>
+      <h2><span>2.</span>Quais dados coletamos</h2>
+      <ul>
+        <li><strong>Formulário de consulta deste site:</strong> nome, e-mail,
+        WhatsApp, nome da marca e serviço de interesse — somente o que você
+        informa voluntariamente.</li>
+        <li><strong>Dados de identificação</strong> (clientes): nome, CPF ou CNPJ,
+        razão social.</li>
+        <li><strong>Dados de contato</strong> (clientes): e-mail, telefone, endereço.</li>
+        <li><strong>Dados da marca:</strong> nome, logotipo, ramo de atividade,
+        classes de interesse.</li>
+        <li><strong>Documentos:</strong> contrato social (pessoa jurídica) ou
+        documento de identificação (pessoa física).</li>
+      </ul>
+      <p class="nota">Coletamos apenas o necessário para responder à sua consulta e
+      registrar e proteger sua marca (princípio da minimização de dados).
+      Este site não utiliza cookies de rastreamento nem ferramentas de
+      publicidade. Caso ferramentas de análise de audiência venham a ser
+      adotadas, esta política será atualizada e o seu consentimento será
+      solicitado previamente.</p>
+    </section>
+
+    <section>
+      <h2><span>3.</span>Para que usamos seus dados</h2>
+      <ul>
+        <li>Responder à sua consulta de viabilidade e apresentar nossa proposta.</li>
+        <li>Prestar os serviços de assessoria e protocolar seu pedido no INPI.</li>
+        <li>Comunicar o andamento do processo e enviar relatórios.</li>
+        <li>Cumprir obrigações legais e fiscais.</li>
+        <li>Enviar conteúdos e novidades — somente mediante seu consentimento,
+        com opção de descadastro a qualquer momento.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span>4.</span>Base legal</h2>
+      <p>O tratamento dos seus dados se fundamenta na <strong>execução de contrato
+      ou de procedimentos preliminares</strong> (art. 7º, V), no <strong>cumprimento de
+      obrigação legal</strong> (art. 7º, II) e, para comunicações de marketing, no seu
+      <strong>consentimento</strong> (art. 7º, I), nos termos da LGPD.</p>
+    </section>
+
+    <section>
+      <h2><span>5.</span>Com quem compartilhamos</h2>
+      <p>Compartilhamos seus dados apenas com o <strong>INPI</strong> (órgão necessário ao
+      registro da sua marca) e com prestadores essenciais à operação — como o
+      serviço de recebimento do formulário deste site e a plataforma de
+      assinatura eletrônica — sob obrigação de confidencialidade.
+      <strong>Não vendemos seus dados a terceiros.</strong></p>
+    </section>
+
+    <section>
+      <h2><span>6.</span>Como protegemos</h2>
+      <p>Adotamos medidas técnicas e organizacionais para proteger seus dados
+      contra acesso não autorizado, perda ou vazamento, incluindo:</p>
+      <ul>
+        <li>Criptografia individual por cliente (AES-256) dos documentos do seu processo;</li>
+        <li>Autenticação em dois fatores nas contas de trabalho;</li>
+        <li>Backup seguro e controle de acesso;</li>
+        <li>Conexão segura (HTTPS) neste site.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span>7.</span>Por quanto tempo guardamos</h2>
+      <p>Mantemos seus dados pelo tempo necessário à prestação do serviço — um
+      processo de registro de marca leva, em média, de 8 a 14 meses — e pelos
+      prazos legais aplicáveis. Após esse período, os dados são descartados com
+      segurança.</p>
+    </section>
+
+    <section>
+      <h2><span>8.</span>Seus direitos</h2>
+      <p>Você pode solicitar, a qualquer momento: <strong>acesso</strong> aos seus dados,
+      <strong>correção</strong>, <strong>exclusão</strong>, <strong>portabilidade</strong>, informações sobre o
+      tratamento, ou <strong>revogar o consentimento</strong> para comunicações. Basta
+      escrever para
+      <a href="mailto:criapa.contato@gmail.com" style="color:var(--teal-500);font-weight:600">criapa.contato@gmail.com</a>.
+      Responderemos no prazo legal.</p>
+      <p class="nota">Quem pede para não receber mais contato entra em uma
+      <strong>lista de supressão permanente</strong>: o pedido vale para sempre, mesmo que
+      seus dados constem de fontes públicas.</p>
+    </section>
+
+    <section>
+      <h2><span>9.</span>Alterações</h2>
+      <p>Esta política pode ser atualizada. A versão vigente estará sempre
+      disponível nesta página, com a data da última atualização indicada no
+      topo.</p>
+    </section>
+
+    <div class="cta-box">
+      <h3>Pronto para proteger sua marca?</h3>
+      <p>Consulta gratuita de viabilidade, sem compromisso.</p>
+      <a href="index.html#contato" class="btn btn-primary">Quero Consultar</a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html#hero" class="footer-logo">CRIAPA<span>Hub</span></a>
+        <p>Propriedade intelectual com tecnologia e estratégia. Protegendo marcas e inovação no Brasil.</p>
+      </div>
+      <div>
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="index.html#beneficios">Busca de Anterioridade</a></li>
+          <li><a href="index.html#beneficios">Registro de Marca</a></li>
+          <li><a href="index.html#beneficios">Monitoramento</a></li>
+          <li><a href="index.html#beneficios">Consultoria PI</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="index.html#como-funciona">Como Funciona</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="marca-mista-no-inpi.html">Blog</a></li>
+          <li><a href="politica-de-privacidade.html">Política de Privacidade</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:criapa.contato@gmail.com">criapa.contato@gmail.com</a></li>
+          <li><a href="#">Recife, PE - Brasil</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 CRIAPA Hub. Todos os direitos reservados.</span>
+      <span>Protegendo Futuros.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
