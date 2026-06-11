@@ -1124,6 +1124,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
     <input type="hidden" name="_subject" value="Nova consulta CRIAPA Hub">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://criapa.github.io/sucesso.html">
     <input type="hidden" name="Marca" id="formMarca">
     <input type="hidden" name="Nome" id="formNome">
     <input type="hidden" name="Email" id="formEmail">
@@ -1391,8 +1392,8 @@ if (!formTarget) {
 consultForm.target = 'formTarget';
 var formSubmitted = false;
 
+// Form submit - copia valores e submita nativamente
 consultForm.addEventListener('submit', function(e) {
-  e.preventDefault();
   formMarca.value = stepMarca.value.trim();
   formNome.value = stepNome.value.trim();
   formEmail.value = stepEmail.value.trim();
@@ -1400,42 +1401,7 @@ consultForm.addEventListener('submit', function(e) {
   formRedeSocial.value = stepRedeSocial.value.trim();
   formServico.value = stepServico.value;
   formMensagem.value = stepMensagem.value.trim();
-
-  var submitBtn = document.getElementById('modalSubmit');
-  var originalText = submitBtn.textContent;
-  submitBtn.textContent = 'Enviando...';
-  submitBtn.disabled = true;
-
-  // Usa XMLHttpRequest para maior compatibilidade mobile
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', consultForm.action, true);
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4) {
-      consultForm.style.display = 'none';
-      formSuccess.style.display = 'block';
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-    }
-  };
-  xhr.onerror = function() {
-    consultForm.style.display = 'none';
-    formSuccess.style.display = 'block';
-    submitBtn.textContent = originalText;
-    submitBtn.disabled = false;
-  };
-
-  var params = 'Marca=' + encodeURIComponent(formMarca.value) +
-    '&Nome=' + encodeURIComponent(formNome.value) +
-    '&Email=' + encodeURIComponent(formEmail.value) +
-    '&WhatsApp=' + encodeURIComponent(formWhatsapp.value) +
-    '&RedeSocial=' + encodeURIComponent(formRedeSocial.value) +
-    '&Servico=' + encodeURIComponent(formServico.value) +
-    '&Mensagem=' + encodeURIComponent(formMensagem.value) +
-    '&_subject=Nova consulta CRIAPA Hub' +
-    '&_captcha=false' +
-    '&_template=table';
-  xhr.send(params);
+  // O form submita nativamente para o FormSubmit (com _next para redirect)
 });
 
 document.getElementById('modalDone').addEventListener('click', closeModal);
