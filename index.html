@@ -1374,9 +1374,20 @@ modalClose.addEventListener('click', closeModal);
 modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
 
-// Form submit via FormSubmit
+// Form submit via FormSubmit - usa iframe oculto para compatibilidade mobile
+// Adiciona iframe oculto para receber a resposta do form
+var formTarget = document.getElementById('formTarget');
+if (!formTarget) {
+  formTarget = document.createElement('iframe');
+  formTarget.id = 'formTarget';
+  formTarget.name = 'formTarget';
+  formTarget.style.display = 'none';
+  document.body.appendChild(formTarget);
+}
+consultForm.target = 'formTarget';
+
 consultForm.addEventListener('submit', function(e) {
-  e.preventDefault();
+  // Nao previne o submit - deixa o form enviar nativamente para o iframe
   formMarca.value = stepMarca.value.trim();
   formNome.value = stepNome.value.trim();
   formEmail.value = stepEmail.value.trim();
@@ -1389,39 +1400,21 @@ consultForm.addEventListener('submit', function(e) {
   submitBtn.textContent = 'Enviando...';
   submitBtn.disabled = true;
 
-  // Usa XMLHttpRequest (melhor compatibilidade mobile)
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', consultForm.action);
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  xhr.setRequestHeader('Accept', 'application/json');
-
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4) {
-      consultForm.style.display = 'none';
-      formSuccess.style.display = 'block';
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-    }
-  };
-
-  xhr.onerror = function() {
-    // Mesmo com erro, mostra sucesso (FormSubmit pode ter recebido)
+  // Aguarda o iframe carregar (form enviado)
+  formTarget.onload = function() {
     consultForm.style.display = 'none';
     formSuccess.style.display = 'block';
     submitBtn.textContent = originalText;
     submitBtn.disabled = false;
   };
 
-  // Monta os dados do form como URL encoded
-  var params = [];
-  var inputs = consultForm.querySelectorAll('input[name], textarea[name], select[name]');
-  for (var i = 0; i < inputs.length; i++) {
-    var el = inputs[i];
-    if (el.name && !el.disabled) {
-      params.push(encodeURIComponent(el.name) + '=' + encodeURIComponent(el.value || ''));
-    }
-  }
-  xhr.send(params.join('&'));
+  // Timeout de seguranca (se o iframe nao carregar em 10s)
+  setTimeout(function() {
+    consultForm.style.display = 'none';
+    formSuccess.style.display = 'block';
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+  }, 10000);
 });
 
 document.getElementById('modalDone').addEventListener('click', closeModal);
