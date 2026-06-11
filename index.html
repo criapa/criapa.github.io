@@ -93,6 +93,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .header-logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:800;color:var(--white);transition:var(--transition)}
 .header.scrolled .header-logo{color:var(--heading)}
 .header-logo .logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--teal-500),var(--verde-500));border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85rem;color:var(--white)}
+.header-logo .logo-img{width:36px;height:36px;border-radius:8px;object-fit:cover}
 .header-nav{display:flex;align-items:center;gap:28px}
 .header-nav a{font-size:.875rem;font-weight:500;color:rgba(255,255,255,.8);transition:var(--transition)}
 .header.scrolled .header-nav a{color:var(--gray-600)}
@@ -458,7 +459,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 <header class="header" id="header">
   <div class="container">
     <a href="#hero" class="header-logo">
-      <div class="logo-mark">CR</div>
+      <img src="criapa.png" alt="CRIAPA" class="logo-img">
       CRIAPA<span style="color:var(--teal-500)">Hub</span>
     </a>
     <nav class="header-nav">
