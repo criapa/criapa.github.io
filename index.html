@@ -1120,7 +1120,10 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
       <div class="modal-progress-dot" data-step="3"></div>
     </div>
 
-    <form id="consultForm" action="https://formspree.io/f/xkoazwoq" method="POST" accept-charset="UTF-8">
+    <form id="consultForm" action="https://formsubmit.co/criapa.contato@gmail.com" method="POST" accept-charset="UTF-8">
+    <input type="hidden" name="_subject" value="Nova consulta CRIAPA Hub">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
     <input type="hidden" name="Marca" id="formMarca">
     <input type="hidden" name="Nome" id="formNome">
     <input type="hidden" name="Email" id="formEmail">
@@ -1391,12 +1394,15 @@ consultForm.addEventListener('submit', async (e) => {
     const response = await fetch(consultForm.action, {
       method: 'POST',
       body: formData,
-      mode: 'no-cors',
       headers: { 'Accept': 'application/json' }
     });
-    // no-cors sempre retorna response.ok = true
-    consultForm.style.display = 'none';
-    formSuccess.style.display = 'block';
+    // FormSubmit retorna 200 OK quando sucesso
+    if (response.ok || response.status === 200) {
+      consultForm.style.display = 'none';
+      formSuccess.style.display = 'block';
+    } else {
+      throw new Error('Erro no envio');
+    }
   } catch (err) {
     alert('Erro de conexão. Verifique sua internet e tente novamente.');
   } finally {
