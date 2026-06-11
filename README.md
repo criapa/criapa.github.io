@@ -79,18 +79,6 @@ Nossa busca de anterioridade com tecnologia avançada minimiza riscos desde o in
 
 ---
 
-## Números
-
-| Indicador | Valor |
-|---|---|
-| Marcas registradas | **+3.700** |
-| Avaliações 5 estrelas | **+250** no Google |
-| Taxa de sucesso | **95%+** |
-| Validade do registro | **10 anos** |
-| Território | **Todo o Brasil** |
-
----
-
 ## Blog
 
 Conteúdo gratuito sobre propriedade intelectual para manter você bem informado:
