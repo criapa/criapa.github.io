@@ -33,22 +33,21 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
 .btn-primary{background:var(--teal-500);color:var(--white);box-shadow:0 4px 16px rgba(38,154,182,.3)}
 .btn-primary:hover{background:var(--teal-400);transform:translateY(-1px);box-shadow:0 6px 24px rgba(38,154,182,.4)}
 .btn-lg{padding:16px 40px;font-size:.95rem}
-.header{position:fixed;top:0;left:0;right:0;z-index:100;padding:10px 0;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--gray-200);transition:var(--transition)}
+.header{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;transition:var(--transition)}
+.header.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--gray-200);padding:10px 0}
 .header .container{display:flex;align-items:center;justify-content:space-between}
-.header-logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:800;color:var(--heading)}
+.header-logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:800;color:var(--white);transition:var(--transition)}
+.header.scrolled .header-logo{color:var(--heading)}
 .header-logo .logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--teal-500),var(--verde-500));border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85rem;color:var(--white)}
 .header-logo .logo-img{width:36px;height:36px;border-radius:8px;object-fit:cover}
 .header-nav{display:flex;align-items:center;gap:28px}
-.header-nav a{font-size:.875rem;font-weight:500;color:var(--gray-600);transition:var(--transition)}
-.header-nav a:hover{color:var(--heading)}
+.header-nav a{font-size:.875rem;font-weight:500;color:rgba(255,255,255,.8);transition:var(--transition)}
+.header.scrolled .header-nav a{color:var(--gray-600)}
+.header-nav a:hover{color:var(--white)}
+.header.scrolled .header-nav a:hover{color:var(--heading)}
 .header-cta{padding:10px 24px;font-size:.8rem}
 .header-toggle{display:none;flex-direction:column;gap:5px;padding:4px;background:none;border:none;cursor:pointer}
-.header-toggle span{width:22px;height:2px;background:var(--azul-900);border-radius:2px;transition:var(--transition)}
-
-.header.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--gray-200);padding:10px 0}
-.header.scrolled .header-logo{color:var(--heading)}
-.header.scrolled .header-nav a{color:var(--gray-600)}
-.header.scrolled .header-nav a:hover{color:var(--heading)}
+.header-toggle span{width:22px;height:2px;background:var(--white);border-radius:2px;transition:var(--transition)}
 .header.scrolled .header-toggle span{background:var(--azul-900)}
 @media(max-width:768px){.header-nav{display:none}.header-cta{display:none}.header-toggle{display:flex}}
 .mobile-menu{position:fixed;top:0;right:-100%;width:300px;height:100vh;background:var(--white);z-index:200;padding:80px 32px 32px;transition:var(--transition);box-shadow:var(--shadow-xl)}
