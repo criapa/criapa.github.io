@@ -1493,10 +1493,13 @@ document.getElementById('modalDone').addEventListener('click', closeModal);
 // Stats card - gold glow on click
 document.querySelectorAll('.stat').forEach(card => {
   card.addEventListener('click', function() {
-    // Remove clicked class from all siblings
+    const isAlreadyClicked = this.classList.contains('clicked');
+    // Remove clicked class from all stats
     document.querySelectorAll('.stat').forEach(s => s.classList.remove('clicked'));
-    // Toggle clicked on this card
-    this.classList.toggle('clicked');
+    // If it wasn't clicked before, activate it; if it was, it stays off (toggle)
+    if (!isAlreadyClicked) {
+      this.classList.add('clicked');
+    }
   });
 });
 
