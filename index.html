@@ -172,7 +172,11 @@ h1,h2,h3,h4,h5,h6{font-family:'Raleway',sans-serif;font-weight:700;line-height:1
    ============================================================ */
 .stats-bar{background:var(--azul-900);padding:32px 0;border-top:1px solid rgba(255,255,255,.04)}
 .stats-bar .container{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
-.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px 24px;text-align:center;min-width:160px;flex:1}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px 24px;text-align:center;min-width:160px;flex:1;cursor:pointer;transition:all .3s ease;position:relative;overflow:hidden}
+.stat:hover{border-color:rgba(212,168,67,.5);box-shadow:0 0 20px rgba(212,168,67,.15)}
+.stat::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(212,168,67,0) 0%,rgba(212,168,67,.15) 50%,rgba(212,168,67,0) 100%);opacity:0;transition:opacity .3s ease}
+.stat:hover::before,.stat.clicked::before{opacity:1}
+.stat.clicked{box-shadow:0 0 30px rgba(212,168,67,.4),inset 0 1px 0 rgba(255,255,255,.1);border-color:var(--ouro-500);background:rgba(212,168,67,.08)}
 .stat-num{font-size:1.5rem;font-weight:800;color:var(--teal-400)}
 .stat-label{font-size:.75rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px;margin-top:6px;font-weight:500}
 @media(max-width:768px){
@@ -1485,6 +1489,16 @@ document.getElementById('modalDone').addEventListener('click', closeModal);
   document.getElementById('cookieAceitar').addEventListener('click', function(){ hideBanner('true'); });
   document.getElementById('cookieRejeitar').addEventListener('click', function(){ hideBanner('false'); });
 })();
+
+// Stats card - gold glow on click
+document.querySelectorAll('.stat').forEach(card => {
+  card.addEventListener('click', function() {
+    // Remove clicked class from all siblings
+    document.querySelectorAll('.stat').forEach(s => s.classList.remove('clicked'));
+    // Toggle clicked on this card
+    this.classList.toggle('clicked');
+  });
+});
 
 </script>
 </body>
