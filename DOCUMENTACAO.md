@@ -10,7 +10,48 @@
 
 ---
 
-## 1. Estrutura de Arquivos
+## 0. GBrain — Sistema de Conhecimento
+
+### Instalacao
+- **Local:** `C:\Users\Pichau\gbrain`
+- **Banco:** `C:\Users\Pichau\.gbrain\brain.pglite`
+- **Runtime:** Bun 1.3.14
+- **Embeddings:** Ollama `nomic-embed-text-v2-moe:latest` (768 dimensoes)
+- **LLM:** Ollama `qwen3.5:9b` (local)
+
+### Dados Importados
+| Fonte | Arquivos | Chunks |
+|-------|----------|--------|
+| CRIAPA Hub (notas) | 27 | 84 |
+| Revisao Sistematica PHD | 254 | 629 |
+| Site (workspace + repo) | 30 | 666 |
+| **Total** | **311** | **1379** |
+
+### Comandos Uteis
+```bash
+cd C:\Users\Pichau\gbrain
+bun run src/cli.ts query "pergunta"    # Busca hibrida (texto + embeddings)
+bun run src/cli.ts search "pergunta"   # Busca por texto
+bun run src/cli.ts capture "nota"      # Capturar pensamento
+bun run src/cli.ts import C:\pasta     # Importar arquivos
+bun run src/cli.ts list                # Listar paginas
+```
+
+### Preferencias do Usuario
+- Ao movimentar arquivos, usar 4 threads para velocidade nas transferencias.
+
+### MCP Server no Hermes
+O GBrain esta configurado como MCP server no Hermes:
+```yaml
+mcp_servers:
+  gbrain:
+    command: bun
+    args: ["run", "src/cli.ts", "serve"]
+    env:
+      BRAIN_PATH: "C:\\Users\\Pichau\\.gbrain\\brain.pglite"
+```
+
+---
 
 ### 1.1 Paginas principais (CRIAPA Hub)
 
