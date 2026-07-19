@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CRIAPA Hub — 3 variações da home (mockups p/ aprovação)</title>
+<style>
+  /* Tokens REAIS do tema Neural (LayoutSeloApp.astro) — fidelidade de produto */
+  :root{
+    --bg:#0a0418; --card:#14082a; --card-accent:#1e0a3c; --field:#0f0524;
+    --border:rgba(168,85,247,.15); --accent:#00f0ff; --accent2:#ff3d9a;
+    --orange:#ff8c00; --muted:#9d8ec4; --dim:#6b5b8a; --heading:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#060213;color:var(--muted);font-family:Inter,system-ui,sans-serif;padding:28px 18px 60px}
+  .head{max-width:1280px;margin:0 auto 26px}
+  .head h1{font-family:'Space Grotesk',Inter,sans-serif;color:var(--heading);font-size:1.5rem;letter-spacing:.5px}
+  .head h1 em{color:var(--accent);font-style:normal}
+  .head p{font-size:.85rem;margin-top:6px;max-width:820px;line-height:1.6}
+  .lane{display:flex;gap:26px;flex-wrap:wrap;justify-content:center;max-width:1280px;margin:0 auto}
+  .col{width:392px;max-width:100%}
+  .tag{display:flex;align-items:baseline;gap:8px;margin-bottom:10px}
+  .tag b{font-family:'Space Grotesk',Inter,sans-serif;color:var(--heading);font-size:1.02rem}
+  .tag span{font-size:.72rem;color:var(--dim);text-transform:uppercase;letter-spacing:1px}
+  .phone{background:var(--bg);border:1px solid rgba(168,85,247,.35);border-radius:34px;padding:14px 12px;box-shadow:0 18px 60px rgba(0,0,0,.55), inset 0 0 40px rgba(168,85,247,.05)}
+  .screen{height:680px;overflow-y:auto;border-radius:22px;scrollbar-width:thin;scrollbar-color:var(--card-accent) transparent;padding:2px 4px 18px}
+  .why{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin-top:12px;font-size:.78rem;line-height:1.6}
+  .why b{color:var(--heading)}
+  .why .s{color:var(--accent)}
+  /* ── átomos compartilhados (linguagem atual do app) ── */
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin-bottom:10px}
+  .hd{display:flex;align-items:center;gap:8px;padding:6px 2px 12px}
+  .hd .logo{font-family:'Space Grotesk',Inter,sans-serif;font-weight:700;color:var(--heading);font-size:1.05rem}
+  .hd .logo i{color:var(--accent);font-style:normal}
+  .hd .hub{color:var(--orange);font-family:'Space Grotesk',Inter,sans-serif;font-weight:700;text-shadow:0 0 12px rgba(255,140,0,.5)}
+  .num{font-family:'Space Grotesk',Inter,sans-serif;font-weight:700;color:var(--heading)}
+  .cta{display:block;text-align:center;background:linear-gradient(135deg,rgba(0,240,255,.16),rgba(0,240,255,.05));border:1px solid rgba(0,240,255,.4);color:var(--accent);border-radius:14px;padding:14px;font-weight:700;font-size:.95rem;text-shadow:0 0 10px rgba(0,240,255,.4)}
+  .chiprow{display:flex;gap:8px;margin-bottom:12px}
+  .chip{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;background:var(--field);border:1px solid var(--border);border-radius:12px;padding:8px 6px;font-size:.66rem;color:var(--dim)}
+  .chip b{font-family:'Space Grotesk',Inter,sans-serif;font-size:.86rem;color:var(--heading)}
+  .chip.on b{color:var(--accent)}
+  .rowmini{display:flex;justify-content:space-between;align-items:center;padding:9px 2px;border-top:1px solid var(--border);font-size:.8rem}
+  .rowmini:first-child{border-top:none}
+  .rowmini b{color:var(--heading);font-weight:600}
+  .rowmini span{color:var(--dim);font-size:.74rem}
+  .sec{font-size:.66rem;color:var(--dim);text-transform:uppercase;letter-spacing:1.4px;margin:16px 2px 8px}
+  .alert{border-color:rgba(255,140,0,.45);background:linear-gradient(135deg,rgba(255,140,0,.08),transparent)}
+  .alert .t{color:var(--orange);font-weight:700;font-size:.8rem}
+  /* ── V2 bento ── */
+  .bento{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .tile{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px;display:flex;flex-direction:column;justify-content:space-between;min-height:104px}
+  .tile.big{grid-column:1/3;background:linear-gradient(135deg,#14082a,#1e0a3c);border-color:rgba(0,240,255,.35);min-height:128px}
+  .tile .ic{font-size:1.25rem}
+  .tile .lb{font-size:.72rem;color:var(--muted);margin-top:4px}
+  .tile .vl{font-family:'Space Grotesk',Inter,sans-serif;font-weight:700;font-size:1.35rem;color:var(--heading);line-height:1.1}
+  .tile .vl.gigante{font-size:2.1rem;color:var(--accent);text-shadow:0 0 18px rgba(0,240,255,.35)}
+  .tile .sub{font-size:.64rem;color:var(--dim);margin-top:2px}
+  .badge{align-self:flex-start;background:rgba(255,140,0,.14);border:1px solid rgba(255,140,0,.4);color:var(--orange);font-size:.62rem;font-weight:700;border-radius:20px;padding:2px 8px}
+  .badge.ok{background:rgba(0,240,255,.1);border-color:rgba(0,240,255,.35);color:var(--accent)}
+  /* ── V3 onboarding ── */
+  .slide{background:linear-gradient(160deg,#1e0a3c,#14082a);border:1px solid rgba(0,240,255,.3);border-radius:18px;padding:26px 20px 18px;text-align:center;margin-bottom:10px}
+  .slide .art{font-size:2.6rem;filter:drop-shadow(0 0 16px rgba(0,240,255,.45))}
+  .slide h3{font-family:'Space Grotesk',Inter,sans-serif;color:var(--heading);font-size:1.05rem;margin-top:10px}
+  .slide p{font-size:.8rem;margin-top:6px;line-height:1.55}
+  .dots{display:flex;gap:6px;justify-content:center;margin-top:14px}
+  .dots i{width:7px;height:7px;border-radius:50%;background:var(--dim);opacity:.4}
+  .dots i.on{background:var(--accent);opacity:1;box-shadow:0 0 8px rgba(0,240,255,.6)}
+  .skip{display:block;text-align:center;color:var(--dim);font-size:.72rem;margin:2px 0 14px}
+  .check{display:flex;align-items:center;gap:10px;padding:10px 2px;border-top:1px solid var(--border);font-size:.82rem}
+  .check:first-child{border-top:none}
+  .check .box{width:20px;height:20px;border-radius:7px;border:1px solid var(--border);display:grid;place-items:center;font-size:.7rem;flex-shrink:0}
+  .check.done .box{background:rgba(0,240,255,.15);border-color:var(--accent);color:var(--accent)}
+  .check.done span{color:var(--dim);text-decoration:line-through}
+  .check b{color:var(--accent);font-size:.72rem;margin-left:auto;font-weight:700}
+  .bar{height:5px;background:var(--field);border-radius:3px;margin:8px 0 2px;overflow:hidden}
+  .bar i{display:block;height:100%;width:33%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:3px}
+  @media(max-width:1280px){.lane{gap:20px}}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="head">
+  <h1>CRIAPA <em>Hub</em> — 3 variações da home <span style="color:var(--dim);font-size:.9rem;font-weight:400">· mockups para aprovação (2026-07-19)</span></h1>
+  <p>Mesmos dados reais nas três (🪙 47 · fila INPI 24d · 1 alerta de colidência · 30,7% sem procurador). O que muda é a <b style="color:var(--heading)">arquitetura da atenção</b>. Copy ponytail: ícone + ≤4 palavras. Estruturas: V1 do design-system <i>application</i> (top-bar + painéis), V2 do <i>bento</i> (grade modular), V3 = estado de primeiro acesso.</p>
+</div>
+
+<div class="lane">
+
+  <!-- ════════ V1 — JORNADA (application) ════════ -->
+  <div class="col">
+    <div class="tag"><b>V1 · Jornada</b><span>3 zonas · recorrente</span></div>
+    <div class="phone"><div class="screen">
+      <div class="hd"><span class="logo">CRI<i>APA</i></span><span class="hub">Hub</span>
+        <span style="margin-left:auto;font-size:.68rem;color:var(--dim)">🛡️</span></div>
+
+      <!-- ZONA STATUS: a assinatura da V1 — uma linha viva, sem cards -->
+      <div class="chiprow">
+        <div class="chip on"><b>🪙 47</b>créditos</div>
+        <div class="chip on"><b>🔐 ativa</b>biometria</div>
+        <div class="chip"><b>🛡️ ok</b>último acesso</div>
+      </div>
+
+      <!-- ZONA AGIR: UM hero contextual (aqui: há alerta → vigilância manda) -->
+      <div class="card alert">
+        <div class="t">⚠️ 1 alerta novo na sua vigilância</div>
+        <div style="font-size:.78rem;margin-top:4px">FAIXA MAR × FELICITÀ · NCL 36 · risco médio</div>
+        <a class="cta" style="margin-top:12px;border-color:rgba(255,140,0,.5);color:var(--orange);background:linear-gradient(135deg,rgba(255,140,0,.14),transparent);text-shadow:none">Ver alerta →</a>
+      </div>
+      <a class="cta">📷 Escanear um selo</a>
+
+      <!-- ZONA EXPLORAR: tudo colapsado em linhas -->
+      <div class="sec">Sua conta</div>
+      <div class="card">
+        <div class="rowmini"><b>🏷️ Vigilância</b><span>6 marcas · ativa</span></div>
+        <div class="rowmini"><b>📜 Meus selos</b><span>22 emitidos</span></div>
+        <div class="rowmini"><b>🎓 Cursos</b><span>2 concluídos</span></div>
+      </div>
+      <div class="sec">Mercado (INPI)</div>
+      <div class="card">
+        <div class="rowmini"><b>📊 Panorama</b><span>fila 24d · abrir ▾</span></div>
+        <div class="rowmini"><b>🔎 Sua classe NCL 36</b><span>fila 28d ▾</span></div>
+      </div>
+      <div class="sec">Mais</div>
+      <div class="card">
+        <div class="rowmini"><b>📲 Instalar o app</b><span>→</span></div>
+        <div class="rowmini"><b>👥 Convide e ganhe</b><span>→</span></div>
+      </div>
+    </div></div>
+    <div class="why"><b>Por quê:</b> menor mudança, maior ganho. A home responde <b>"o que faço agora?"</b> com um único hero que muda por estado (alerta &gt; escanear &gt; proteger). <span class="s">Assinatura:</span> a linha de status ponytail — carteira, biometria e acesso viram 3 chips de uma linha (hoje são 3 cards). Custo: só reordenação + CSS.</div>
+  </div>
+
+  <!-- ════════ V2 — BENTO ════════ -->
+  <div class="col">
+    <div class="tag"><b>V2 · Bento</b><span>grade modular · dados vivos</span></div>
+    <div class="phone"><div class="screen">
+      <div class="hd"><span class="logo">CRI<i>APA</i></span><span class="hub">Hub</span>
+        <span style="margin-left:auto;font-size:.68rem;color:var(--dim)">🪙 47 · 🔐</span></div>
+
+      <div class="bento">
+        <!-- tile grande = ação principal -->
+        <div class="tile big">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div><div class="ic">📷</div><div class="vl">Escanear selo</div>
+            <div class="sub">aponte a câmera · verificação na hora</div></div>
+            <div style="width:64px;height:64px;border:2px solid rgba(0,240,255,.5);border-radius:10px;display:grid;place-items:center;font-size:1.6rem">⊞</div>
+          </div>
+        </div>
+        <div class="tile">
+          <span class="badge">⚠️ 1 alerta</span>
+          <div><div class="vl">6</div><div class="lb">marcas vigiadas</div></div>
+        </div>
+        <div class="tile">
+          <span class="badge ok">⛓️ 20 selados</span>
+          <div><div class="vl">22</div><div class="lb">meus selos</div></div>
+        </div>
+        <!-- a assinatura da V2: o dado do Panorama como material visual -->
+        <div class="tile big" style="border-color:var(--border);background:var(--card)">
+          <div style="display:flex;align-items:flex-end;justify-content:space-between">
+            <div><div class="lb">fila do INPI hoje</div>
+              <div class="vl gigante">24 dias</div>
+              <div class="sub">mai 31 · jun 38 · jul 45 ▲ · sua classe: 28d</div></div>
+            <div style="text-align:right"><div class="vl" style="font-size:1.1rem">30,7%</div>
+              <div class="sub">depositam sem<br>procurador</div></div>
+          </div>
+        </div>
+        <div class="tile"><div class="ic">➕</div><div><div class="lb">Proteger nova marca</div></div></div>
+        <div class="tile"><div class="ic">🎓</div><div><div class="lb">Cursos · 2 grátis</div></div></div>
+        <div class="tile"><div class="ic">🪙</div><div><div class="vl">47</div><div class="lb">créditos · recarregar</div></div></div>
+        <div class="tile"><div class="ic">🔐</div><div><div class="lb">Biometria ativa ✓</div></div></div>
+      </div>
+      <div class="sec">Instalar · convidar · verificar exemplo</div>
+      <div class="card"><div class="rowmini"><b>📲 · 👥 · 🏅</b><span>→</span></div></div>
+    </div></div>
+    <div class="why"><b>Por quê:</b> zero texto corrido — a home inteira é <b>escaneável em 3 segundos</b>, hierarquia pelo tamanho do tile (bento). <span class="s">Assinatura:</span> o Panorama vira material visual — "fila 24 dias" gigante na primeira dobra transforma nosso diferencial de dados em interface. Custo: médio (grade nova, mesmos endpoints).</div>
+  </div>
+
+  <!-- ════════ V3 — PRIMEIRO ACESSO ════════ -->
+  <div class="col">
+    <div class="tag"><b>V3 · Primeiro acesso</b><span>carrossel + checklist</span></div>
+    <div class="phone"><div class="screen">
+      <div class="hd"><span class="logo">CRI<i>APA</i></span><span class="hub">Hub</span></div>
+
+      <!-- carrossel 3 passos (1 frase + 1 arte), pulável, mostra 1× -->
+      <div class="slide">
+        <div class="art">📷</div>
+        <h3>Escaneie e confie</h3>
+        <p>Qualquer selo CRIAPA se verifica na hora,<br>direto da câmera.</p>
+        <div class="dots"><i class="on"></i><i></i><i></i></div>
+      </div>
+      <a class="skip">pular apresentação ›</a>
+
+      <!-- a assinatura da V3: checklist de progresso (gamificação — cultura EDUCA) -->
+      <div class="card" style="border-color:rgba(0,240,255,.3)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <b style="color:var(--heading);font-size:.85rem">🚀 Comece por aqui</b>
+          <span style="font-size:.68rem;color:var(--dim)">1 de 3</span>
+        </div>
+        <div class="bar"><i></i></div>
+        <div class="check done"><div class="box">✓</div><span>Criar sua conta</span></div>
+        <div class="check"><div class="box"></div>Ativar biometria (30s)<b>+ seguro</b></div>
+        <div class="check"><div class="box"></div>Emitir seu 1º selo<b>3 🪙 grátis</b></div>
+      </div>
+
+      <a class="cta">📷 Escanear o selo de exemplo</a>
+
+      <div class="sec">Conheça</div>
+      <div class="card">
+        <div class="rowmini"><b>🏷️ Vigiar uma marca</b><span>colidência toda semana</span></div>
+        <div class="rowmini"><b>📊 Panorama do mercado</b><span>fila 24d ▾</span></div>
+        <div class="rowmini"><b>🎓 Cursos grátis de PI</b><span>certificado selado</span></div>
+      </div>
+    </div></div>
+    <div class="why"><b>Por quê:</b> o 1º acesso ganha um estado PRÓPRIO (hoje o novato vê a mesma pilha do veterano). Carrossel mínimo (3 telas, pulável, 1×) dá o mapa; o <span class="s">checklist com progresso</span> — a assinatura — converte: biometria e 1º selo viram conquistas com recompensa visível, na cultura de badges do EDUCA. Some sozinho ao completar. Custo: médio (estado novo + localStorage).</div>
+  </div>
+
+</div>
+<p style="text-align:center;margin-top:30px;font-size:.75rem;color:var(--dim)">As variações combinam: V3 é o estado de 1º acesso de qualquer uma; V1 e V2 disputam o estado recorrente. Tokens, dados e copy = produto real.</p>
+</body>
+</html>

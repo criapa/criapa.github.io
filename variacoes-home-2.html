@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CRIAPA Hub — variações V4–V9 (potencial pleno: cultura do registro + girar a economia)</title>
+<style>
+  :root{
+    --bg:#0a0418; --card:#14082a; --card-accent:#1e0a3c; --field:#0f0524;
+    --border:rgba(168,85,247,.15); --accent:#00f0ff; --accent2:#ff3d9a;
+    --orange:#ff8c00; --muted:#9d8ec4; --dim:#6b5b8a; --heading:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#060213;color:var(--muted);font-family:Inter,system-ui,sans-serif;padding:28px 18px 60px}
+  .head{max-width:1280px;margin:0 auto 26px}
+  .head h1{font-family:'Space Grotesk',Inter,sans-serif;color:var(--heading);font-size:1.5rem}
+  .head h1 em{color:var(--accent);font-style:normal}
+  .head p{font-size:.85rem;margin-top:6px;max-width:900px;line-height:1.6}
+  .lane{display:flex;gap:26px;flex-wrap:wrap;justify-content:center;max-width:1300px;margin:0 auto}
+  .col{width:392px;max-width:100%;margin-bottom:16px}
+  .tag{display:flex;align-items:baseline;gap:8px;margin-bottom:10px}
+  .tag b{font-family:'Space Grotesk',Inter,sans-serif;color:var(--heading);font-size:1.02rem}
+  .tag span{font-size:.7rem;color:var(--dim);text-transform:uppercase;letter-spacing:1px}
+  .phone{background:var(--bg);border:1px solid rgba(168,85,247,.35);border-radius:34px;padding:14px 12px;box-shadow:0 18px 60px rgba(0,0,0,.55), inset 0 0 40px rgba(168,85,247,.05)}
+  .screen{height:680px;overflow-y:auto;border-radius:22px;scrollbar-width:thin;scrollbar-color:var(--card-accent) transparent;padding:2px 4px 18px}
+  .why{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin-top:12px;font-size:.78rem;line-height:1.6}
+  .why b{color:var(--heading)} .why .s{color:var(--accent)}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin-bottom:10px}
+  .hd{display:flex;align-items:center;gap:8px;padding:6px 2px 12px}
+  .hd .logo{font-family:'Space Grotesk',Inter,sans-serif;font-weight:700;color:var(--heading);font-size:1.05rem}
+  .hd .logo i{color:var(--accent);font-style:normal}
+  .hd .hub{color:var(--orange);font-family:'Space Grotesk',Inter,sans-serif;font-weight:700;text-shadow:0 0 12px rgba(255,140,0,.5)}
+  .hd .r{margin-left:auto;font-size:.68rem;color:var(--dim)}
+  .num{font-family:'Space Grotesk',Inter,sans-serif;font-weight:700;color:var(--heading)}
+  .cta{display:block;text-align:center;background:linear-gradient(135deg,rgba(0,240,255,.16),rgba(0,240,255,.05));border:1px solid rgba(0,240,255,.4);color:var(--accent);border-radius:14px;padding:13px;font-weight:700;font-size:.92rem;text-shadow:0 0 10px rgba(0,240,255,.4);margin-bottom:10px}
+  .rowmini{display:flex;justify-content:space-between;align-items:center;padding:9px 2px;border-top:1px solid var(--border);font-size:.8rem}
+  .rowmini:first-child{border-top:none}
+  .rowmini b{color:var(--heading);font-weight:600}
+  .rowmini span{color:var(--dim);font-size:.74rem}
+  .sec{font-size:.66rem;color:var(--dim);text-transform:uppercase;letter-spacing:1.4px;margin:14px 2px 8px}
+  .big{font-family:'Space Grotesk',Inter,sans-serif;font-weight:700;color:var(--accent);text-shadow:0 0 18px rgba(0,240,255,.35)}
+  /* trust strip — credibilidade percebida (pedido 2026-07-19) */
+  .trust{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:2px 0 10px}
+  .trust span{font-size:.6rem;color:var(--dim);border:1px solid var(--border);border-radius:20px;padding:3px 9px;background:var(--field)}
+  .trust span b{color:var(--accent);font-weight:600}
+  /* notificacao push (padrao Apple Notification / opensourceui) */
+  .push{display:flex;gap:10px;align-items:flex-start;background:rgba(30,10,60,.85);border:1px solid var(--border);border-radius:14px;padding:11px 13px;margin-bottom:8px;box-shadow:0 6px 22px rgba(0,0,0,.4)}
+  .push .pic{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font-size:1rem;background:var(--field);flex-shrink:0}
+  .push .tx{flex:1;min-width:0}
+  .push .t1{display:flex;justify-content:space-between;gap:8px;font-size:.74rem}
+  .push .t1 b{color:var(--heading)} .push .t1 span{color:var(--dim);font-size:.62rem;flex-shrink:0}
+  .push .t2{font-size:.72rem;color:var(--muted);margin-top:1px;line-height:1.4}
+  .push.hot{border-color:rgba(255,140,0,.45)}
+  /* V4 espelho */
+  .versus{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;text-align:center}
+  .versus .lado b{display:block;font-family:'Space Grotesk',Inter,sans-serif;font-size:1.5rem;color:var(--heading)}
+  .versus .lado span{font-size:.66rem;color:var(--dim)}
+  .versus .vs{font-size:.7rem;color:var(--accent2);font-weight:700}
+  .prova{background:var(--field);border-radius:10px;padding:9px 12px;font-size:.76rem;margin-top:10px;border-left:3px solid var(--accent)}
+  /* V5 timeline */
+  .tl{position:relative;padding-left:26px}
+  .tl:before{content:'';position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent) 40%,var(--border) 40%)}
+  .step{position:relative;padding:8px 0 12px}
+  .step .pt{position:absolute;left:-24px;top:10px;width:14px;height:14px;border-radius:50%;background:var(--field);border:2px solid var(--border)}
+  .step.done .pt{background:var(--accent);border-color:var(--accent);box-shadow:0 0 10px rgba(0,240,255,.6)}
+  .step.now .pt{border-color:var(--accent2);background:var(--accent2);box-shadow:0 0 12px rgba(255,61,154,.7)}
+  .step b{color:var(--heading);font-size:.84rem;font-weight:600}
+  .step span{display:block;font-size:.7rem;color:var(--dim);margin-top:2px}
+  .step.now b{color:var(--accent2)}
+  .eta{background:rgba(255,61,154,.08);border:1px solid rgba(255,61,154,.3);border-radius:10px;padding:8px 12px;font-size:.74rem;margin-top:4px}
+  /* V6 comunidade */
+  .impacto{display:flex;gap:8px;text-align:center}
+  .impacto div{flex:1;background:var(--field);border-radius:12px;padding:10px 4px}
+  .impacto b{display:block;font-family:'Space Grotesk',Inter,sans-serif;font-size:1.2rem;color:var(--accent)}
+  .impacto span{font-size:.62rem;color:var(--dim)}
+  .rank{display:flex;align-items:center;gap:10px;padding:8px 2px;border-top:1px solid var(--border);font-size:.8rem}
+  .rank:first-child{border-top:none}
+  .rank .pos{font-family:'Space Grotesk',Inter,sans-serif;font-weight:700;color:var(--dim);width:24px}
+  .rank.eu{background:rgba(0,240,255,.06);border-radius:8px;padding:8px 8px}
+  .rank.eu .pos{color:var(--accent)}
+  .rank .barr{flex:1;height:5px;background:var(--field);border-radius:3px;overflow:hidden}
+  .rank .barr i{display:block;height:100%;background:var(--accent);opacity:.7}
+  /* V7 ritmo */
+  .week{display:flex;gap:5px;margin:4px 0 10px}
+  .day{flex:1;text-align:center;background:var(--field);border:1px solid var(--border);border-radius:9px;padding:7px 0;font-size:.62rem;color:var(--dim)}
+  .day b{display:block;font-size:.8rem;color:var(--heading);font-family:'Space Grotesk',Inter,sans-serif}
+  .day.chk{border-color:rgba(0,240,255,.4)} .day.chk b{color:var(--accent)}
+  .day.rpi{border-color:rgba(255,140,0,.5);background:rgba(255,140,0,.08)} .day.rpi b{color:var(--orange)}
+  .streak{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,rgba(255,140,0,.1),transparent);border:1px solid rgba(255,140,0,.35);border-radius:12px;padding:10px 14px;margin-bottom:10px;font-size:.8rem}
+  /* V8 cofre */
+  .ativo{border-left:3px solid var(--accent);padding:10px 12px;background:var(--field);border-radius:10px;margin-top:8px}
+  .ativo .t{display:flex;justify-content:space-between;font-size:.84rem}
+  .ativo .t b{color:var(--heading)} .ativo .t span{color:var(--accent);font-size:.7rem;font-weight:700}
+  .vig{height:5px;background:var(--card);border-radius:3px;margin-top:8px;overflow:hidden}
+  .vig i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+  .ativo .leg{display:flex;justify-content:space-between;font-size:.62rem;color:var(--dim);margin-top:3px}
+  /* V9 portas */
+  .pergunta{font-family:'Space Grotesk',Inter,sans-serif;color:var(--heading);font-size:1.25rem;text-align:center;line-height:1.35;margin:18px 6px 16px}
+  .pergunta em{color:var(--accent);font-style:normal}
+  .portas{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .porta{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px 12px;text-align:center;min-height:112px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+  .porta .ic{font-size:1.7rem}
+  .porta b{color:var(--heading);font-size:.85rem}
+  .porta span{font-size:.66rem;color:var(--dim)}
+  .porta.hot{border-color:rgba(0,240,255,.4);background:linear-gradient(160deg,#1e0a3c,#14082a)}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="head">
+  <h1>CRIAPA <em>Hub</em> — V4–V9 <span style="color:var(--dim);font-size:.9rem;font-weight:400">· potencial pleno: cultura do registro + girar a economia</span></h1>
+  <p>Cada variação é uma <b style="color:var(--heading)">tese estratégica</b>, não só um layout: V4 usa o dado como espelho social; V5 ensina o processo e reduz a ansiedade; V6 transforma usuários em movimento; V7 cria o hábito no ritmo da RPI; V8 muda a percepção de PI-custo para PI-ativo (a barreira nº 1 segundo o INPI, doc 32); V9 derruba o vocabulário jurídico da porta de entrada. Combináveis entre si e com V1–V3. Requisitos incorporados: <b style="color:var(--heading)">credibilidade percebida</b> (faixa de confiança com o que JÁ é real: carimbo Bitcoin, extrato auditável, passkey, verificação pública) e <b style="color:var(--heading)">padrão de notificação push</b> (Apple Notification/System Alert do opensourceui) como linguagem dos avisos, com gráficos de área do bklit (já usado nas ilhas React) para as tendências.</p>
+</div>
+
+<div class="lane">
+
+  <!-- ═══ V4 — ESPELHO DO MERCADO ═══ -->
+  <div class="col">
+    <div class="tag"><b>V4 · Espelho</b><span>o dado que provoca o registro</span></div>
+    <div class="phone"><div class="screen">
+      <div class="hd"><span class="logo">CRI<i>APA</i></span><span class="hub">Hub</span><span class="r">🪙 47</span></div>
+      <div class="trust"><span>⛓️ <b>carimbo Bitcoin</b></span><span>✓ <b>extrato auditável</b></span><span>🔐 <b>passkey</b></span></div>
+      <div class="card" style="border-color:rgba(0,240,255,.3)">
+        <div class="sec" style="margin-top:0">Seu setor · imóveis (NCL 36) · este ano</div>
+        <div class="versus">
+          <div class="lado"><b>14.333</b><span>marcas depositadas<br>por concorrentes</span></div>
+          <div class="vs">vs</div>
+          <div class="lado"><b style="color:var(--accent)">1</b><span>marca sua<br>protegida ✓</span></div>
+        </div>
+        <div class="prova">7 em cada 10 do seu setor contratam procurador.<br><b style="color:var(--heading)">Você se protege sozinho — e com vigilância. 🏆</b></div>
+      </div>
+      <a class="cta">➕ Proteger outra marca do negócio</a>
+      <div class="card">
+        <div class="sec" style="margin-top:0">O espelho da semana</div>
+        <div class="rowmini"><b>Fila do INPI</b><span>24d · subiu 3 sem. ▲</span></div>
+        <div class="rowmini"><b>Deferimento no seu setor</b><span>77% das decisões</span></div>
+        <div class="rowmini"><b>Quem não registra</b><span>perde a marca p/ quem registra 1º</span></div>
+      </div>
+      <div class="sec">Sua conta</div>
+      <div class="card">
+        <div class="rowmini"><b>🏷️ Vigilância</b><span>1 alerta ⚠️</span></div>
+        <div class="rowmini"><b>📜 Selos</b><span>22</span></div>
+        <div class="rowmini"><b>📊 Panorama completo</b><span>▾</span></div>
+      </div>
+    </div></div>
+    <div class="why"><b>Tese:</b> ninguém registra por dever — registra quando <b>vê o vizinho registrando</b>. <span class="s">Assinatura:</span> o "você × seu setor" com dados vivos do doc 52: prova social direta na primeira dobra, e elogio honesto a quem já agiu (retenção). É a taxa de proteção por CNAE/UF (nº 6) virando produto. <b>Cultura:</b> o espelho estatístico do §7 na prática.</div>
+  </div>
+
+  <!-- ═══ V5 — LINHA DO TEMPO ═══ -->
+  <div class="col">
+    <div class="tag"><b>V5 · Jornada do registro</b><span>o processo sem medo</span></div>
+    <div class="phone"><div class="screen">
+      <div class="hd"><span class="logo">CRI<i>APA</i></span><span class="hub">Hub</span><span class="r">🪙 47 · 🔐</span></div>
+      <div class="card" style="border-color:rgba(0,240,255,.3)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+          <b style="color:var(--heading);font-size:.9rem">FAIXA MAR IMÓVEIS</b>
+          <span style="font-size:.68rem;color:var(--dim)">nº 943.476.771</span>
+        </div>
+        <div class="tl">
+          <div class="step done"><i class="pt"></i><b>Depósito</b><span>28/05 · feito ✓</span></div>
+          <div class="step done"><i class="pt"></i><b>Publicação na RPI</b><span>14/07 · revista 2897 ✓</span></div>
+          <div class="step now"><i class="pt"></i><b>Prazo de oposição — você está aqui</b><span>até 12/09 · vigilância de olho 👁</span></div>
+          <div class="step"><i class="pt"></i><b>Exame de mérito</b><span>previsão: nov/2027</span></div>
+          <div class="step"><i class="pt"></i><b>Concessão</b><span>previsão: jan/2028 · vigência 10 anos</span></div>
+        </div>
+        <div class="eta">📐 Previsões calculadas com 859 mil processos reais — o INPI decide em ~560 dias, quase sempre em fila.</div>
+      </div>
+      <a class="cta">📷 Escanear selo</a>
+      <div class="card">
+        <div class="rowmini"><b>📊 Panorama</b><span>fila 24d ▾</span></div>
+        <div class="rowmini"><b>🎓 Curso: o que é oposição?</b><span>grátis · 15min</span></div>
+      </div>
+    </div></div>
+    <div class="why"><b>Tese:</b> o que mata a cultura do registro é o processo parecer uma <b>caixa-preta de 2 anos</b>. A home vira o mapa do SEU processo, com previsões dos nossos próprios dados (fila FIFO ~560d — nenhum concorrente tem isso). <span class="s">Assinatura:</span> o "você está aqui" com ETA real. Ansiedade → acompanhamento; dúvida → curso contextual (EDUCA no momento exato). <b>Economia:</b> confiança no processo = mais depósitos.</div>
+  </div>
+
+  <!-- ═══ V6 — MOVIMENTO ═══ -->
+  <div class="col">
+    <div class="tag"><b>V6 · Movimento</b><span>rede que gira a economia</span></div>
+    <div class="phone"><div class="screen">
+      <div class="hd"><span class="logo">CRI<i>APA</i></span><span class="hub">Hub</span><span class="r">🪙 47</span></div>
+      <div class="card" style="border-color:rgba(0,240,255,.3);text-align:center">
+        <div class="sec" style="margin-top:0;text-align:left">O movimento até agora</div>
+        <div class="impacto">
+          <div><b>22</b><span>selos<br>emitidos</span></div>
+          <div><b>6</b><span>marcas sob<br>vigilância</span></div>
+          <div><b>8</b><span>colisões<br>detectadas</span></div>
+        </div>
+        <div style="font-size:.72rem;margin-top:10px;line-height:1.5">Cada registro protege um negócio real.<br><b style="color:var(--heading)">Convide um empreendedor — vocês dois ganham 🪙 5.</b></div>
+        <a class="cta" style="margin:10px 0 0">👥 Convidar agora</a>
+      </div>
+      <div class="card">
+        <div class="sec" style="margin-top:0">Onde o Brasil registra (12m)</div>
+        <div class="rank"><span class="pos">1º</span><b style="color:var(--heading);font-size:.78rem">SP</b><div class="barr"><i style="width:96%"></i></div></div>
+        <div class="rank"><span class="pos">2º</span><b style="color:var(--heading);font-size:.78rem">SC</b><div class="barr"><i style="width:38%"></i></div></div>
+        <div class="rank eu"><span class="pos">7º</span><b style="color:var(--accent);font-size:.78rem">PE — você está aqui</b><div class="barr"><i style="width:14%"></i></div></div>
+        <div style="font-size:.7rem;color:var(--dim);margin-top:8px">Cada registro seu sobe Pernambuco no mapa. 🚀</div>
+      </div>
+      <div class="sec">Agir</div>
+      <a class="cta">➕ Proteger uma marca</a>
+      <div class="card"><div class="rowmini"><b>🎓 Seja embaixador na sua universidade</b><span>→</span></div></div>
+    </div></div>
+    <div class="why"><b>Tese:</b> girar a economia é <b>efeito de rede</b>: indicação com recompensa dupla (já existe no backend!) + orgulho regional ("suba PE no ranking") + programa de embaixadores (acordo, cláusula 22.2). <span class="s">Assinatura:</span> o contador de impacto coletivo + o ranking de UFs com "você está aqui" — dado real do Panorama virando pertencimento. O app deixa de ser ferramenta e vira causa.</div>
+  </div>
+
+  <!-- ═══ V7 — RITMO DA RPI ═══ -->
+  <div class="col">
+    <div class="tag"><b>V7 · Ritmo</b><span>o hábito da terça-feira</span></div>
+    <div class="phone"><div class="screen">
+      <div class="hd"><span class="logo">CRI<i>APA</i></span><span class="hub">Hub</span><span class="r">🪙 47</span></div>
+      <div class="streak"><span>🔥 <b class="num">12</b> check-ins seguidos</span><span style="font-size:.68rem;color:var(--dim)">faltam 3 p/ +1 🪙</span></div>
+      <div class="card" style="border-color:rgba(255,140,0,.35)">
+        <div class="sec" style="margin-top:0">Semana da propriedade industrial</div>
+        <div class="week">
+          <div class="day chk"><b>✓</b>seg</div>
+          <div class="day rpi"><b>RPI</b>ter</div>
+          <div class="day"><b>·</b>qua</div>
+          <div class="day"><b>·</b>qui</div>
+          <div class="day"><b>·</b>sex</div>
+        </div>
+        <div style="font-size:.8rem;line-height:1.5"><b style="color:var(--orange)">Terça, 9h:</b> sai a revista 2898 do INPI.<br>Sua vigilância varre as <b class="num" style="font-size:.85rem">6 marcas</b> automaticamente.</div>
+      </div>
+      <div class="sec">Avisos da vigilância</div>
+      <div class="push hot">
+        <div class="pic">⚠️</div>
+        <div class="tx"><div class="t1"><b>Colisão detectada</b><span>ter · 9h04</span></div>
+        <div class="t2">FAIXA MAR × FELICITÀ · NCL 36 · risco médio — toque para ver</div></div>
+      </div>
+      <div class="push">
+        <div class="pic">🔍</div>
+        <div class="tx"><div class="t1"><b>Varredura concluída</b><span>ter · 9h02</span></div>
+        <div class="t2">Revista 2897: 6 marcas conferidas · 5.533 depósitos no Brasil</div></div>
+      </div>
+      <div class="push">
+        <div class="pic">📰</div>
+        <div class="tx"><div class="t1"><b>Boletim de julho chegou</b><span>dia 1º</span></div>
+        <div class="t2">Fila 24d · seu setor 77% de deferimento — no seu e-mail ✓</div></div>
+      </div>
+      <div class="card">
+        <div class="rowmini" style="border-top:none"><b>Fila do exame (13 sem.)</b><span>45d ▲</span></div>
+        <svg viewBox="0 0 300 44" style="width:100%;height:44px;margin-top:4px">
+          <defs><linearGradient id="gf" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#00f0ff" stop-opacity=".35"/><stop offset="1" stop-color="#00f0ff" stop-opacity="0"/>
+          </linearGradient></defs>
+          <path d="M0,34 L25,33 L50,34 L75,32 L100,31 L125,30 L150,28 L175,27 L200,24 L225,20 L250,15 L275,9 L300,4 L300,44 L0,44 Z" fill="url(#gf)"/>
+          <path d="M0,34 L25,33 L50,34 L75,32 L100,31 L125,30 L150,28 L175,27 L200,24 L225,20 L250,15 L275,9 L300,4" fill="none" stroke="#00f0ff" stroke-width="2"/>
+        </svg>
+        <div style="display:flex;justify-content:space-between;font-size:.6rem;color:var(--dim)"><span>abr</span><span>mai 31d</span><span>jun 38d</span><span>jul 45d</span></div>
+      </div>
+      <div class="card"><div class="rowmini"><b>🔔 Avisos de terça no celular</b><span>ativar push →</span></div></div>
+      <a class="cta">📷 Escanear selo</a>
+      <div class="card"><div class="rowmini"><b>📜 Selos</b><span>22</span></div><div class="rowmini"><b>🎓 Cursos</b><span>2 ✓</span></div></div>
+    </div></div>
+    <div class="why"><b>Tese:</b> retenção nasce de <b>ritmo externo real</b> — a RPI sai TODA terça; o app já varre e já tem streak de check-in com recompensa (backend pronto). A home só torna o ritmo visível: countdown → resultado da varredura → resumo da semana. <span class="s">Assinatura:</span> o calendário-RPI + a central de avisos no padrão push (Apple Notification): a MESMA linguagem dentro do app e na notificação do celular — intuitivo porque o usuário já conhece do sistema. Sparkline da fila = area-chart do bklit (lib das nossas ilhas). O "ativar push" é o opt-in do Web Push real (fatia futura no SW). Volta toda terça como quem confere loteria.</div>
+  </div>
+
+  <!-- ═══ V8 — COFRE DE ATIVOS ═══ -->
+  <div class="col">
+    <div class="tag"><b>V8 · Cofre</b><span>PI é ativo, não custo</span></div>
+    <div class="phone"><div class="screen">
+      <div class="hd"><span class="logo">CRI<i>APA</i></span><span class="hub">Hub</span><span class="r">🔐 ativa</span></div>
+      <div class="trust"><span>⛓️ <b>carimbo Bitcoin</b></span><span>✓ <b>verificação pública</b></span><span>LGPD</span></div>
+      <div class="card" style="border-color:rgba(0,240,255,.3)">
+        <div class="sec" style="margin-top:0">Seu patrimônio intangível</div>
+        <div style="display:flex;align-items:baseline;gap:8px">
+          <span class="big" style="font-size:1.9rem">3 ativos</span>
+          <span style="font-size:.72rem">protegidos e vigiados</span>
+        </div>
+        <div class="ativo">
+          <div class="t"><b>🏷️ FAIXA MAR IMÓVEIS</b><span>EM EXAME</span></div>
+          <div class="vig"><i style="width:22%"></i></div>
+          <div class="leg"><span>depósito 2026</span><span>concessão ~2028 · vigência até 2038</span></div>
+        </div>
+        <div class="ativo">
+          <div class="t"><b>💻 Sistema Faixa (software)</b><span>SELADO ⛓️</span></div>
+          <div class="vig"><i style="width:64%"></i></div>
+          <div class="leg"><span>selo CRIAPA-2026</span><span>carimbo Bitcoin ✓</span></div>
+        </div>
+        <div class="ativo">
+          <div class="t"><b>🎓 Certificado F1 · 40h</b><span>VERIFICÁVEL</span></div>
+          <div class="vig"><i style="width:100%"></i></div>
+          <div class="leg"><span>emitido 07/2026</span><span>QR público</span></div>
+        </div>
+      </div>
+      <a class="cta">➕ Adicionar ativo ao cofre</a>
+      <div class="card">
+        <div class="rowmini"><b>🛡️ Vigilância dos ativos</b><span>1 alerta ⚠️</span></div>
+        <div class="rowmini"><b>📰 Boletim do assinante</b><span>inscrito ✓</span></div>
+        <div class="rowmini"><b>📊 Valor do intangível no BR</b><span>25% do investimento ▾</span></div>
+      </div>
+    </div></div>
+    <div class="why"><b>Tese:</b> a barreira nº 1 da cultura, segundo o próprio INPI (doc 32), é PI ser vista como <b>custo</b>. A home reposiciona: sua marca, seu software e seu certificado são um <b>portfólio</b> com barra de vigência e status — linguagem de carteira de investimentos. <span class="s">Assinatura:</span> o card-cofre com barras de vida dos ativos. "Adicionar ativo" converte melhor que "registrar marca".</div>
+  </div>
+
+  <!-- ═══ V9 — BALCÃO ÚNICO ═══ -->
+  <div class="col">
+    <div class="tag"><b>V9 · Balcão único</b><span>zero juridiquês na porta</span></div>
+    <div class="phone"><div class="screen">
+      <div class="hd"><span class="logo">CRI<i>APA</i></span><span class="hub">Hub</span><span class="r">🪙 47</span></div>
+      <div class="pergunta">O que você quer<br><em>proteger</em> hoje?</div>
+      <div class="trust"><span>⛓️ <b>prova pública</b></span><span>✓ <b>verificável por QR</b></span><span>🔐 <b>biometria</b></span></div>
+      <div class="portas">
+        <div class="porta hot"><span class="ic">🏷️</span><b>Meu nome ou logo</b><span>marca · a partir de 2 🪙</span></div>
+        <div class="porta"><span class="ic">💻</span><b>Meu app ou sistema</b><span>software · selo + registro</span></div>
+        <div class="porta"><span class="ic">💡</span><b>Minha invenção</b><span>patente · guia passo a passo</span></div>
+        <div class="porta"><span class="ic">🎨</span><b>Meu conteúdo</b><span>obra · selo de autoria</span></div>
+      </div>
+      <div class="card" style="margin-top:10px">
+        <div class="rowmini"><b>🤔 Não sei o que se aplica</b><span>descobrir em 3 perguntas →</span></div>
+      </div>
+      <div class="sec">Já protegido</div>
+      <div class="card">
+        <div class="rowmini"><b>🏷️ FAIXA MAR</b><span>em exame · vigiada 👁</span></div>
+        <div class="rowmini"><b>📜 22 selos</b><span>ver todos</span></div>
+      </div>
+      <div class="sec">Enquanto isso no Brasil</div>
+      <div class="card"><div class="rowmini"><b>📊 5.533 depósitos esta semana</b><span>panorama ▾</span></div></div>
+    </div></div>
+    <div class="why"><b>Tese:</b> democratizar (a missão do acordo, cláusula 1.2) começa no vocabulário: ninguém procura "depósito de marca nominativa" — procura <b>"proteger meu nome"</b>. <span class="s">Assinatura:</span> a pergunta única + 4 portas em linguagem leiga, com o triage "não sei o que se aplica" (3 perguntas → porta certa). É o balcão do despachante digital — a razão de existir da CRIAPA como plataforma. <b>Economia:</b> abre o funil para quem nem sabia que podia registrar.</div>
+  </div>
+
+</div>
+<p style="text-align:center;margin-top:26px;font-size:.75rem;color:var(--dim);max-width:900px;margin-left:auto;margin-right:auto;line-height:1.7">
+Como se combinam: <b style="color:var(--heading)">V9 (porta de entrada)</b> + <b style="color:var(--heading)">V5 (acompanhamento)</b> + <b style="color:var(--heading)">V7 (ritmo semanal)</b> formam a jornada completa aquisição→processo→hábito. <b style="color:var(--heading)">V4 e V6</b> são camadas de cultura aplicáveis sobre qualquer base. <b style="color:var(--heading)">V8</b> é o reposicionamento de longo prazo. Todas usam dados/recursos que JÁ existem no backend (panorama, coortes, streak, indicação, vigilância, selos).
+</p>
+</body>
+</html>

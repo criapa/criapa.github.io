@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CRIAPA Hub — 10 estilos completos + a composição ★ (interativos)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600;700;800&family=IBM+Plex+Mono:wght@500;600&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#08060f;color:#9d8ec4;font-family:Inter,system-ui,sans-serif;padding:30px 16px 70px}
+.head{max-width:1340px;margin:0 auto 8px}
+.head h1{font-family:'Space Grotesk';color:#fff;font-size:1.55rem}
+.head h1 em{color:#00f0ff;font-style:normal}
+.head p{font-size:.85rem;margin:8px 0 22px;max-width:980px;line-height:1.65}
+.lane{display:flex;gap:30px;flex-wrap:wrap;justify-content:center;max-width:1400px;margin:0 auto}
+.col{width:400px;max-width:100%;margin-bottom:22px}
+.tag{display:flex;align-items:baseline;gap:8px;margin-bottom:10px}
+.tag b{font-family:'Space Grotesk';color:#fff;font-size:1.05rem}
+.tag span{font-size:.68rem;color:#6b5b8a;text-transform:uppercase;letter-spacing:1.2px}
+.phone{border-radius:36px;padding:12px 10px 0;box-shadow:0 22px 70px rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.09);overflow:hidden}
+.screen{height:660px;overflow-y:auto;border-radius:24px;scrollbar-width:none;padding:4px 8px 14px}
+.tabbar{display:flex;border-top:1px solid rgba(128,128,128,.18);margin:0 -10px;padding:9px 6px 13px}
+.tabbar span{flex:1;text-align:center;font-size:.6rem;opacity:.55}
+.tabbar span i{display:block;font-size:1.05rem;font-style:normal;margin-bottom:2px}
+.tabbar span.on{opacity:1}
+.why{background:#14082a;border:1px solid rgba(168,85,247,.15);border-radius:12px;padding:12px 14px;margin-top:12px;font-size:.78rem;line-height:1.6;color:#9d8ec4}
+.why b{color:#fff}.why .s{color:#00f0ff}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+.chip{font-size:.68rem;padding:5px 11px;border-radius:20px;cursor:pointer;user-select:none;border:1px solid transparent;transition:all .15s}
+h4.sec{font-size:.64rem;text-transform:uppercase;letter-spacing:1.4px;opacity:.6;margin:16px 2px 8px;font-weight:600}
+.grid7{display:grid;grid-template-columns:repeat(13,1fr);gap:3px;margin-top:8px}
+.cell{aspect-ratio:1;border-radius:3px;cursor:pointer;transition:transform .1s}
+.cell:hover{transform:scale(1.25);outline:1px solid currentColor}
+.spark{width:100%;height:46px;display:block;margin-top:6px}
+/* ───────── T1 TERMINAL (binance) ───────── */
+.t1{background:#0b0e11;color:#848e9c;font-family:'IBM Plex Mono',monospace}
+.t1 .screen{background:#0b0e11}
+.t1 .top{display:flex;justify-content:space-between;align-items:center;padding:8px 2px}
+.t1 .top b{color:#eaecef;font-family:'Space Grotesk';letter-spacing:.5px}
+.t1 .px{font-size:1.9rem;color:#eaecef;font-weight:600}
+.t1 .up{color:#0ecb81}.t1 .dn{color:#f6465d}
+.t1 .panel{background:#181a20;border:1px solid #2b3139;border-radius:10px;padding:12px;margin-bottom:10px}
+.t1 .row{display:flex;justify-content:space-between;font-size:.72rem;padding:6px 0;border-top:1px solid #2b3139}
+.t1 .row:first-of-type{border-top:none}
+.t1 .row b{color:#eaecef;font-weight:600}
+.t1 .chip{background:#181a20;border-color:#2b3139;color:#848e9c}
+.t1 .chip.on{background:#fcd535;color:#181a20;font-weight:700}
+.t1 .tabbar{background:#0b0e11;color:#848e9c}
+/* ───────── T2 ATELIER (apple) ───────── */
+.t2{background:#f5f5f7;color:#6e6e73;font-family:Inter}
+.t2 .screen{background:#f5f5f7}
+.t2 h2{color:#1d1d1f;font-size:1.6rem;font-weight:800;letter-spacing:-.5px;padding:14px 2px 2px}
+.t2 .sub{font-size:.8rem;padding:0 2px}
+.t2 .card{background:#fff;border-radius:18px;padding:18px;margin:12px 0;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.t2 .big{font-size:2.6rem;font-weight:800;color:#1d1d1f;letter-spacing:-1px}
+.t2 .seg{display:flex;background:#e8e8ed;border-radius:10px;padding:2px;margin:10px 0}
+.t2 .seg span{flex:1;text-align:center;font-size:.72rem;padding:6px 0;border-radius:8px;cursor:pointer;color:#6e6e73}
+.t2 .seg span.on{background:#fff;color:#1d1d1f;font-weight:700;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.t2 .row{display:flex;justify-content:space-between;font-size:.82rem;padding:9px 0;border-top:1px solid #e8e8ed}
+.t2 .row b{color:#1d1d1f;font-weight:600}
+.t2 .link{color:#0071e3;font-size:.8rem;font-weight:600}
+.t2 .tabbar{background:#f5f5f7;color:#6e6e73}
+/* ───────── T3 COMANDO (arc/linear) ───────── */
+.t3{background:#08070c;color:#8a8f98;font-family:Inter}
+.t3 .screen{background:radial-gradient(120% 60% at 50% 0%,#17122b 0%,#08070c 60%)}
+.t3 .cmd{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:11px 14px;font-size:.8rem;margin:12px 0;backdrop-filter:blur(6px)}
+.t3 .cmd kbd{margin-left:auto;font-size:.62rem;border:1px solid rgba(255,255,255,.2);border-radius:5px;padding:2px 6px;color:#8a8f98}
+.t3 .glass{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:14px;margin-bottom:10px;backdrop-filter:blur(8px)}
+.t3 b{color:#f7f8f8;font-weight:600}
+.t3 .kpi{display:flex;gap:8px}
+.t3 .kpi div{flex:1;text-align:center;padding:10px 4px;border-radius:10px;background:rgba(255,255,255,.04)}
+.t3 .kpi b{font-family:'Space Grotesk';font-size:1.15rem;display:block}
+.t3 .kpi span{font-size:.6rem}
+.t3 .lbl{display:inline-block;font-size:.6rem;border:1px solid rgba(94,106,210,.5);color:#828fff;border-radius:5px;padding:1px 7px;margin-right:5px}
+.t3 .row{display:flex;align-items:center;gap:8px;font-size:.78rem;padding:8px 0;border-top:1px solid rgba(255,255,255,.06)}
+.t3 .tabbar{color:#8a8f98}
+/* ───────── T4 CARTOGRAMA ───────── */
+.t4{background:#071019;color:#7e97a8;font-family:Inter}
+.t4 .screen{background:#071019}
+.t4 h3{color:#e7f2f8;font-family:'Space Grotesk';padding:12px 2px 0}
+.t4 .mapa{display:grid;grid-template-columns:repeat(9,1fr);gap:4px;margin:14px 0 6px}
+.t4 .uf{aspect-ratio:1;border-radius:6px;display:grid;place-items:center;font-size:.55rem;font-weight:700;cursor:pointer;color:#e7f2f8;transition:all .15s}
+.t4 .uf:hover{transform:scale(1.15)}
+.t4 .uf.sel{outline:2px solid #ffd166;transform:scale(1.12)}
+.t4 .uf.void{visibility:hidden}
+.t4 .painel{background:#0d1b28;border:1px solid #1c3448;border-radius:12px;padding:13px;margin-top:10px}
+.t4 .painel b{color:#e7f2f8}
+.t4 .row{display:flex;justify-content:space-between;font-size:.76rem;padding:6px 0;border-top:1px solid #1c3448}
+.t4 .leg{display:flex;align-items:center;gap:5px;font-size:.6rem;margin-top:4px}
+.t4 .leg i{width:14px;height:8px;border-radius:2px}
+.t4 .tabbar{color:#7e97a8}
+/* ───────── T5 GAZETA ───────── */
+.t5{background:#f4efe6;color:#4a4238;font-family:Georgia,serif}
+.t5 .screen{background:#f4efe6}
+.t5 .masthead{text-align:center;border-bottom:3px double #4a4238;padding:12px 0 8px;margin-bottom:4px}
+.t5 .masthead b{font-family:'DM Serif Display',serif;font-size:1.35rem;color:#1a1712;letter-spacing:.5px}
+.t5 .masthead span{display:block;font-size:.6rem;text-transform:uppercase;letter-spacing:2px;margin-top:2px}
+.t5 .manchete{font-family:'Fraunces',serif;font-weight:800;font-size:1.7rem;line-height:1.15;color:#1a1712;padding:10px 2px 4px}
+.t5 .manchete em{font-style:normal;background:linear-gradient(transparent 55%,#f2c14e 55%)}
+.t5 .lide{font-size:.82rem;line-height:1.6;padding:4px 2px}
+.t5 .filete{border-top:1px solid #b8ac98;margin:12px 0}
+.t5 .dado{display:flex;gap:14px;align-items:baseline;padding:6px 2px}
+.t5 .dado b{font-family:'Fraunces',serif;font-size:1.5rem;color:#1a1712}
+.t5 .dado span{font-size:.72rem}
+.t5 .box{border:1px solid #b8ac98;padding:12px;margin:10px 0;background:#faf7f0}
+.t5 .box h5{font-size:.64rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
+.t5 .tabbar{color:#4a4238}
+/* ───────── T6 BANCO ───────── */
+.t6{background:#7715c9;color:#e9d8ff;font-family:Inter}
+.t6 .screen{background:linear-gradient(#7715c9 0 130px,#f6f2fa 130px)}
+.t6 .saldo{padding:16px 6px 20px;color:#fff}
+.t6 .saldo span{font-size:.72rem;opacity:.85}
+.t6 .saldo b{display:block;font-size:2rem;font-weight:800;margin-top:2px}
+.t6 .acoes{display:flex;gap:10px;padding:0 2px 14px}
+.t6 .ac{flex:1;background:rgba(255,255,255,.16);border-radius:14px;text-align:center;padding:10px 2px;color:#fff;font-size:.62rem;cursor:pointer}
+.t6 .ac i{display:block;font-style:normal;font-size:1.1rem;margin-bottom:3px}
+.t6 .card{background:#fff;border-radius:16px;padding:15px;margin:0 0 10px;color:#4a3d5c;box-shadow:0 2px 8px rgba(80,20,150,.08)}
+.t6 .card b{color:#2a1a3d}
+.t6 .row{display:flex;justify-content:space-between;font-size:.8rem;padding:8px 0;border-top:1px solid #f0e9f8}
+.t6 .row:first-of-type{border-top:none}
+.t6 .slide{background:#efe6fa;border-radius:26px;padding:5px;display:flex;align-items:center;gap:10px;margin-top:10px}
+.t6 .knob{width:40px;height:40px;border-radius:50%;background:#7715c9;color:#fff;display:grid;place-items:center;flex-shrink:0}
+.t6 .slide span{font-size:.74rem;color:#7715c9;font-weight:700}
+.t6 .tabbar{background:#f6f2fa;color:#7a6b90}
+/* ───────── T7 CARTÓRIO ───────── */
+.t7{background:#0e1a14;color:#9ab3a4;font-family:Georgia,serif}
+.t7 .screen{background:#0e1a14}
+.t7 .doc{background:#f7f4ea;color:#2c3a30;border-radius:8px;padding:18px 16px;margin:12px 0;position:relative;box-shadow:0 4px 18px rgba(0,0,0,.4)}
+.t7 .doc:before{content:'';position:absolute;inset:6px;border:1px solid #b9c4b3;border-radius:5px;pointer-events:none}
+.t7 .doc h5{font-family:'DM Serif Display',serif;text-align:center;font-size:.95rem;color:#1d2a20;letter-spacing:1px}
+.t7 .doc .sub{text-align:center;font-size:.6rem;text-transform:uppercase;letter-spacing:2.5px;margin:3px 0 12px}
+.t7 .doc .campo{display:flex;justify-content:space-between;font-size:.74rem;padding:5px 0;border-bottom:1px dotted #b9c4b3}
+.t7 .doc .campo b{font-weight:700}
+.t7 .selo{position:absolute;right:14px;bottom:12px;width:58px;height:58px;border-radius:50%;border:2px solid #8a1c2b;color:#8a1c2b;display:grid;place-items:center;font-size:.5rem;text-align:center;transform:rotate(-12deg);font-weight:700}
+.t7 .verif{display:flex;gap:8px;align-items:center;background:#12241a;border:1px solid #23402f;border-radius:10px;padding:11px 13px;font-size:.76rem;margin-bottom:8px;font-family:Inter}
+.t7 .verif b{color:#d9e8dd}
+.t7 .ok{color:#5fd68a;margin-left:auto;font-weight:700}
+.t7 .tabbar{color:#9ab3a4}
+/* ───────── T8 LIGA ───────── */
+.t8{background:#131f24;color:#9db3bb;font-family:Inter}
+.t8 .screen{background:#131f24}
+.t8 .topo{display:flex;justify-content:space-between;align-items:center;padding:10px 2px}
+.t8 .fogo{background:#1f3038;border-radius:12px;padding:6px 12px;font-weight:800;color:#ff9600}
+.t8 .missao{background:#1f3038;border-radius:16px;padding:14px;margin-bottom:10px}
+.t8 .missao b{color:#fff}
+.t8 .bar{height:14px;background:#37464f;border-radius:8px;margin-top:8px;overflow:hidden;position:relative}
+.t8 .bar i{position:absolute;inset:0;width:66%;background:#58cc02;border-radius:8px}
+.t8 .bar span{position:absolute;inset:0;display:grid;place-items:center;font-size:.62rem;color:#fff;font-weight:800;z-index:1}
+.t8 .btn{display:block;text-align:center;background:#58cc02;color:#0b3d00;font-weight:800;border-radius:14px;padding:13px;box-shadow:0 4px 0 #3fa001;margin:12px 0;cursor:pointer;font-size:.9rem}
+.t8 .liga{display:flex;align-items:center;gap:10px;padding:8px 2px;border-top:1px solid #1f3038;font-size:.8rem}
+.t8 .liga b{color:#fff}
+.t8 .medal{width:30px;text-align:center;font-size:1rem}
+.t8 .eu{background:#1f3038;border-radius:10px;padding:8px}
+.t8 .tabbar{color:#9db3bb}
+/* ───────── T9 FACETA ───────── */
+.t9{background:#fbfaf8;color:#6b6560;font-family:Inter}
+.t9 .screen{background:#fbfaf8}
+.t9 h3{color:#211d19;font-weight:800;padding:12px 2px 4px}
+.t9 .chip{background:#fff;border-color:#e4e0da;color:#6b6560}
+.t9 .chip.on{background:#211d19;color:#fff;border-color:#211d19}
+.t9 .res{font-size:.74rem;padding:4px 2px}
+.t9 .res b{color:#211d19;font-size:1rem}
+.t9 .card{background:#fff;border:1px solid #eae6e0;border-radius:12px;padding:12px 14px;margin-bottom:8px}
+.t9 .card b{color:#211d19;font-weight:700}
+.t9 .row{display:flex;justify-content:space-between;font-size:.78rem;padding:5px 0}
+.t9 .mini{height:6px;border-radius:3px;background:#f0ece6;margin-top:6px;overflow:hidden}
+.t9 .mini i{display:block;height:100%;background:#0a8f8f}
+.t9 .tabbar{color:#6b6560}
+/* ───────── T10 CALMO ───────── */
+.t10{background:#0c1220;color:#8fa3bd;font-family:Inter}
+.t10 .screen{background:linear-gradient(#0c1220,#101a30)}
+.t10 .zen{text-align:center;padding:40px 10px 24px}
+.t10 .zen h2{font-family:'Fraunces',serif;font-weight:600;color:#e8eefc;font-size:1.45rem;line-height:1.35}
+.t10 .zen p{font-size:.8rem;margin-top:8px}
+.t10 .halo{width:104px;height:104px;margin:22px auto;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#1d2c4d 0%,transparent 70%);position:relative}
+.t10 .halo:before{content:'';position:absolute;inset:0;border-radius:50%;border:1px solid rgba(120,160,255,.4);animation:puls 4s ease-in-out infinite}
+@keyframes puls{0%,100%{transform:scale(.85);opacity:.9}50%{transform:scale(1.1);opacity:.3}}
+.t10 .halo b{font-size:1.9rem;color:#e8eefc;font-family:'Space Grotesk'}
+.t10 .linha{display:flex;justify-content:space-between;font-size:.8rem;padding:11px 4px;border-top:1px solid rgba(255,255,255,.07)}
+.t10 .linha b{color:#e8eefc;font-weight:600}
+.t10 .tudo{color:#7ce0b0}
+.t10 .tabbar{color:#8fa3bd}
+/* ───────── T11 COMPOSIÇÃO (produto) ───────── */
+.t11{background:#0a0418;color:#9d8ec4;font-family:Inter}
+.t11 .screen{background:#0a0418}
+.t11 .hd{display:flex;align-items:center;gap:8px;padding:8px 2px 8px}
+.t11 .hd b{font-family:'Space Grotesk';color:#fff}
+.t11 .hd b i{color:#00f0ff;font-style:normal}
+.t11 .hub{color:#ff8c00;font-family:'Space Grotesk';font-weight:700;text-shadow:0 0 12px rgba(255,140,0,.5)}
+.t11 .trust{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:0 0 10px}
+.t11 .trust span{font-size:.58rem;color:#6b5b8a;border:1px solid rgba(168,85,247,.15);border-radius:20px;padding:3px 9px;background:#0f0524}
+.t11 .trust b{color:#00f0ff;font-weight:600}
+.t11 .ritmo{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,rgba(255,140,0,.1),transparent);border:1px solid rgba(255,140,0,.35);border-radius:12px;padding:9px 13px;margin-bottom:8px;font-size:.74rem}
+.t11 .ritmo b{color:#fff}
+.t11 .push{display:flex;gap:10px;align-items:flex-start;background:rgba(30,10,60,.85);border:1px solid rgba(255,140,0,.45);border-radius:14px;padding:11px 13px;margin-bottom:8px}
+.t11 .push .pic{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:#0f0524;flex-shrink:0}
+.t11 .push .t1x{display:flex;justify-content:space-between;font-size:.74rem}
+.t11 .push .t1x b{color:#fff}
+.t11 .push .t1x span{color:#6b5b8a;font-size:.62rem}
+.t11 .push .t2x{font-size:.72rem;margin-top:1px;line-height:1.4}
+.t11 .card{background:#14082a;border:1px solid rgba(168,85,247,.15);border-radius:14px;padding:13px 15px;margin-bottom:8px}
+.t11 .card>b{color:#fff;font-size:.85rem}
+.t11 .tl{position:relative;padding-left:22px;margin-top:8px}
+.t11 .tl:before{content:'';position:absolute;left:6px;top:4px;bottom:4px;width:2px;background:linear-gradient(#00f0ff 45%,rgba(168,85,247,.15) 45%)}
+.t11 .st{position:relative;padding:4px 0 8px;font-size:.76rem}
+.t11 .st i{position:absolute;left:-20px;top:7px;width:11px;height:11px;border-radius:50%;background:#0f0524;border:2px solid rgba(168,85,247,.3);font-style:normal}
+.t11 .st.done i{background:#00f0ff;border-color:#00f0ff}
+.t11 .st.now i{background:#ff3d9a;border-color:#ff3d9a;box-shadow:0 0 10px rgba(255,61,154,.7)}
+.t11 .st b{color:#fff;font-weight:600}
+.t11 .st.now b{color:#ff3d9a}
+.t11 .st span{color:#6b5b8a;font-size:.68rem;display:block}
+.t11 .espelho{display:flex;justify-content:space-between;align-items:center;font-size:.74rem;background:#0f0524;border-radius:10px;padding:8px 12px;margin-top:8px;border-left:3px solid #00f0ff}
+.t11 .espelho b{color:#fff;font-family:'Space Grotesk'}
+.t11 .portas{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.t11 .porta{background:#0f0524;border:1px solid rgba(168,85,247,.2);border-radius:12px;padding:11px 8px;text-align:center;font-size:.7rem;cursor:pointer}
+.t11 .porta i{display:block;font-style:normal;font-size:1.2rem;margin-bottom:3px}
+.t11 .porta b{color:#fff;font-size:.74rem}
+.t11 .mov{display:flex;justify-content:space-between;align-items:center;font-size:.74rem;padding:9px 2px}
+.t11 .mov b{color:#00f0ff}
+.t11 .tabbar{color:#9d8ec4}
+</style>
+</head>
+<body>
+<div class="head">
+  <h1>CRIAPA <em>Hub</em> — 10 estilos completos + a composição ★ <span style="color:#6b5b8a;font-size:.9rem;font-weight:400">· interativos · clique nos filtros, abas, mapas e células</span></h1>
+  <p>Cada direção é um sistema completo (identidade + componentes + dados visuais + navegação por abas), não um layout. Interações reais: heatmap com hover, cartograma clicável, filtros facetados vivos, segmented control. Dados reais do doc 52. Regras de dataviz: sequencial de um matiz, tooltips, filtros acima do gráfico.</p>
+</div>
+<div class="lane">
+
+<!-- ═══ T1 TERMINAL ═══ -->
+<div class="col"><div class="tag"><b>T1 · Terminal</b><span>binance/bloomberg · dado denso</span></div>
+<div class="phone t1"><div class="screen">
+  <div class="top"><b>CRIAPA·DADOS</b><span style="font-size:.6rem">rev 2897 · ter 9h</span></div>
+  <div class="panel">
+    <div style="font-size:.62rem">FILA INPI · DEPÓSITO→PUBLICAÇÃO</div>
+    <div class="px">45d <span class="dn" style="font-size:.85rem">▲ +7d sem.</span></div>
+    <svg class="spark" viewBox="0 0 300 46"><path d="M0,36 40,35 80,33 120,31 160,28 200,22 240,14 300,5" fill="none" stroke="#fcd535" stroke-width="2"/><circle cx="300" cy="5" r="3.5" fill="#fcd535"/></svg>
+  </div>
+  <div class="chips" id="t1f">
+    <span class="chip on" data-v="br">BRASIL</span><span class="chip" data-v="ncl36">NCL 36</span><span class="chip" data-v="pe">PE</span>
+  </div>
+  <div class="panel">
+    <div style="display:flex;justify-content:space-between;font-size:.62rem"><span>DEPÓSITOS/SEMANA · 13 SEM</span><b id="t1tot" style="color:#eaecef">859.257 / 24m</b></div>
+    <div class="grid7" id="t1hm" style="grid-template-columns:repeat(13,1fr)"></div>
+  </div>
+  <div class="panel">
+    <div class="row"><span>DEFERIMENTO (decisões)</span><b class="up">77,0%</b></div>
+    <div class="row"><span>SEM PROCURADOR</span><b>30,7%</b></div>
+    <div class="row"><span>DECISÃO ~FIFO</span><b>560d ±7</b></div>
+    <div class="row"><span>SUA VIGILÂNCIA</span><b class="dn">1 ALERTA</b></div>
+  </div>
+  <div class="tabbar"><span class="on"><i>▦</i>dados</span><span><i>👁</i>radar</span><span><i>⊕</i>agir</span><span><i>🪙</i>47</span><span><i>☰</i>conta</span></div>
+</div>
+<div class="why"><b>Para quem:</b> o usuário-analista (NITs, escritórios, camada 2). <span class="s">Interação:</span> os filtros BRASIL/NCL 36/PE trocam o heatmap de verdade (clique). Credibilidade pela densidade honesta: números mono, deltas, proveniência no topo. É o Panorama camada 1-2 como terminal.</div></div>
+
+<!-- ═══ T2 ATELIER ═══ -->
+<div class="col"><div class="tag"><b>T2 · Atelier</b><span>apple · um dado por vez</span></div>
+<div class="phone t2"><div class="screen">
+  <h2>Sua proteção</h2>
+  <p class="sub">Terça, 14 de julho</p>
+  <div class="card">
+    <div class="seg" id="t2seg"><span class="on" data-k="0">Hoje</span><span data-k="1">Semana</span><span data-k="2">Ano</span></div>
+    <div class="big" id="t2big">Tudo em ordem</div>
+    <p style="font-size:.8rem;margin-top:4px" id="t2sub">6 marcas vigiadas · nenhuma colisão hoje</p>
+  </div>
+  <div class="card">
+    <div class="row" style="border-top:none"><b>🏷️ FAIXA MAR</b><span class="link">em exame ›</span></div>
+    <div class="row"><b>📜 22 selos</b><span class="link">ver ›</span></div>
+    <div class="row"><b>🪙 47 créditos</b><span class="link">recarregar ›</span></div>
+  </div>
+  <div class="card">
+    <b style="color:#1d1d1f;font-size:.9rem">O Brasil esta semana</b>
+    <div class="row"><span>Depósitos de marca</span><b>5.533</b></div>
+    <div class="row"><span>Fila do INPI</span><b>45 dias</b></div>
+    <p class="link" style="margin-top:8px">Ver o Panorama completo ›</p>
+  </div>
+  <div class="tabbar"><span class="on"><i>●</i>Início</span><span><i>👁</i>Radar</span><span><i>＋</i></span><span><i>📊</i>Dados</span><span><i>👤</i>Conta</span></div>
+</div>
+<div class="why"><b>Para quem:</b> o dono de negócio sem tempo. <span class="s">Interação:</span> o segmented control (Hoje/Semana/Ano) troca a resposta única — "tudo em ordem" é a manchete; detalhe só se quiser. Credibilidade pelo silêncio: quem confia não grita. Ponytail no limite: 3 palavras.</div></div>
+
+<!-- ═══ T3 COMANDO ═══ -->
+<div class="col"><div class="tag"><b>T3 · Comando</b><span>arc/linear · velocidade</span></div>
+<div class="phone t3"><div class="screen">
+  <div style="padding:10px 2px"><b style="font-family:'Space Grotesk'">CRIAPA</b> <span class="lbl">HUB</span></div>
+  <div class="cmd">🔎 Buscar marca, processo, classe… <kbd>⌘K</kbd></div>
+  <div class="kpi">
+    <div><b style="color:#828fff">47</b><span>créditos</span></div>
+    <div><b style="color:#f7f8f8">6</b><span>vigiadas</span></div>
+    <div><b style="color:#fc7840">1</b><span>alerta</span></div>
+  </div>
+  <h4 class="sec">Fluxos rápidos</h4>
+  <div class="glass">
+    <div class="row" style="border-top:none"><span class="lbl">S</span><b>Selar arquivo</b><span style="margin-left:auto;font-size:.65rem">arrastar ou ⌘U</span></div>
+    <div class="row"><span class="lbl">V</span><b>Vigiar marca</b><span style="margin-left:auto;font-size:.65rem">2 🪙</span></div>
+    <div class="row"><span class="lbl">P</span><b>Panorama NCL 36</b><span style="margin-left:auto;font-size:.65rem">fila 28d</span></div>
+    <div class="row"><span class="lbl">B</span><b>Verificar selo</b><span style="margin-left:auto;font-size:.65rem">câmera</span></div>
+  </div>
+  <h4 class="sec">Atividade</h4>
+  <div class="glass" style="font-size:.76rem">
+    <div class="row" style="border-top:none">⚠️ <b>Colisão FAIXA × FELICITÀ</b><span style="margin-left:auto">ter</span></div>
+    <div class="row">⛓️ <b>Selo CRIAPA-2026-A3F1 confirmado</b><span style="margin-left:auto">seg</span></div>
+    <div class="row">📰 <b>Boletim de julho enviado</b><span style="margin-left:auto">1º</span></div>
+  </div>
+  <div class="tabbar"><span class="on"><i>◈</i>hub</span><span><i>👁</i>radar</span><span><i>⌘</i>ações</span><span><i>📊</i>dados</span><span><i>○</i>eu</span></div>
+</div>
+<div class="why"><b>Para quem:</b> o usuário-poder que volta todo dia. <span class="s">Interação:</span> a barra ⌘K é a navegação — tudo é busca + 4 fluxos de uma linha com atalho e custo à vista. Feed de atividade = auditabilidade contínua (credibilidade operacional).</div></div>
+
+<!-- ═══ T4 CARTOGRAMA ═══ -->
+<div class="col"><div class="tag"><b>T4 · Cartograma</b><span>o Brasil clicável</span></div>
+<div class="phone t4"><div class="screen">
+  <h3>Onde o Brasil registra</h3>
+  <div style="font-size:.7rem;padding:2px 2px">depósitos de marca · 12 meses · toque numa UF</div>
+  <div class="mapa" id="t4mapa"></div>
+  <div class="leg"><span>menos</span><i style="background:#12303f"></i><i style="background:#155a6e"></i><i style="background:#0e8a9e"></i><i style="background:#12c2d8"></i><i style="background:#7ff3ff"></i><span>mais</span></div>
+  <div class="painel" id="t4painel">
+    <b id="t4nome">Pernambuco</b>
+    <div class="row"><span>Depósitos (12m)</span><b id="t4dep">9.841</b></div>
+    <div class="row"><span>Por 100 mil empresas</span><b id="t4norm">318</b></div>
+    <div class="row"><span>Fila média</span><b id="t4fila">26d</b></div>
+    <div class="row"><span>Classe mais comum</span><b id="t4ncl">NCL 35</b></div>
+  </div>
+  <div class="painel" style="border-color:rgba(255,209,102,.4)">
+    <div style="font-size:.76rem">💡 <b style="color:#ffd166">Seu estado é o 7º</b> — cada registro seu sobe PE no mapa.</div>
+  </div>
+  <div class="tabbar"><span><i>●</i>início</span><span class="on"><i>🗺</i>mapa</span><span><i>⊕</i>agir</span><span><i>👁</i>radar</span><span><i>☰</i>conta</span></div>
+</div>
+<div class="why"><b>Para quem:</b> todos — o mapa é a porta de entrada universal do dado. <span class="s">Interação:</span> cartograma-grade das 27 UFs (choropleth sequencial de 1 matiz, regra dataviz) — <b>toque muda o painel</b>. A normalização "por 100 mil empresas" (doc 52 nº 7) evita o mapa-de-população. Liberdade de exploração sem juridiquês.</div></div>
+
+<!-- ═══ T5 GAZETA ═══ -->
+<div class="col"><div class="tag"><b>T5 · Gazeta</b><span>o jornal da terça</span></div>
+<div class="phone t5"><div class="screen">
+  <div class="masthead"><b>A Gazeta do Registro</b><span>edição 2897 · terça-feira, 14 de julho de 2026</span></div>
+  <div class="manchete">A fila do INPI <em>dobrou</em> em três meses</div>
+  <p class="lide">A espera entre depósito e publicação saltou de 24 para 45 dias desde abril, segundo levantamento exclusivo da CRIAPA sobre 859 mil processos.</p>
+  <div class="filete"></div>
+  <div class="dado"><b>5.533</b><span>marcas depositadas no Brasil nesta edição</span></div>
+  <div class="dado"><b>77%</b><span>das decisões da semana foram deferimentos</span></div>
+  <div class="dado"><b>1</b><span>colisão detectada na sua vigilância — <u>ver página 2</u></span></div>
+  <div class="box">
+    <h5>Coluna do assinante</h5>
+    <p style="font-size:.8rem;line-height:1.6">No seu setor (NCL 36), 110 novos pedidos esta semana. A coorte de setembro/2024 fechou com 82,9% de resolução.</p>
+  </div>
+  <div class="box" style="text-align:center">
+    <h5>Expediente</h5>
+    <p style="font-size:.68rem">Fonte: INPI/RPI · metodologia CRIAPA · panorama estatístico, não é parecer. ⛓️ dados selados e auditáveis.</p>
+  </div>
+  <div class="tabbar"><span class="on"><i>📰</i>edição</span><span><i>👁</i>radar</span><span><i>⊕</i>agir</span><span><i>🗂</i>acervo</span><span><i>☰</i>conta</span></div>
+</div>
+<div class="why"><b>Para quem:</b> cultura do registro em massa — o dado como PAUTA semanal. <span class="s">Assinatura:</span> a home é uma edição de jornal que "sai" toda terça com a RPI: manchete calculada, lide com proveniência, coluna do assinante (camada 2). Credibilidade emprestada do formato jornalístico + expediente com metodologia. Compartilhável por natureza.</div></div>
+
+<!-- ═══ T6 BANCO ═══ -->
+<div class="col"><div class="tag"><b>T6 · Banco</b><span>neobanco da PI</span></div>
+<div class="phone t6"><div class="screen">
+  <div class="saldo"><span>Carteira CRIAPA</span><b>🪙 47</b><span>≈ 23 semanas de vigilância garantida</span></div>
+  <div class="acoes">
+    <div class="ac"><i>⊕</i>Proteger</div><div class="ac"><i>📷</i>Verificar</div><div class="ac"><i>🪙</i>Recarga</div><div class="ac"><i>📊</i>Extrato</div>
+  </div>
+  <div class="card">
+    <b style="font-size:.85rem">Movimentações</b>
+    <div class="row"><span>🔍 Vigilância semanal ×6</span><b style="color:#c9366f">−6</b></div>
+    <div class="row"><span>🎓 Curso concluído</span><b style="color:#0a9e60">+2</b></div>
+    <div class="row"><span>👥 Indicação aceita</span><b style="color:#0a9e60">+5</b></div>
+    <p style="font-size:.68rem;margin-top:8px;color:#8a7ba0">✓ extrato encadeado por hash — auditável a qualquer momento</p>
+  </div>
+  <div class="card">
+    <b style="font-size:.85rem">Débito pendente</b>
+    <div style="font-size:.76rem;margin-top:4px">Anterioridade profunda · FAIXA MAR · 8 🪙</div>
+    <div class="slide"><div class="knob">→</div><span>deslize para confirmar com biometria</span></div>
+  </div>
+  <div class="tabbar"><span class="on"><i>⌂</i>Início</span><span><i>👁</i>Radar</span><span><i>⇄</i>Extrato</span><span><i>🎓</i>Educa</span><span><i>👤</i>Perfil</span></div>
+</div>
+<div class="why"><b>Para quem:</b> quem já confia em neobanco — empresta a gramática financeira ao intangível. <span class="s">Assinatura:</span> o slide-to-confirm com passkey (opensourceui) para débitos: fricção deliberada = segurança percebida. O "≈ semanas de vigilância" traduz crédito em proteção. Extrato com selo de auditabilidade (nosso hash-chain real).</div></div>
+
+<!-- ═══ T7 CARTÓRIO ═══ -->
+<div class="col"><div class="tag"><b>T7 · Cartório digital</b><span>credibilidade máxima</span></div>
+<div class="phone t7"><div class="screen">
+  <div class="verif"><span>⛓️</span><div><b>Registro público verificável</b><div style="font-size:.64rem">carimbo Bitcoin · QR · hash SHA-256</div></div><span class="ok">✓</span></div>
+  <div class="doc">
+    <h5>CERTIFICADO DE PROVENIÊNCIA</h5>
+    <div class="sub">selo criapa · autenticidade digital</div>
+    <div class="campo"><span>Artefato</span><b>Sistema Faixa v2.1</b></div>
+    <div class="campo"><span>Identificador</span><b>CRIAPA-2026-A3F1</b></div>
+    <div class="campo"><span>Emitido em</span><b>12 · 07 · 2026</b></div>
+    <div class="campo"><span>Titular</span><b>A. H. J. Silva</b></div>
+    <div class="campo"><span>Âncora</span><b>bloco 903.114 ₿</b></div>
+    <div class="selo">SELO<br>CRIAPA<br>✓</div>
+  </div>
+  <div class="verif"><span>🏷️</span><div><b>FAIXA MAR IMÓVEIS</b><div style="font-size:.64rem">processo 943.476.771 · em exame · vigiado</div></div><span class="ok">👁</span></div>
+  <div class="verif"><span>🎓</span><div><b>Certificado F1 · 40h</b><div style="font-size:.64rem">verificável em criapa.com.br/verificar</div></div><span class="ok">✓</span></div>
+  <div style="text-align:center;padding:8px"><span style="font-family:Inter;font-size:.72rem;border:1px solid #23402f;border-radius:20px;padding:6px 14px">＋ lavrar novo registro</span></div>
+  <div class="tabbar"><span class="on"><i>𝄞</i>registros</span><span><i>👁</i>vigília</span><span><i>⊕</i>lavrar</span><span><i>🔍</i>verificar</span><span><i>☰</i>conta</span></div>
+</div>
+<div class="why"><b>Para quem:</b> quem precisa MOSTRAR o registro a terceiros (investidor, juiz, cliente). <span class="s">Assinatura:</span> o documento-certidão como unidade central da UI — papel, filete duplo, carimbo — mas cada campo é dado vivo verificável. É o "cartório do futuro": a estética da fé pública + a prova criptográfica real que já temos.</div></div>
+
+<!-- ═══ T8 LIGA ═══ -->
+<div class="col"><div class="tag"><b>T8 · Liga</b><span>gamificação séria</span></div>
+<div class="phone t8"><div class="screen">
+  <div class="topo"><b style="color:#fff;font-family:'Space Grotesk'">CRIAPA</b><span class="fogo">🔥 12</span></div>
+  <div class="missao">
+    <b>Missão da semana</b>
+    <div style="font-size:.76rem;margin-top:3px">Conferir o resultado da varredura de terça</div>
+    <div class="bar"><span>2 de 3</span><i></i></div>
+  </div>
+  <div class="missao">
+    <b>Trilha do protetor</b>
+    <div style="font-size:.74rem;margin-top:6px">✓ conta criada &nbsp;·&nbsp; ✓ biometria &nbsp;·&nbsp; ✓ 1º selo<br>○ 1ª marca vigiada <span style="color:#58cc02;font-weight:700">+5 🪙</span> &nbsp;·&nbsp; ○ curso F1</div>
+  </div>
+  <div class="btn">CONTINUAR A TRILHA</div>
+  <h4 class="sec" style="color:#9db3bb">Liga Pernambuco · semana 29</h4>
+  <div class="liga"><span class="medal">🥇</span><b>Studio Mandacaru</b><span style="margin-left:auto">9 ações</span></div>
+  <div class="liga"><span class="medal">🥈</span><b>Café do Porto</b><span style="margin-left:auto">7</span></div>
+  <div class="liga eu"><span class="medal">4º</span><b style="color:#58cc02">Você</b><span style="margin-left:auto">5 · sobe com +1 🛡</span></div>
+  <div class="tabbar"><span class="on"><i>⚑</i>trilha</span><span><i>👁</i>radar</span><span><i>⊕</i>agir</span><span><i>🏆</i>liga</span><span><i>👤</i>perfil</span></div>
+</div>
+<div class="why"><b>Para quem:</b> o MEI/criador jovem — a cultura do registro como hábito treinável. <span class="s">Assinatura:</span> a Trilha do Protetor (badges/recompensas REAIS do backend: streak, curso +2🪙, indicação +5🪙) + liga regional anonimizável. Gamificação séria: as missões são as ações que protegem de verdade, nunca pontos vazios.</div></div>
+
+<!-- ═══ T9 FACETA ═══ -->
+<div class="col"><div class="tag"><b>T9 · Faceta</b><span>airtable · liberdade de filtro</span></div>
+<div class="phone t9"><div class="screen">
+  <h3>Explorar o mercado</h3>
+  <div style="font-size:.72rem;padding:0 2px">monte seu recorte — os números respondem</div>
+  <h4 class="sec">Classe</h4>
+  <div class="chips" data-g="classe"><span class="chip on">todas</span><span class="chip">NCL 35</span><span class="chip">NCL 36</span><span class="chip">NCL 41</span></div>
+  <h4 class="sec">UF</h4>
+  <div class="chips" data-g="uf"><span class="chip on">Brasil</span><span class="chip">SP</span><span class="chip">PE</span><span class="chip">SC</span></div>
+  <h4 class="sec">Apresentação</h4>
+  <div class="chips" data-g="ap"><span class="chip on">todas</span><span class="chip">nominativa</span><span class="chip">mista</span></div>
+  <div class="res">Seu recorte: <b id="t9n">859.257</b> depósitos · fila média <b id="t9f">24d</b></div>
+  <div class="card">
+    <div class="row"><b>Deferimento</b><span id="t9d">77%</span></div><div class="mini"><i id="t9db" style="width:77%"></i></div>
+    <div class="row" style="margin-top:8px"><b>Sem procurador</b><span id="t9p">30,7%</span></div><div class="mini"><i id="t9pb" style="width:31%"></i></div>
+  </div>
+  <div class="card" style="border-color:#0a8f8f"><div class="row"><b style="color:#0a8f8f">📥 Exportar recorte (CSV)</b><span>assinante</span></div></div>
+  <div class="tabbar"><span><i>⌂</i>início</span><span class="on"><i>◫</i>explorar</span><span><i>⊕</i>agir</span><span><i>👁</i>radar</span><span><i>☰</i>conta</span></div>
+</div>
+<div class="why"><b>Para quem:</b> pesquisador/estatístico/NIT — a linha Pro do doc 39 §5. <span class="s">Interação:</span> facetas de verdade — <b>clique nos chips</b> e o recorte recalcula (classe × UF × apresentação, com k-anonimato no backend). O export CSV é o produto assinante. Liberdade máxima de uso do dado com regra ética embutida.</div></div>
+
+<!-- ═══ T10 CALMO ═══ -->
+<div class="col"><div class="tag"><b>T10 · Calmo</b><span>calm tech · confiança silenciosa</span></div>
+<div class="phone t10"><div class="screen">
+  <div class="zen">
+    <h2>Sua marca está<br>sendo vigiada.</h2>
+    <div class="halo"><b>6</b></div>
+    <p>seis marcas sob vigilância contínua<br>nenhuma ameaça esta semana</p>
+  </div>
+  <div class="linha"><span>Próxima varredura</span><b>terça, 9h</b></div>
+  <div class="linha"><span>Seu processo</span><b>no prazo · exame em nov/27</b></div>
+  <div class="linha"><span>Extrato</span><b class="tudo">íntegro ✓</b></div>
+  <div class="linha"><span>Carimbo Bitcoin</span><b class="tudo">confirmado ⛓️</b></div>
+  <div style="text-align:center;padding:22px 10px"><span style="font-size:.78rem;border:1px solid rgba(120,160,255,.35);border-radius:22px;padding:9px 20px;color:#c9d6f2">precisa de algo? toque aqui</span></div>
+  <div class="tabbar"><span class="on"><i>◐</i>agora</span><span><i>👁</i>vigília</span><span><i>⊕</i>agir</span><span><i>𝄃</i>histórico</span><span><i>○</i>você</span></div>
+</div>
+<div class="why"><b>Para quem:</b> o cliente que pagou para NÃO pensar nisso — o produto da vigilância é a tranquilidade. <span class="s">Assinatura:</span> o halo que respira com o número de marcas protegidas; quatro linhas de status e um único convite. A credibilidade aqui é a ausência de ansiedade: tudo verificável (extrato ✓, ⛓️), nada gritando.</div></div>
+
+<!-- ═══ T11 COMPOSIÇÃO RECOMENDADA ═══ -->
+<div class="col"><div class="tag"><b>T11 · Composição ★</b><span>V9 entrada + V5 processo + V7 ritmo</span></div>
+<div class="phone t11"><div class="screen">
+  <div class="hd"><b>CRI<i>APA</i></b><span class="hub">Hub</span><span style="margin-left:auto;font-size:.66rem">🪙 47 · 🔐</span></div>
+  <div class="trust"><span>⛓️ <b>carimbo Bitcoin</b></span><span>✓ <b>extrato auditável</b></span><span>🔐 <b>biometria</b></span></div>
+
+  <!-- V7: o ritmo da terça -->
+  <div class="ritmo"><span>📅 <b>Terça, 9h02</b> · revista 2897 varrida ✓</span><span>🔥 <b>12</b></span></div>
+
+  <!-- V7: aviso em padrão push -->
+  <div class="push">
+    <div class="pic">⚠️</div>
+    <div style="flex:1"><div class="t1x"><b>Colisão detectada</b><span>há 2h</span></div>
+    <div class="t2x">FAIXA MAR × FELICITÀ · NCL 36 · risco médio — toque para ver</div></div>
+  </div>
+
+  <!-- V5: o processo com você-está-aqui -->
+  <div class="card"><b>🏷️ FAIXA MAR IMÓVEIS</b>
+    <div class="tl">
+      <div class="st done"><i></i><b>Depósito</b> <span>28/05 ✓</span></div>
+      <div class="st done"><i></i><b>Publicação</b> <span>14/07 · rev 2897 ✓</span></div>
+      <div class="st now"><i></i><b>Oposição — você está aqui</b> <span>até 12/09 · vigilância de olho 👁</span></div>
+      <div class="st"><i></i><b>Exame → concessão</b> <span>previsão nov/27 · base: 859 mil processos</span></div>
+    </div>
+    <!-- V4: o espelho cultural, uma linha -->
+    <div class="espelho"><span>Seu setor esta semana</span><b>110 depósitos · você vigiado ✓</b></div>
+  </div>
+
+  <!-- V9: a pergunta única (compacta, para crescer o portfólio) -->
+  <div class="card"><b>O que mais você quer proteger?</b>
+    <div class="portas">
+      <div class="porta"><i>🏷️</i><b>Nome ou logo</b></div>
+      <div class="porta"><i>💻</i><b>App ou sistema</b></div>
+      <div class="porta"><i>💡</i><b>Invenção</b></div>
+      <div class="porta"><i>🎨</i><b>Conteúdo</b></div>
+    </div>
+  </div>
+
+  <!-- V6: o movimento, uma linha -->
+  <div class="mov"><span>👥 Convide — vocês dois ganham</span><b>+5 🪙 →</b></div>
+
+  <div class="tabbar"><span class="on"><i>●</i>hoje</span><span><i>👁</i>radar</span><span><i>⊕</i>proteger</span><span><i>📊</i>dados</span><span><i>👤</i>conta</span></div>
+</div>
+<div class="why"><b>A recomendada:</b> a jornada inteira numa tela, na identidade Neural real. Ordem = prioridade do usuário: <span class="s">ritmo</span> (o que aconteceu hoje) → <span class="s">alerta</span> (padrão push) → <span class="s">seu processo</span> (timeline com ETA dos nossos dados + espelho do setor em 1 linha) → <span class="s">crescer</span> (pergunta única V9) → <span class="s">rede</span> (V6 em 1 linha). Trust strip fixa no topo. Nada tem mais de 4 palavras por rótulo; toda seção colapsa em 1 linha quando não há novidade.</div></div>
+
+</div>
+<p style="text-align:center;margin-top:24px;font-size:.76rem;color:#6b5b8a;max-width:1000px;margin-left:auto;margin-right:auto;line-height:1.75">
+Leitura estratégica: <b style="color:#00f0ff">T11 é a composição recomendada para o produto</b> (V9+V5+V7 com V4/V6 em camadas). Os demais modos podem virar PÁGINAS dela:  <b style="color:#fff">T2/T10</b> para o cliente comum (conforto) · <b style="color:#fff">T1/T9</b> para a camada assinante/Pro (dados com liberdade) · <b style="color:#fff">T4/T5</b> para cultura e compartilhamento · <b style="color:#fff">T6/T7</b> para credibilidade percebida máxima · <b style="color:#fff">T3</b> para o usuário-poder · <b style="color:#fff">T8</b> para aquisição jovem. O app real pode ter UMA identidade com <i>páginas</i> nestes modos: home T2/T10, dados T1/T9, mapa T4, selo T7, créditos T6, terça T5.
+</p>
+<script>
+/* T1: heatmap 13 semanas com 3 recortes (filtro funcional) */
+(function(){
+  var D = {
+    br:   {tot:'859.257 / 24m', v:[14,15,13,16,18,15,17,19,16,21,23,25,27]},
+    ncl36:{tot:'14.333 / 12m',  v:[3,4,3,5,4,4,5,6,5,7,8,9,11]},
+    pe:   {tot:'9.841 / 12m',   v:[2,3,2,3,4,3,4,4,5,5,6,7,8]}
+  };
+  var cores=['#1c2530','#3a4a26','#5c7a1e','#8fb508','#fcd535'];
+  var hm=document.getElementById('t1hm');
+  function pinta(k){
+    var d=D[k], max=Math.max.apply(null,d.v);
+    hm.innerHTML=d.v.map(function(n,i){
+      var t=Math.min(4,Math.floor(n/max*4.99));
+      return '<div class="cell" style="background:'+cores[t]+'" title="semana '+(i+1)+': '+n+' mil depósitos"></div>';
+    }).join('');
+    document.getElementById('t1tot').textContent=d.tot;
+  }
+  document.getElementById('t1f').addEventListener('click',function(e){
+    var c=e.target.closest('.chip'); if(!c)return;
+    this.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});
+    c.classList.add('on'); pinta(c.dataset.v);
+  });
+  pinta('br');
+})();
+/* T2: segmented control troca a resposta */
+(function(){
+  var R=[['Tudo em ordem','6 marcas vigiadas · nenhuma colisão hoje'],
+         ['1 alerta novo','FAIXA × FELICITÀ · risco médio · ver detalhes'],
+         ['82,9% resolvido','sua coorte (set/24) · deferimento em ~567 dias']];
+  document.getElementById('t2seg').addEventListener('click',function(e){
+    var s=e.target.closest('span'); if(!s)return;
+    this.querySelectorAll('span').forEach(function(x){x.classList.remove('on')});
+    s.classList.add('on');
+    document.getElementById('t2big').textContent=R[s.dataset.k][0];
+    document.getElementById('t2sub').textContent=R[s.dataset.k][1];
+  });
+})();
+/* T4: cartograma-grade do Brasil (posições aproximadas) */
+(function(){
+  var UF=[['RR',0,1,.1],['AP',0,3,.1],['AM',1,0,.2],['PA',1,2,.3],['MA',1,4,.2],['CE',1,6,.4],['RN',1,8,.2],
+  ['AC',2,0,.1],['RO',2,1,.15],['TO',2,3,.15],['PI',2,5,.15],['PB',2,7,.2],['PE',2,8,.55],
+  ['MT',3,2,.3],['GO',3,3,.45],['BA',3,5,.5],['AL',3,7,.15],['SE',3,8,.12],
+  ['MS',4,2,.25],['MG',4,4,.75],['ES',4,6,.3],
+  ['SP',5,3,1],['RJ',5,5,.6],['PR',5,2,.55],
+  ['SC',6,3,.6],['RS',6,2,.5],['DF',6,5,.35]];
+  var dados={SP:['São Paulo','96.412','402','20d','NCL 35'],PE:['Pernambuco','9.841','318','26d','NCL 35'],
+  SC:['Santa Catarina','38.104','389','21d','NCL 25'],MG:['Minas Gerais','61.220','344','22d','NCL 35'],
+  PR:['Paraná','41.877','361','21d','NCL 35'],RJ:['Rio de Janeiro','44.905','352','23d','NCL 41']};
+  function tom(f){var t=['#12303f','#155a6e','#0e8a9e','#12c2d8','#7ff3ff'];return t[Math.min(4,Math.floor(f*4.99))]}
+  var m=document.getElementById('t4mapa');
+  var html='';
+  for(var r=0;r<7;r++)for(var c=0;c<9;c++){
+    var u=UF.find(function(x){return x[1]===r&&x[2]===c});
+    html += u ? '<div class="uf'+(u[0]==='PE'?' sel':'')+'" data-uf="'+u[0]+'" style="background:'+tom(u[3])+'" title="'+u[0]+'">'+u[0]+'</div>'
+              : '<div class="uf void"></div>';
+  }
+  m.innerHTML=html;
+  m.addEventListener('click',function(e){
+    var u=e.target.closest('.uf'); if(!u||u.classList.contains('void'))return;
+    m.querySelectorAll('.uf').forEach(function(x){x.classList.remove('sel')});
+    u.classList.add('sel');
+    var d=dados[u.dataset.uf]||[u.dataset.uf,'—','—','—','—'];
+    document.getElementById('t4nome').textContent=d[0];
+    document.getElementById('t4dep').textContent=d[1];
+    document.getElementById('t4norm').textContent=d[2];
+    document.getElementById('t4fila').textContent=d[3];
+    document.getElementById('t4ncl').textContent=d[4];
+  });
+})();
+/* T9: facetas vivas — cada combinação recalcula o recorte */
+(function(){
+  var base={n:859257,f:24,d:77,p:30.7};
+  var mod={ 'NCL 35':{n:.18,f:1.05,d:-2,p:2},'NCL 36':{n:.017,f:1.15,d:-4,p:-6},'NCL 41':{n:.07,f:1.02,d:1,p:4},
+            'SP':{n:.28,f:.85,d:1,p:-8},'PE':{n:.011,f:1.08,d:-1,p:9},'SC':{n:.044,f:.9,d:2,p:-4},
+            'nominativa':{n:.28,f:1.1,d:1,p:12},'mista':{n:.7,f:.95,d:0,p:-5} };
+  function calc(){
+    var n=base.n,f=base.f,d=base.d,p=base.p;
+    document.querySelectorAll('.t9 .chips .chip.on').forEach(function(c){
+      var m=mod[c.textContent]; if(!m)return;
+      n=Math.round(n*m.n); f=Math.round(f*m.f); d=Math.min(95,Math.max(40,d+m.d)); p=Math.min(80,Math.max(5,+(p+m.p).toFixed(1)));
+    });
+    document.getElementById('t9n').textContent=n.toLocaleString('pt-BR');
+    document.getElementById('t9f').textContent=f+'d';
+    document.getElementById('t9d').textContent=d+'%';
+    document.getElementById('t9p').textContent=p.toLocaleString('pt-BR')+'%';
+    document.getElementById('t9db').style.width=d+'%';
+    document.getElementById('t9pb').style.width=p+'%';
+  }
+  document.querySelectorAll('.t9 .chips').forEach(function(g){
+    g.addEventListener('click',function(e){
+      var c=e.target.closest('.chip'); if(!c)return;
+      g.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});
+      c.classList.add('on'); calc();
+    });
+  });
+})();
+</script>
+</body>
+</html>
