@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CRIAPA Hub — 10 estilos + V1–V9 (todos os mockups)</title>
+<title>CRIAPA Hub — 10 estilos + V1–V12 (todos os mockups)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600;700;800&family=IBM+Plex+Mono:wght@500;600&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
@@ -353,6 +353,56 @@ h4.sec{font-size:.64rem;text-transform:uppercase;letter-spacing:1.4px;opacity:.6
 .vh .porta span{font-size:.66rem;color:var(--dim)}
 .vh .porta.hot{border-color:rgba(0,240,255,.4);background:linear-gradient(160deg,#1e0a3c,#14082a)}
 @media(max-width:1280px){.vh .lane{gap:20px}}
+/* V10 COPILOTO (IA) */
+.vh .chat-area{display:flex;flex-direction:column;flex:1}
+.vh .chat-scroll{flex:1;overflow-y:auto;padding:0 6px}
+.vh .chat-msg{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.vh .chat-msg.usr{flex-direction:row-reverse}
+.vh .chat-msg .av{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:.75rem;flex-shrink:0}
+.vh .chat-msg .av.ai{background:linear-gradient(135deg,var(--accent),#7c3aed);color:#fff;font-weight:700}
+.vh .chat-msg .av.you{background:var(--accent);color:#0a0418;font-weight:700}
+.vh .chat-msg .bub{background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:14px 14px 14px 4px;padding:10px 13px;font-size:.76rem;line-height:1.55;max-width:88%}
+.vh .chat-msg.usr .bub{background:rgba(0,240,255,.08);border-color:rgba(0,240,255,.2);border-radius:14px 14px 4px 14px}
+.vh .chat-msg .bub b{color:var(--heading)}
+.vh .chat-msg .bub .sc{display:inline-block;font-size:.65rem;padding:3px 9px;border-radius:12px;border:1px solid var(--border);margin:3px 2px;cursor:pointer;background:var(--field);color:var(--muted)}
+.vh .chat-msg .bub .sc:hover{border-color:var(--accent);color:var(--accent)}
+.vh .chat-in{display:flex;gap:6px;align-items:center;background:var(--field);border:1px solid var(--border);border-radius:14px;padding:8px 14px;margin:6px}
+.vh .chat-in input{background:none;border:none;color:var(--heading);font-family:Inter;font-size:.8rem;flex:1;outline:none}
+.vh .chat-in input::placeholder{color:var(--dim)}
+.vh .chat-in .snd{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#0a0418;border:none;font-size:1rem;cursor:pointer;display:grid;place-items:center;flex-shrink:0;font-weight:700}
+/* V11 RADAR (inteligência competitiva) */
+.vh .grafo{position:relative;width:100%;height:250px;margin:8px 0}
+.vh .grafo svg{position:absolute;inset:0;width:100%;height:100%}
+.vh .g-node{position:absolute;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:.55rem;font-weight:700;text-align:center;border:2px solid var(--border);background:var(--card);color:var(--muted);cursor:pointer;transition:all .2s;z-index:2;transform:translate(-50%,-50%)}
+.vh .g-node:hover{transform:translate(-50%,-50%) scale(1.2);z-index:3}
+.vh .g-node.center{width:52px;height:52px;border-color:var(--accent);background:rgba(0,240,255,.1);color:var(--accent);font-size:.6rem;box-shadow:0 0 20px rgba(0,240,255,.3)}
+.vh .g-node.alert{border-color:#ff3d9a;background:rgba(255,61,154,.12);color:#ff3d9a;animation:radar-pulse 2s ease-in-out infinite}
+.vh .g-node .lb{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:4px;font-size:.5rem;color:var(--dim);white-space:nowrap;font-weight:400}
+@keyframes radar-pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,61,154,.4)}50%{box-shadow:0 0 0 12px rgba(255,61,154,0)}}
+.vh .g-legend{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;font-size:.62rem;color:var(--dim);margin-top:4px}
+.vh .g-legend i{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:3px;vertical-align:middle}
+.vh .g-card{background:var(--field);border:1px solid var(--border);border-radius:12px;padding:10px 12px;margin-bottom:6px;font-size:.72rem}
+.vh .g-card .ln{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;padding:4px 0}
+.vh .g-card .ln b{color:var(--heading)}
+.vh .g-card .ln span{color:var(--dim)}
+.vh .g-card .ln .dv{color:var(--accent);font-weight:700}
+/* V12 GALERIA (portfólio público) */
+.vh .profile{text-align:center;padding:14px 0 8px}
+.vh .profile .pic{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;font-size:1.3rem;margin:0 auto 4px;color:#0a0418}
+.vh .profile .nm{font-family:'Space Grotesk',Inter,sans-serif;color:var(--heading);font-size:.9rem}
+.vh .profile .un{font-size:.64rem;color:var(--dim)}
+.vh .gl{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.vh .gc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px 8px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:3px}
+.vh .gc .gi{font-size:1.5rem}
+.vh .gc .gn{font-family:'Space Grotesk',Inter,sans-serif;color:var(--heading);font-size:.8rem;font-weight:600}
+.vh .gc .gd{font-size:.62rem;color:var(--dim)}
+.vh .gc .gb{font-size:.55rem;padding:2px 8px;border-radius:10px;display:inline-block;margin-top:2px;font-weight:600}
+.vh .gc .gb.ok{background:rgba(0,240,255,.12);color:var(--accent);border:1px solid rgba(0,240,255,.25)}
+.vh .gc .gb.warn{background:rgba(255,140,0,.12);color:var(--orange);border:1px solid rgba(255,140,0,.25)}
+.vh .gc .gb.done{background:rgba(92,214,138,.12);color:#5cd68a;border:1px solid rgba(92,214,138,.25)}
+.vh .sh{display:flex;gap:6px;align-items:center;justify-content:center;background:var(--field);border:1px solid var(--border);border-radius:12px;padding:8px 12px;font-size:.68rem;color:var(--dim);margin:10px 0}
+.vh .sh code{font-family:'IBM Plex Mono',monospace;color:var(--accent);font-size:.62rem}
+.vh .sh .cp{margin-left:auto;color:var(--accent);font-weight:700;cursor:pointer}
 </style>
 </head>
 <body>
@@ -363,6 +413,7 @@ h4.sec{font-size:.64rem;text-transform:uppercase;letter-spacing:1.4px;opacity:.6
   <button class="active" data-section="sec-estilos">10 Estilos (T1–T11)</button>
   <button data-section="sec-v1">V1–V3 Home</button>
   <button data-section="sec-v2">V4–V9 Potencial</button>
+  <button data-section="sec-v3">V10–V12 Novos</button>
 </div>
 
 <!-- ════════ SEÇÃO 1: 10 ESTILOS COMPLETOS ════════ -->
@@ -979,6 +1030,130 @@ Leitura estratégica: <b style="color:#00f0ff">T11 é a composição recomendada
 </div>
 <p style="text-align:center;margin-top:26px;font-size:.75rem;color:var(--dim);max-width:900px;margin-left:auto;margin-right:auto;line-height:1.7;padding:0 16px">
 Como se combinam: <b style="color:var(--heading)">V9 (porta de entrada)</b> + <b style="color:var(--heading)">V5 (acompanhamento)</b> + <b style="color:var(--heading)">V7 (ritmo semanal)</b> formam a jornada completa aquisição→processo→hábito. <b style="color:var(--heading)">V4 e V6</b> são camadas de cultura aplicáveis sobre qualquer base. <b style="color:var(--heading)">V8</b> é o reposicionamento de longo prazo. Todas usam dados/recursos que JÁ existem no backend (panorama, coortes, streak, indicação, vigilância, selos).
+</p>
+</section>
+
+<!-- ════════ SEÇÃO 4: V10–V12 NOVOS ════════ -->
+<section id="sec-v3" class="section vh">
+
+<div class="head" style="padding:24px 16px 0">
+  <h1>CRIAPA <em>Hub</em> — V10–V12 <span style="color:var(--dim);font-size:.9rem;font-weight:400">· 3 novas direções de design</span></h1>
+  <p>Três lacunas não cobertas pelos 20 conceitos anteriores: <b style="color:var(--heading)">V10</b> substitui navegação por conversa com IA; <b style="color:var(--heading)">V11</b> transforma o mercado em grafo vivo de inteligência competitiva; <b style="color:var(--heading)">V12</b> faz da home um portfólio público compartilhável que o usuário quer encher. Todas no tema Neural.</p>
+</div>
+<div class="lane">
+
+<!-- ═══ V10 — COPILOTO ═══ -->
+<div class="col">
+  <div class="tag"><b>V10 · Copiloto</b><span>IA como interface</span></div>
+  <div class="phone"><div class="screen" style="display:flex;flex-direction:column;padding-bottom:0">
+    <div class="hd"><span class="logo">CRI<i>APA</i></span><span class="hub">Hub</span><span class="r">🪙 47</span></div>
+    <div class="chat-scroll">
+      <div class="chat-msg">
+        <div class="av ai">✦</div>
+        <div class="bub">Bom dia! 👋 Encontrei <b>1 colisão nova</b> desde sua última visita. Quer ver?</div>
+      </div>
+      <div class="chat-msg">
+        <div class="av ai">✦</div>
+        <div class="bub"><b>Seu resumo da semana:</b><br>📊 5.533 depósitos no BR · fila 24d<br>👁 6 marcas vigiadas · sem riscos<br>🔥 streak de 12 semanas<br><span class="sc">📊 ver panorama</span> <span class="sc">👁 vigilância</span></div>
+      </div>
+      <div class="card" style="background:var(--card);margin-bottom:8px">
+        <div class="rowmini"><b>⚠️ Alerta: FAIXA × FELICITÀ</b><span>NCL 36 · risco médio</span></div>
+        <div style="font-size:.72rem;margin-top:4px;color:var(--muted)">Toque para ver detalhes da colisão.</div>
+      </div>
+      <div class="chat-msg">
+        <div class="av ai">✦</div>
+        <div class="bub">Também notei que você tem <b>cursos pendentes</b> na EDUCA. Quer continuar de onde parou?</div>
+      </div>
+      <div class="chat-msg usr">
+        <div class="av you">Y</div>
+        <div class="bub">o que mais posso proteger?</div>
+      </div>
+      <div class="chat-msg">
+        <div class="av ai">✦</div>
+        <div class="bub">Com seu perfil, sugiro: <b>proteger o nome do seu próximo projeto</b> e <b>selar o conteúdo do curso</b>. Quer ver os passos?<br><span class="sc">📋 ver plano</span> <span class="sc">⏰ depois</span></div>
+      </div>
+    </div>
+    <div class="chat-in"><input placeholder="Pergunte sobre sua PI..." value="o que mais posso proteger?"><div class="snd">→</div></div>
+    <div class="tabbar" style="margin-top:0"><span class="on"><i>✦</i>copiloto</span><span><i>👁</i>radar</span><span><i>⊕</i>proteger</span><span><i>📊</i>dados</span><span><i>👤</i>conta</span></div>
+  </div></div>
+  <div class="why"><b>Tese:</b> navegação por conversa elimina a escolha — o usuário pergunta e a home responde com o dado certo na hora. <span class="s">Assinatura:</span> o avatar IA (✦) que cumprimenta, sugere e lembra. As mensagens alternam entre informação contextual (resumo, alertas) e convite à ação. Cards de dados aparecem INLINE na conversa — mesmo conteúdo, formato novo. Zero barreira de entrada: quem não sabe o que fazer, pergunta.</div>
+</div>
+
+<!-- ═══ V11 — RADAR ═══ -->
+<div class="col">
+  <div class="tag"><b>V11 · Radar</b><span>inteligência competitiva</span></div>
+  <div class="phone"><div class="screen">
+    <div class="hd"><span class="logo">CRI<i>APA</i></span><span class="hub">Hub</span><span class="r">🪙 47</span></div>
+    <div class="grafo">
+      <svg viewBox="0 0 100 100"><line x1="50" y1="50" x2="22" y2="22" stroke="rgba(168,85,247,.2)" stroke-width=".5"/><line x1="50" y1="50" x2="78" y2="18" stroke="rgba(255,61,154,.3)" stroke-width=".7"/><line x1="50" y1="50" x2="84" y2="50" stroke="rgba(168,85,247,.2)" stroke-width=".5"/><line x1="50" y1="50" x2="78" y2="78" stroke="rgba(168,85,247,.2)" stroke-width=".5"/><line x1="50" y1="50" x2="22" y2="78" stroke="rgba(168,85,247,.2)" stroke-width=".5"/><line x1="50" y1="50" x2="16" y2="50" stroke="rgba(168,85,247,.2)" stroke-width=".5"/></svg>
+      <div class="g-node center" style="left:50%;top:50%">VOCÊ<div class="lb">6 marcas</div></div>
+      <div class="g-node" style="left:22%;top:22%">FAIXA<div class="lb">sua marca</div></div>
+      <div class="g-node alert" style="left:78%;top:18%">⚠<div class="lb">FELICITÀ · colidiu</div></div>
+      <div class="g-node" style="left:84%;top:50%">NCL 36<div class="lb">seu setor</div></div>
+      <div class="g-node" style="left:78%;top:78%">NCL 35<div class="lb">+28% dep.</div></div>
+      <div class="g-node" style="left:22%;top:78%">SP<div class="lb">96.412 dep.</div></div>
+      <div class="g-node" style="left:16%;top:50%">PE<div class="lb">sua UF</div></div>
+    </div>
+    <div class="g-legend"><span><i style="background:var(--accent);box-shadow:0 0 8px rgba(0,240,255,.5)"></i>você</span><span><i style="background:var(--border)"></i>concorrente</span><span><i style="background:#ff3d9a"></i>colisão ativa</span></div>
+    <div class="g-card">
+      <div class="ln"><b>⚠️ FELICITÀ x FAIXA MAR</b><span class="dv">risco médio</span></div>
+      <div style="font-size:.7rem;color:var(--dim)">NCL 36 · depósito em 12/06 · oposição até 12/09</div>
+    </div>
+    <div class="g-card">
+      <div class="ln"><b>📊 Seu setor (NCL 36)</b><span class="dv">28 dias de fila</span></div>
+      <div style="font-size:.7rem;color:var(--dim)">110 novos pedidos esta semana · 77% deferimento</div>
+    </div>
+    <div class="g-card" style="border-color:rgba(255,140,0,.3)">
+      <div class="ln"><b>🔔 Recomendação</b><span style="color:var(--orange);font-weight:700">vigiar FELICITÀ</span></div>
+      <div style="font-size:.7rem;color:var(--dim)">Monitorar processo concorrente custa 2 🪙 · sugestão automática</div>
+    </div>
+    <div class="tabbar"><span><i>●</i>início</span><span class="on"><i>◎</i>radar</span><span><i>⊕</i>agir</span><span><i>📊</i>dados</span><span><i>👤</i>conta</span></div>
+  </div></div>
+  <div class="why"><b>Tese:</b> o mercado de PI é um ecossistema de relações — marcas colidem, classes concorrem, estados se comparam. <span class="s">Assinatura:</span> o grafo vivo com o usuário no centro, conectado a concorrentes (alerta pulsante), classes, UFs. Cada nó tem dado relevante no tooltip/label. Painéis abaixo do grafo detalham a colisão, o setor e a recomendação automática — transformando inteligência bruta em ação. <b>Difere de T4:</b> não é mapa estático — é grafo relacional em tempo real.</div>
+</div>
+
+<!-- ═══ V12 — GALERIA ═══ -->
+<div class="col">
+  <div class="tag"><b>V12 · Galeria</b><span>portfólio público</span></div>
+  <div class="phone"><div class="screen">
+    <div class="hd"><span class="logo">CRI<i>APA</i></span><span class="hub">Hub</span></div>
+    <div class="profile">
+      <div class="pic">Y</div>
+      <div class="nm">Yuki</div>
+      <div class="un">criapa.com.br/sou/yuki · 3 ativos</div>
+    </div>
+    <div class="gl">
+      <div class="gc">
+        <div class="gi">🏷️</div><div class="gn">FAIXA MAR</div><div class="gd">em exame · NCL 36</div>
+        <span class="gb warn">em vigilância 👁</span>
+      </div>
+      <div class="gc">
+        <div class="gi">💻</div><div class="gn">Sistema Faixa</div><div class="gd">software · selado</div>
+        <span class="gb done">verificável ✓</span>
+      </div>
+      <div class="gc">
+        <div class="gi">📜</div><div class="gn">22 selos</div><div class="gd">emitidos · hash chain</div>
+        <span class="gb ok">público ⛓️</span>
+      </div>
+      <div class="gc">
+        <div class="gi">🎓</div><div class="gn">Certificado F1</div><div class="gd">40h · conclusão</div>
+        <span class="gb done">verificável ✓</span>
+      </div>
+    </div>
+    <div class="sh">🔗 perfil público: <code>criapa.com.br/sou/yuki</code><span class="cp">copiar</span></div>
+    <div class="card">
+      <div class="rowmini"><b>🏷️ Proteger outra criação</b><span>+</span></div>
+      <div class="rowmini"><b>📊 8 colisões evitadas no total</b><span>💰</span></div>
+      <div class="rowmini"><b>👥 Convidar · vocês dois ganham</b><span>+5 🪙</span></div>
+    </div>
+    <div class="tabbar"><span class="on"><i>◈</i>galeria</span><span><i>👁</i>radar</span><span><i>⊕</i>proteger</span><span><i>📊</i>dados</span><span><i>👤</i>conta</span></div>
+  </div></div>
+  <div class="why"><b>Tese:</b> quanto mais o usuário registra, mais bonita fica a home dele — e <b>compartilhável</b>. <span class="s">Assinatura:</span> o perfil público (<code style="font-size:.72rem">criapa.com.br/sou/</code>) com os ativos como cards visuais. Cada card é um troféu com badges de status (vigilância, verificável, público). A home não é mais um dashboard — é um <b>museu pessoal</b> que o usuário quer encher. <b>Cultura:</b> o portfólio vira prova social ambulante — cada card é um convite para o próximo registro. Quanto mais cheio, mais o dono quer compartilhar.</div>
+</div>
+
+</div>
+<p style="text-align:center;margin-top:26px;font-size:.75rem;color:var(--dim);max-width:900px;margin-left:auto;margin-right:auto;line-height:1.7;padding:0 16px">
+<b style="color:var(--heading)">V10 + V12</b> formam o par descoberta-ostentação: o Copiloto guia quem não sabe, a Galeria premia quem protegeu. <b style="color:var(--heading)">V11</b> é a camada profissional sobre qualquer base: o Radar transforma dado em inteligência acionável. V10 usa o mesmo backend dos demais; V11 usa o grafo de concorrência (doc 52 §4); V12 usa os selos e certificados já existentes.
 </p>
 </section>
 
